@@ -2,7 +2,7 @@ name: reactive_resume
 
 services:
   postgres:
-    image: postgres:latest
+    image: docker.1panel.live/library/postgres:latest
     restart: unless-stopped
     environment:
       - POSTGRES_DB=postgres
@@ -18,7 +18,7 @@ services:
       retries: 3
 
   browserless:
-    image: ghcr.io/browserless/chromium:latest
+    image: ghcr.dockerproxy.com/browserless/chromium:latest
     restart: unless-stopped
     environment:
       - QUEUED=10
@@ -41,7 +41,7 @@ services:
   #     - "9222:9222"
 
   seaweedfs:
-    image: chrislusf/seaweedfs:latest
+    image: docker.1panel.live/chrislusf/seaweedfs:latest
     restart: unless-stopped
     command: server -s3 -filer -dir=/data -ip=0.0.0.0
     environment:
@@ -57,7 +57,7 @@ services:
       retries: 3
 
   seaweedfs-create-bucket:
-    image: quay.io/minio/mc:latest
+    image: quay.dockerproxy.com/minio/mc:latest
     restart: on-failure
     entrypoint: >
       /bin/sh -c "
@@ -71,7 +71,10 @@ services:
         condition: service_healthy
 
   app:
-    image: amruthpillai/reactive-resume:latest
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: reactive-resume:latest
     # image: ghcr.io/amruthpillai/reactive-resume:latest
     environment:
       # Server
