@@ -30,7 +30,10 @@ function getModel(input: GetModelInput) {
 	const baseURL = input.baseURL || undefined;
 
 	return match(provider)
-		.with("openai", () => createOpenAI({ apiKey, baseURL }).languageModel(model))
+		.with("openai", () => {
+			const openai = createOpenAI({ apiKey, baseURL });
+			return "chat" in openai ? (openai as any).chat(model) : openai.languageModel(model);
+		})
 		.with("ollama", () => createOllama({ apiKey, baseURL }).languageModel(model))
 		.with("anthropic", () => createAnthropic({ apiKey, baseURL }).languageModel(model))
 		.with("vercel-ai-gateway", () => createGateway({ apiKey, baseURL }).languageModel(model))
@@ -41,7 +44,8 @@ function getModel(input: GetModelInput) {
 				baseURL: baseURL || "https://api.cerebras.ai/v1",
 				model,
 			});
-			return createOpenAI({ apiKey, baseURL: baseURL || "https://api.cerebras.ai/v1" }).languageModel(model);
+			const openai = createOpenAI({ apiKey, baseURL: baseURL || "https://api.cerebras.ai/v1" });
+			return "chat" in openai ? (openai as any).chat(model) : openai.languageModel(model);
 		})
 		.exhaustive();
 }
@@ -69,13 +73,22 @@ export type TestConnectionInput = z.infer<typeof aiCredentialsSchema>;
 export async function testConnection(input: TestConnectionInput): Promise<boolean> {
 	const RESPONSE_OK = "1";
 
-	// Simple text check instead of structured output (Output.choice) for better compatibility
-	const result = await generateText({
-		model: getModel(input),
-		messages: [{ role: "user", content: `Respond with only the number "${RESPONSE_OK}".` }],
-	});
+	console.log("[AI Test Connection] Starting...", { provider: input.provider, model: input.model });
 
-	return result.text.trim().includes(RESPONSE_OK);
+	try {
+		// Simple text check instead of structured output (Output.choice) for better compatibility
+		const result = await generateText({
+			model: getModel(input),
+			messages: [{ role: "user", content: `Respond with only the number "${RESPONSE_OK}".` }],
+		});
+
+		console.log("[AI Test Connection] Result:", result.text);
+
+		return result.text.trim().includes(RESPONSE_OK);
+	} catch (error) {
+		console.error("[AI Test Connection] Error:", error);
+		throw error;
+	}
 }
 
 export type ParsePdfInput = z.infer<typeof aiCredentialsSchema> & {
