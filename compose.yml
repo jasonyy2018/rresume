@@ -57,7 +57,7 @@ services:
       retries: 3
 
   seaweedfs-create-bucket:
-    image: docker.m.daocloud.io/minio/mc:latest
+    image: quay.io/minio/mc:latest
     restart: on-failure
     entrypoint: >
       /bin/sh -c "
