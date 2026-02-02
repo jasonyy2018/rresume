@@ -49,7 +49,7 @@ export function Hero() {
 					transition={{ duration: 0.6, delay: 0.8 }}
 					target="_blank"
 					rel="noopener"
-					href="https://docs.rxresu.me/getting-started"
+					href="https://github.com/jasonyy2018/rresume"
 				>
 					<Badge variant="secondary" className="h-auto gap-1.5 px-3 py-0.5">
 						<SparkleIcon aria-hidden="true" className="size-3.5" weight="fill" />

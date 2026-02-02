@@ -2,7 +2,7 @@ import { Trans } from "@lingui/react/macro";
 import { motion } from "motion/react";
 import { useMemo } from "react";
 
-const email = "hello@amruthpillai.com";
+const email = "jyu@wisdomitc.com";
 
 const testimonials: string[] = [
 	"Great site. Love the interactive interface. You can tell it's designed by someone who wants to use it.",

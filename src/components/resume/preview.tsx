@@ -162,12 +162,7 @@ function PageContainer({ pageIndex, pageLayout, pageClassName, showPageNumbers =
 
 			{metadata.page.format !== "free-form" && pageHeight > maxPageHeight && (
 				<div className="absolute start-0 top-full mt-4 print:hidden">
-					<a
-						rel="noopener"
-						target="_blank"
-						className="group/link"
-						href="https://docs.rxresu.me/guides/fitting-content-on-a-page"
-					>
+					<a rel="noopener" target="_blank" className="group/link" href="https://github.com/jasonyy2018/rresume">
 						<Alert className="max-w-sm text-yellow-600">
 							<WarningIcon color="currentColor" />
 							<AlertTitle>

@@ -9,7 +9,12 @@ export function Copyright({ className, ...props }: Props) {
 			<p>
 				<Trans>
 					Licensed under{" "}
-					<a href="#" target="_blank" rel="noopener" className="font-medium underline underline-offset-2">
+					<a
+						href="https://github.com/jasonyy2018/rresume/blob/main/LICENSE"
+						target="_blank"
+						rel="noopener"
+						className="font-medium underline underline-offset-2"
+					>
 						MIT
 					</a>
 					.
@@ -22,14 +27,14 @@ export function Copyright({ className, ...props }: Props) {
 
 			<p>
 				<Trans>
-					A passion project by{" "}
+					Maintained by{" "}
 					<a
 						target="_blank"
 						rel="noopener"
-						href="https://amruthpillai.com"
+						href="https://github.com/jasonyy2018"
 						className="font-medium underline underline-offset-2"
 					>
-						Amruth Pillai
+						Jason Yu
 					</a>
 					.
 				</Trans>
