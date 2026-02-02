@@ -2,7 +2,7 @@ name: reactive_resume
 
 services:
   postgres:
-    image: docker.1panel.live/library/postgres:latest
+    image: docker.m.daocloud.io/library/postgres:latest
     restart: unless-stopped
     environment:
       - POSTGRES_DB=postgres
@@ -41,7 +41,7 @@ services:
   #     - "9222:9222"
 
   seaweedfs:
-    image: docker.1panel.live/chrislusf/seaweedfs:latest
+    image: docker.m.daocloud.io/chrislusf/seaweedfs:latest
     restart: unless-stopped
     command: server -s3 -filer -dir=/data -ip=0.0.0.0
     environment:
