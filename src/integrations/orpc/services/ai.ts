@@ -35,9 +35,14 @@ function getModel(input: GetModelInput) {
 		.with("anthropic", () => createAnthropic({ apiKey, baseURL }).languageModel(model))
 		.with("vercel-ai-gateway", () => createGateway({ apiKey, baseURL }).languageModel(model))
 		.with("gemini", () => createGoogleGenerativeAI({ apiKey, baseURL }).languageModel(model))
-		.with("cerebras", () =>
-			createOpenAI({ apiKey, baseURL: baseURL || "https://api.cerebras.ai/v1" }).languageModel(model),
-		)
+		.with("cerebras", () => {
+			console.log("[Cerebras Config]", {
+				apiKey: apiKey?.substring(0, 5) + "...",
+				baseURL: baseURL || "https://api.cerebras.ai/v1",
+				model,
+			});
+			return createOpenAI({ apiKey, baseURL: baseURL || "https://api.cerebras.ai/v1" }).languageModel(model);
+		})
 		.exhaustive();
 }
 
