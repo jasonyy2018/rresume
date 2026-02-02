@@ -69,13 +69,13 @@ export type TestConnectionInput = z.infer<typeof aiCredentialsSchema>;
 export async function testConnection(input: TestConnectionInput): Promise<boolean> {
 	const RESPONSE_OK = "1";
 
+	// Simple text check instead of structured output (Output.choice) for better compatibility
 	const result = await generateText({
 		model: getModel(input),
-		output: Output.choice({ options: [RESPONSE_OK] }),
-		messages: [{ role: "user", content: `Respond with "${RESPONSE_OK}"` }],
+		messages: [{ role: "user", content: `Respond with only the number "${RESPONSE_OK}".` }],
 	});
 
-	return result.output === RESPONSE_OK;
+	return result.text.trim().includes(RESPONSE_OK);
 }
 
 export type ParsePdfInput = z.infer<typeof aiCredentialsSchema> & {

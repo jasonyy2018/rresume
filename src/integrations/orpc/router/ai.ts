@@ -1,4 +1,4 @@
-import { ORPCError } from "@orpc/client";
+import { ORPCError } from "@orpc/server";
 import { AISDKError } from "ai";
 import z, { ZodError } from "zod";
 import { protectedProcedure } from "../context";
