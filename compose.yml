@@ -18,7 +18,7 @@ services:
       retries: 3
 
   browserless:
-    image: ghcr.dockerproxy.com/browserless/chromium:latest
+    image: ghcr.m.daocloud.io/browserless/chromium:latest
     restart: unless-stopped
     environment:
       - QUEUED=10
@@ -57,7 +57,7 @@ services:
       retries: 3
 
   seaweedfs-create-bucket:
-    image: quay.dockerproxy.com/minio/mc:latest
+    image: quay.m.daocloud.io/minio/mc:latest
     restart: on-failure
     entrypoint: >
       /bin/sh -c "
