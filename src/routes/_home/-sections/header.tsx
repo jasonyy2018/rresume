@@ -3,7 +3,7 @@ import { ArrowRightIcon, TranslateIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
 import { motion, useMotionValue, useSpring } from "motion/react";
 import { useEffect, useRef } from "react";
-import { GithubStarsButton } from "@/components/input/github-stars-button";
+
 import { LocaleCombobox } from "@/components/locale/combobox";
 import { ThemeToggleButton } from "@/components/theme/toggle-button";
 import { BrandIcon } from "@/components/ui/brand-icon";
@@ -71,8 +71,6 @@ export function Header() {
 					<ThemeToggleButton />
 
 					<div className="hidden items-center gap-x-4 sm:flex">
-						<GithubStarsButton />
-
 						<Button asChild size="icon" aria-label={t`Go to dashboard`}>
 							<Link to="/dashboard">
 								<ArrowRightIcon aria-hidden="true" />

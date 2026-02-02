@@ -14,9 +14,9 @@
   </p>
 
   <p>
-    <img src="https://img.shields.io/github/package-json/v/amruthpillai/reactive-resume?style=flat-square" alt="Reactive Resume version">
-    <img src="https://img.shields.io/github/stars/amruthpillai/Reactive-Resume?style=flat-square" alt="GitHub Stars">
-    <img src="https://img.shields.io/github/license/amruthpillai/Reactive-Resume?style=flat-square" alt="License" />
+    <img src="https://img.shields.io/github/package-json/v/jasonyy2018/rresume?style=flat-square" alt="Reactive Resume version">
+    <img src="https://img.shields.io/github/stars/jasonyy2018/rresume?style=flat-square" alt="GitHub Stars">
+    <img src="https://img.shields.io/github/license/jasonyy2018/rresume?style=flat-square" alt="License" />
     <img src="https://img.shields.io/docker/pulls/amruthpillai/reactive-resume?style=flat-square" alt="Docker Pulls" />
     <a href="https://discord.gg/EE8yFqW4"><img src="https://img.shields.io/discord/1173518977851473940?style=flat-square&label=discord" alt="Discord" /></a>
     <a href="https://crowdin.com/project/reactive-resume"><img src="https://badges.crowdin.net/reactive-resume/localized.svg?style=flat-square" alt="Crowdin" /></a>
@@ -135,8 +135,8 @@ The quickest way to run Reactive Resume locally:
 
 ```bash
 # Clone the repository
-git clone https://github.com/amruthpillai/reactive-resume.git
-cd reactive-resume
+git clone https://github.com/jasonyy2018/rresume.git
+cd rresume
 
 # Start all services
 docker compose up -d

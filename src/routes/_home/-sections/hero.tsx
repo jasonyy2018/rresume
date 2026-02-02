@@ -1,6 +1,6 @@
 import { t } from "@lingui/core/macro";
 import { Trans } from "@lingui/react/macro";
-import { ArrowRightIcon, BookIcon, SparkleIcon } from "@phosphor-icons/react";
+import { ArrowRightIcon, SparkleIcon } from "@phosphor-icons/react";
 import { Link } from "@tanstack/react-router";
 import { motion } from "motion/react";
 import { CometCard } from "@/components/animation/comet-card";
@@ -101,16 +101,6 @@ export function Hero() {
 								/>
 							</span>
 						</Link>
-					</Button>
-
-					<Button asChild size="lg" variant="ghost" className="gap-2 px-4">
-						<a href="https://docs.rxresu.me" target="_blank" rel="noopener">
-							<BookIcon aria-hidden="true" className="size-4" />
-							<Trans>Learn More</Trans>
-							<span className="sr-only">
-								<Trans>(opens in new tab)</Trans>
-							</span>
-						</a>
 					</Button>
 				</motion.div>
 			</div>
