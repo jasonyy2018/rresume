@@ -24,7 +24,7 @@ FROM docker.m.daocloud.io/library/node:24-slim AS builder
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
-# ENV COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
+ENV COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
 RUN corepack enable
 
 WORKDIR /app
