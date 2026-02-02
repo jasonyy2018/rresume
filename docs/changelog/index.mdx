@@ -1,0 +1,84 @@
+---
+title: "Changelog"
+description: "List of all notable changes and updates to Reactive Resume"
+rss: true
+---
+
+<Update label="v5.0.5" description="31st January 2026">
+  - Implement Cover Letter functionality in the resume builder, allowing the user to create cover letters as custom sections. [(link)](/guides/adding-a-cover-letter)
+  - Implement full-screen mode for the rich text editor in the resume builder, allowing the user to write in a more focused environment.
+  - Implement a new custom section type: `summary`, which allows the user to add another "summary" like section to the resume.
+  - Implement a `useFormBlocker` hook to prevent the user from closing a dialog while the form has unsaved changes.
+  - Fix an issue where keywords spacing was not consistent in the interests section. [#2631](https://github.com/amruthpillai/reactive-resume/pull/2631)
+  - Fix an issue where the AI connection test was not working correctly, also return appropriate error messages for AI provider issues.
+</Update>
+
+<Update label="v5.0.4" description="28th January 2026">
+  - Bring back Undo/Redo functionality in the resume builder for improved editing experience.
+  - Arrange the sidebar builder dynamically based on the section type in each template. [#2564](https://github.com/amruthpillai/reactive-resume/pull/2603)
+  - Remove extra spacing when proficiency is empty. [#2607](https://github.com/amruthpillai/reactive-resume/pull/2626)
+  - Fix rendering in Pikachu template: conditionally render header and page picture using `isFirstPage`, and respect the `fullWidth` property for page layout.
+  - Fixes to templates to improve layout and rendering consistency.
+  - Fix GitHub OAuth login for users migrated from previous versions.
+  - Improve communication with the printer service and reduce resource usage for better PDF generation reliability.
+  - Update and sync translations from Crowdin (Afrikaans, Persian, Portuguese/Brazilian, and other languages).
+  - Update translation sources and configuration.
+  - Fix "empty" Git merge remnants in codebase.
+  - Update package dependencies and fix self-hosting guide links in README.
+  - Remove dead code, update screenshots, and add PWA (Progressive Web App) support.
+  - Update links to PDF example files in documentation.
+  - Other bug fixes and minor improvements (#2542, #2573, #2598).
+</Update>
+
+<Update label="v5.0.3" description="25th January 2026">
+  - Implement the ability to print Free-Form PDFs which do not have a fixed page height, allowing the user to fit the content on a page as they see fit. [(link)](/guides/selecting-page-format)
+  - Allow the user to override the default endpoint for all AI providers, not just Ollama. Also display the default endpoint for each provider in the AI settings page.
+  - Updated the chip input component, to allow the user to add, edit, remove or reorder keywords for skills and other sections.
+  - Improved RTL support across the app, thanks to @obreo for the contribution. [(link)](https://github.com/amruthpillai/reactive-resume/pull/2583)
+  - Updates to the translation configuration to remove line numbers from the translation files, as this was causing unnecessary diffs.
+  - Updated the video on the homepage to be lighter and faster to load, while still maintaining the same quality.
+  - Increased the screenshot TTL for resumes, to avoid regenerating screenshots unnecessarily unless the resume has been updated recently (in the last hour).
+  - Update dependencies and translations to the latest versions.
+</Update>
+
+<Update label="v5.0.2" description="24th January 2026">
+  - Added an agent skill `skills/resume-builder` for agentic AI assistants to build resumes for Reactive Resume through conversational AI.
+  - Added a new guide on how to fit content on a page, to avoid issues when exporting to PDF. [(link)](/guides/fitting-content-on-a-page)
+  - Display an alert when the content is too tall for a page, to help the user fit the content on a page.
+  - Fix an issue with the Ditgar template, where the page was not respecting the `fullWidth` setting.
+  - Updated the JSON Schema to conform to a proper format.
+  - Updated the Discord Server invite link to a new one.
+  - Updated dependencies to the latest versions.
+</Update>
+
+<Update label="v5.0.1" description="23th January 2026">
+  - Updated translations from Crowdin.
+  - Added a Community Spotlight section to the documentation.
+  - Remove `-r require-metadata` from the Dockerfile as it was not needed.
+  - Fixed inconsistencies in the docker compose examples in the documentation.
+  - Fixed an issue with usernames not allowing hyphens in them.
+  - Fixed issues with the printer service, when using the `getResumeScreenshot` or `printResumeAsPDF` endpoints.
+</Update>
+
+<Update label="v5.0.0" description="22th January 2026">
+  This has been a major overhaul from the previous version of Reactive Resume. The app has been completely redesigned and rebuilt from scratch, to be more intuitive and user-friendly.
+
+  **Here are some of the key changes from the previous version:**
+  - 2 new templates: _Ditgar_ and _Lapras_
+  - Authentication via Passkeys
+  - New user interface and refreshed design
+  - API Access and Reference Documentation
+  - AI Integration with OpenAI, Google, Anthropic, and Ollama
+  - A better font selector, with real-time preview of the font
+  - More comprehensive documentation, with guides for specific features
+  - An improved templates gallery, with clear overview of each template
+  - Ability to import resumes from PDF or DOCX (requires AI Integration)
+  - Reliable server infrastructure, with improved performance and scalability
+  - Ability to move items between sections and pages, for better organization
+  - A more powerful CSS Editor, with better autocomplete and syntax highlighting
+  - Extended Custom Sections to include a type, for better customization and organization
+  - Ability to choose the kind of icons to display for level indicators (stars, circles, custom icons, etc.)
+  - Ability to resize how wide/narrow the sidebar should be on the resume, or convert a page to be full width
+
+  There's still a lot more that I'm forgetting, but I'm sure you'll find out soon enough as you explore the new version. I hope you enjoy building your resume now, better than ever. If you have any feedback, please feel free to [contact me](https://amruthpillai.com/#contact) or [open an issue](https://github.com/amruthpillai/reactive-resume/issues) on GitHub.
+</Update>

@@ -1,0 +1,17 @@
+dist
+.env*
+/data
+.nitro
+.output
+.vercel
+.cursor
+TODO.md
+coverage
+.netlify
+.DS_Store
+.tanstack
+node_modules
+!.env.example
+public/sw.js
+scripts/**/*.json
+public/workbox-*.js
