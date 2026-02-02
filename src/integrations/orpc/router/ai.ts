@@ -25,6 +25,7 @@ export const aiRouter = {
 			try {
 				return await aiService.testConnection(input);
 			} catch (error) {
+				console.error("[AI Test Connection Error]", error);
 				if (error instanceof AISDKError) {
 					throw new ORPCError("BAD_GATEWAY", { message: error.message });
 				}
