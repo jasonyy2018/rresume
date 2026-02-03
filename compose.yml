@@ -2,7 +2,7 @@ name: reactive_resume
 
 services:
   postgres:
-    image: docker.m.daocloud.io/library/postgres:latest
+    image: postgres:latest
     restart: unless-stopped
     environment:
       - POSTGRES_DB=postgres
@@ -18,7 +18,7 @@ services:
       retries: 3
 
   browserless:
-    image: docker.m.daocloud.io/browserless/chrome:latest
+    image: ghcr.io/browserless/chrome:latest
     restart: unless-stopped
     environment:
       - QUEUED=10
@@ -41,7 +41,7 @@ services:
   #     - "9222:9222"
 
   seaweedfs:
-    image: docker.m.daocloud.io/chrislusf/seaweedfs:latest
+    image: chrislusf/seaweedfs:latest
     restart: unless-stopped
     command: server -s3 -filer -dir=/data -ip=0.0.0.0
     environment:
@@ -57,7 +57,7 @@ services:
       retries: 3
 
   seaweedfs-create-bucket:
-    image: docker.m.daocloud.io/minio/mc:latest
+    image: minio/mc:latest
     restart: on-failure
     entrypoint: >
       /bin/sh -c "
