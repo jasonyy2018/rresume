@@ -195,6 +195,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 			toast.success(t`Your resume has been imported successfully.`, { id: toastId, description: null });
 			closeDialog();
 		} catch (error: unknown) {
+			console.error("[Import Resume Error]", error);
 			if (error instanceof Error) {
 				toast.error(error.message, { id: toastId, description: null });
 			} else {

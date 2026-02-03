@@ -63,4 +63,4 @@ EXPOSE 3000/tcp
 HEALTHCHECK --interval=30s --timeout=10s --start-period=60s --retries=3 \
     CMD curl -f http://localhost:3000/api/health || exit 1
 
-ENTRYPOINT ["node", ".output/server/index.mjs"]
+ENTRYPOINT ["node", "--max-old-space-size=4096", ".output/server/index.mjs"]
