@@ -39,7 +39,7 @@ function getModel(input: GetModelInput) {
 	const baseURL = input.baseURL || undefined;
 
 	return match(provider)
-		.with("openai", () => createOpenAI({ apiKey, baseURL })(model))
+		.with("openai", () => createOpenAI({ apiKey, baseURL }).chat(model))
 		.with("ollama", () => createOllama({ apiKey, baseURL }).languageModel(model))
 		.with("anthropic", () => createAnthropic({ apiKey, baseURL }).languageModel(model))
 		.with("vercel-ai-gateway", () => createGateway({ apiKey, baseURL }).languageModel(model))
@@ -50,10 +50,18 @@ function getModel(input: GetModelInput) {
 				baseURL: baseURL || "https://api.cerebras.ai/v1",
 				model,
 			});
-			const openai = createOpenAI({ apiKey, baseURL: baseURL || "https://api.cerebras.ai/v1" });
-			return openai(model);
+			const openai = createOpenAI({
+				apiKey,
+				baseURL: baseURL || "https://api.cerebras.ai/v1",
+			});
+			return openai.chat(model);
 		})
-		.with("siliconflow", () => createOpenAI({ apiKey, baseURL: baseURL || "https://api.siliconflow.cn/v1" })(model))
+		.with("siliconflow", () =>
+			createOpenAI({
+				apiKey,
+				baseURL: baseURL || "https://api.siliconflow.cn/v1",
+			}).chat(model),
+		)
 		.exhaustive();
 }
 
