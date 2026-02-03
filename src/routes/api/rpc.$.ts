@@ -9,6 +9,10 @@ const rpcHandler = new RPCHandler(router, {
 });
 
 async function handler({ request }: { request: Request }) {
+	const { pathname } = new URL(request.url);
+	const contentLength = request.headers.get("content-length") || "unknown";
+	console.log(`[RPC Handler] Incoming request: ${request.method} ${pathname} (Content-Length: ${contentLength})`);
+
 	try {
 		const { response } = await rpcHandler.handle(request, {
 			prefix: "/api/rpc",

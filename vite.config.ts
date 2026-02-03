@@ -65,10 +65,12 @@ const config = defineConfig({
 	},
 
 	plugins: [
-		reflectPolyfillPlugin(),
 		lingui(),
+		reflectPolyfillPlugin(),
 		tailwindcss(),
-		nitro({ plugins: ["plugins/1.migrate.ts"] }),
+		nitro({
+			plugins: ["plugins/1.migrate.ts"],
+		}),
 		tanstackStart({ router: { semicolons: true, quoteStyle: "double" } }),
 		viteReact({ babel: { plugins: ["@lingui/babel-plugin-lingui-macro"] } }),
 		VitePWA({
