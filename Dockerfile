@@ -32,6 +32,7 @@ WORKDIR /app
 COPY --from=dependencies /tmp/dev/node_modules ./node_modules
 COPY . .
 
+RUN pnpm exec lingui compile
 RUN pnpm run build
 
 # ---------- Runtime Layer ----------
