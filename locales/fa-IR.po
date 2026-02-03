@@ -33,10 +33,6 @@ msgstr "ایجاد شده"
 msgid "Name"
 msgstr "نام"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(در زبانهٔ جدید باز می‌شود)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>در نهایت،</0><1>یک رزومه‌ساز رایگان و مت
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>سوالات</0><1>متداول</1><2>پرسیده‌شده</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>از اینکه از Reactive Resume استفاده می‌کنید متشکرم! این اپ حاصل عشق است که عمدتاً در اوقات فراغتم با پشتیبانی فوق‌العاده مشارکت‌کنندگان متن‌باز در سراسر جهان ساخته شده است.</0><1>اگر Reactive Resume برای شما مفید بوده و می‌خواهید به رایگان و باز ماندن آن برای همه کمک کنید، لطفاً به اهدای کمک مالی فکر کنید. هر مقدار کوچکی هم قدردانی می‌شود!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "در طول سال‌ها افراد زیادی برایم نوشته‌
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "یک لینک تأیید جدید به آدرس ایمیل شما ارسال شده است. لطفاً برای تأیید حساب خود، صندوق ورودی‌تان را بررسی کنید."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "یک پروژه عاشقانه توسط <0>Amruth Pillai</0>."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "آفریکانس"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "AI"
+msgid "import.ai"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "رنگ پس‌زمینه"
 msgid "Backup codes copied to clipboard."
 msgstr "کدهای پشتیبان در کلیپ‌بورد کپی شدند."
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "Base URL (اختیاری)"
@@ -429,15 +422,15 @@ msgstr "بلغاری"
 msgid "Bullet List"
 msgstr "فهرست نشانه‌دار"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "توسط جامعه، برای جامعه."
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "تغییر تم به..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "نظرتان عوض شده؟ نام رزومه خود را به چیزی توصیفی‌تر تغییر دهید."
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "آخرین تغییرات"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "ایمیل خود را برای لینکی جهت تنظیم مجدد گذرواژه بررسی کنید."
@@ -548,9 +537,10 @@ msgstr "دایره"
 msgid "Clear selection"
 msgstr "پاک کردن انتخاب"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
-msgstr "برای انتخاب فایل برای وارد کردن، اینجا کلیک کنید"
+msgid "import.click-to-select"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Code Block"
@@ -889,22 +879,9 @@ msgstr "در حال غیرفعال کردن احراز هویت دو مرحله�
 msgid "Disconnect"
 msgstr "قطع اتصال"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "دیسکورد"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "مستندات"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "حساب ندارید؟ <0><1>همین حالا یکی بسازید <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "به Reactive Resume دونیت کنید"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1324,11 +1301,16 @@ msgstr "مجاری"
 msgid "Icon"
 msgstr "آیکون"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "وارد کردن"
+msgid "import.action"
+msgstr ""
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr ""
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1338,9 +1320,10 @@ msgstr "وارد کردن یک رزومهٔ موجود"
 msgid "Importing your resume..."
 msgstr "در حال وارد کردن رزومه شما..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "در حال وارد کردن..."
+msgid "import.importing"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1458,10 +1441,6 @@ msgstr "لتونیایی"
 msgid "Layout"
 msgstr "چیدمان"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "بیشتر بدانید"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "راهنمای تنظیم محتوا در صفحه"
@@ -1496,10 +1475,6 @@ msgstr "سطح {level} از ۵"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "دارای مجوز <0>MIT</0>."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2268,14 +2243,6 @@ msgstr "فاصله (عمودی)"
 msgid "Spanish"
 msgstr "اسپانیایی"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "حامیان مالی"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "حمایت های مالی"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2311,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "خط‌خورده"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "ردیت"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "چکیده"
@@ -2322,10 +2285,6 @@ msgstr "چکیده"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "حمایت از Reactive Resume"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "با هر کاری که می‌توانید از اپ حمایت کنید!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2411,6 +2370,10 @@ msgstr "گذرواژه‌ای که وارد کرده‌اید نادرست اس�
 msgid "The resume you are trying to access is password protected"
 msgstr "رزومه‌ای که می‌خواهید به آن دسترسی پیدا کنید با گذرواژه محافظت شده است"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "URL وارد شده معتبر نیست."
@@ -2453,14 +2416,14 @@ msgstr "این قابلیت نیاز دارد یکپارچه‌سازی هوش �
 msgid "This is a URL-friendly name for your resume."
 msgstr "این یک نام مناسب برای URLِ رزومه شما است."
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "این کار ممکن است چند دقیقه طول بکشد، بسته به پاسخ ارائه‌دهندهٔ هوش مصنوعی. لطفاً پنجره را نبندید یا صفحه را تازه‌سازی نکنید."
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "بسته به ظرفیت سرور این کار ممکن است کمی طول بکشد. لطفاً پنجره را نبندید یا صفحه را تازه‌سازی نکنید."
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2504,11 +2467,6 @@ msgstr "برای حذف حساب خود، باید متن تأیید را وار
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "بازدیدها و دانلودهای رزومهٔ خود را پیگیری کنید"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "ترجمه‌ها"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2567,7 +2525,11 @@ msgstr "احراز هویت دو مرحله‌ای با موفقیت غیرفع�
 msgid "Two-factor authentication has been setup successfully."
 msgstr "احراز هویت دو مرحله‌ای با موفقیت راه‌اندازی شد."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "نوع"
@@ -2865,6 +2827,10 @@ msgstr "کلید API شما در کلیپ‌بورد کپی شد."
 #: src/routes/builder/$resumeId/index.tsx
 msgid "Your changes are saved automatically."
 msgstr "تغییرات شما به‌صورت خودکار ذخیره می‌شوند."
+
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr ""
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."

@@ -23,6 +23,7 @@ export const aiProviderSchema = z.enum([
 	"vercel-ai-gateway",
 	"cerebras",
 	"siliconflow",
+	"openrouter",
 ]);
 
 export type AIProvider = z.infer<typeof aiProviderSchema>;
@@ -60,6 +61,16 @@ function getModel(input: GetModelInput) {
 			createOpenAI({
 				apiKey,
 				baseURL: baseURL || "https://api.siliconflow.cn/v1",
+			}).chat(model),
+		)
+		.with("openrouter", () =>
+			createOpenAI({
+				apiKey,
+				baseURL: baseURL || "https://openrouter.ai/api/v1",
+				headers: {
+					"HTTP-Referer": "https://reactive-resume.com", // Fallback referer
+					"X-Title": "Reactive Resume",
+				},
 			}).chat(model),
 		)
 		.exhaustive();
@@ -124,9 +135,10 @@ export type ParsePdfInput = z.infer<typeof aiCredentialsSchema> & {
 export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
 	const isSupportedProvider = ["openai", "gemini"].includes(input.provider);
 	const isSiliconFlow = input.provider === "siliconflow";
+	const isOpenRouter = input.provider === "openrouter";
 	const isNonOpenAIURL = input.provider === "openai" && input.baseURL && !input.baseURL.includes("api.openai.com");
 
-	if (!isSupportedProvider || isNonOpenAIURL || isSiliconFlow) {
+	if (!isSupportedProvider || isNonOpenAIURL || isSiliconFlow || isOpenRouter) {
 		throw new ORPCError("BAD_REQUEST", {
 			message: `The provider "${input.provider}" (with baseURL "${input.baseURL}") does not support PDF parsing. This feature requires official OpenAI or Google Gemini.`,
 		});
@@ -197,9 +209,10 @@ export type ParseDocxInput = z.infer<typeof aiCredentialsSchema> & {
 export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
 	const isSupportedProvider = ["openai", "gemini"].includes(input.provider);
 	const isSiliconFlow = input.provider === "siliconflow";
+	const isOpenRouter = input.provider === "openrouter";
 	const isNonOpenAIURL = input.provider === "openai" && input.baseURL && !input.baseURL.includes("api.openai.com");
 
-	if (!isSupportedProvider || isNonOpenAIURL || isSiliconFlow) {
+	if (!isSupportedProvider || isNonOpenAIURL || isSiliconFlow || isOpenRouter) {
 		throw new ORPCError("BAD_REQUEST", {
 			message: `The provider "${input.provider}" (with baseURL "${input.baseURL}") does not support Word document parsing. This feature requires official OpenAI or Google Gemini.`,
 		});

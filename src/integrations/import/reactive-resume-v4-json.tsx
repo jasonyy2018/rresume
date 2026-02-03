@@ -713,7 +713,7 @@ export class ReactiveResumeV4JSONImporter {
 						marginX: nonNegative(v4Data.metadata.page?.margin ?? 14),
 						marginY: nonNegative(v4Data.metadata.page?.margin ?? 14),
 						format: v4Data.metadata.page?.format ?? "a4",
-						locale: "en-US",
+						locale: "en",
 						hideIcons: v4Data.metadata.typography?.hideIcons ?? false,
 					},
 					design: {

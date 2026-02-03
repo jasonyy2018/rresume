@@ -33,10 +33,6 @@ msgstr "ତିଆରି ହୋଇଛି"
 msgid "Name"
 msgstr "ନାମ"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(ନୂତନ ଟାବ୍‌ରେ ଖୋଲେ)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>ଶେଷରେ,</0><1>ଏକ ନିଶୁଳ୍କ ଏବଂ ଖୋ�
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>ପୁନଃପୁନି</0><1>ପଚରାଯାଉଥିବା</1><2>ପ୍ରଶ୍ନଗୁଡିକ</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>Reactive Resume ବ୍ୟବହାର କରିବାକୁ ଧନ୍ୟବାଦ! ଏହି ଆପ୍‌ଟି ମୁଖ୍ୟତଃ ମୋର ଖାଲି ସମୟରେ, ପୃଥିବୀ ସାରା ଖୋଲା‑ମୂଳ ଅବଦାନକାରୀମାନଙ୍କର ଅଦ୍ଭୁତ ସମର୍ଥନ ସହ ଭଲପାଇବାର ସହ ତିଆରି କରାଯାଇଛି।</0><1>ଯଦି Reactive Resume ଆପଣଙ୍କ ପାଇଁ ଉପକାରୀ ହୋଇଥାଏ, ଏବଂ ଆପଣ ଏକାଏକଙ୍କ ପାଇଁ ଏହାକୁ ନିଶୁଳ୍କ ଏବଂ ଖୋଲା ରଖିବାରେ ସାହାଯ୍ୟ କରିବାକୁ ଚାହାଁନ୍ତି, ଦୟାକରି ଦାନ କରିବାକୁ ଭାବନ୍ତୁ। ପ୍ରତ୍ୟେକ ଛୋଟ ଅବଦାନକୁ ମଧ୍ୟ ଆମେ ମୂଲ୍ୟାଙ୍କନ କରୁଛୁ!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "ବର୍ଷଗୁଡିକ ଧରି ଅନେକ ଲୋକ ମତେ R
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "ଆପଣଙ୍କ ଇମେଲ୍ ଠିକଣାକୁ ଏକ ନୂତନ ସତ୍ୟାପନ ଲିଙ୍କ ପଠାଯାଇଛି। ଦୟାକରି ଆପଣଙ୍କ ଆକାଉଣ୍ଟକୁ ସତ୍ୟାପନ କରିବା ପାଇଁ ଇନବକ୍ସ ଯାଞ୍ଚ କରନ୍ତୁ।"
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "<0>Amruth Pillai</0> ଙ୍କ ଏକ ଆଗ୍ରହ ପୂର୍ଣ୍ଣ ପ୍ରକଳ୍ପ।"
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "ଆଫ୍ରିକାନ୍ସ"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "AI"
+msgid "import.ai"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "ପୃଷ୍ଠଭୂମି ରଙ୍ଗ"
 msgid "Backup codes copied to clipboard."
 msgstr "ବ୍ୟାକଅପ୍ କୋଡଗୁଡିକ କ୍ଲିପ୍‌ବୋର୍ଡକୁ କପି ହୋଇଛି।"
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "ବେସ୍ URL (ଇଚ୍ଛାକୃତ)"
@@ -429,15 +422,15 @@ msgstr "ବଲଗେରିଆନ୍"
 msgid "Bullet List"
 msgstr "ବୁଲେଟ୍ ତାଲିକା"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "ସମୁଦାୟ ଦ୍ୱାରା, ସମୁଦାୟ ପାଇଁ।"
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "ଥିମ୍ ପରିବର୍ତ୍ତନ କରନ୍ତୁ..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "ମତ ପରିବର୍ତ୍ତନ କଲେ କି? ଆପଣଙ୍କ ରେଜ୍ୟୁମେକୁ ଅଧିକ ବିବରଣା ନାମକୁ ପୁନଃନାମକରଣ କରନ୍ତୁ।"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "ଚେଞ୍ଜଲଗ୍‍ (Changelog)"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "ଆପଣଙ୍କ ପାସୱାର୍ଡ ପୁନଃସେଟ୍ କରିବା ପାଇଁ ଲିଙ୍କ ପାଇଁ ଆପଣଙ୍କ ଇମେଲ୍ ଯାଞ୍ଚ କରନ୍ତୁ।"
@@ -548,9 +537,10 @@ msgstr "ବୃତ୍ତ"
 msgid "Clear selection"
 msgstr "ଚୟନ ସଫା କରନ୍ତୁ"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
-msgstr "ଆୟାତ କରିବା ପାଇଁ ଫାଇଲ୍ ଚୟନ କରିବାକୁ ଏଠାରେ କ୍ଲିକ୍ କରନ୍ତୁ"
+msgid "import.click-to-select"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Code Block"
@@ -889,22 +879,9 @@ msgstr "ଦ୍ୱି-ଘଟକ ପରିଚୟ ପ୍ରମାଣିକରଣ �
 msgid "Disconnect"
 msgstr "ଡିସ୍‌କନେକ୍ଟ କରନ୍ତୁ"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "ଡିସକର୍ଡ (Discord)"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "ଦଳିଲପତ୍ର"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "ଆକାଉଣ୍ଟ ନଥିଲେ କି? <0><1>ଏବେ ଏକ ତିଆରି କରନ୍ତୁ <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "Reactive Resume କୁ ଦାନ କରନ୍ତୁ"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1324,11 +1301,16 @@ msgstr "ହଙ୍ଗେରିଆନ୍"
 msgid "Icon"
 msgstr "ଆଇକନ୍"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "ଆୟାତ କରନ୍ତୁ"
+msgid "import.action"
+msgstr ""
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr ""
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1338,9 +1320,10 @@ msgstr "ଏକ ଅବସ୍ଥିତ ରେଜ୍ୟୁମେ ଆୟାତ କ�
 msgid "Importing your resume..."
 msgstr "ଆପଣଙ୍କ ରେଜ୍ୟୁମେ ଆୟାତ ହେଉଛି..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "ଆୟାତ ହେଉଛି..."
+msgid "import.importing"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1458,10 +1441,6 @@ msgstr "ଲାଟଭିଆନ୍"
 msgid "Layout"
 msgstr "ଲେଆଉଟ୍"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "ଅଧିକ ଜାଣନ୍ତୁ"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "ଏହି ପୃଷ୍ଠାରେ ବିଷୟବସ୍ତୁ କିପରି ଫିଟ୍ କରିବେ ବିଷୟରେ ଅଧିକ ସିଖନ୍ତୁ"
@@ -1496,10 +1475,6 @@ msgstr "5 ରୁ ସ୍ତର {level}"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "<0>MIT</0> ଲାଇସେନ୍ସ ଅଧୀନରେ ଅଛି।"
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2268,14 +2243,6 @@ msgstr "ଉର୍ଦ୍ଧ୍ୱାଧର ଭାବେ ଖାଲି ସ୍ଥା
 msgid "Spanish"
 msgstr "ସ୍ପାନିଶ୍"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "ପ୍ରଯୋଜକମାନେ"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "ସ୍ପଂସର୍ସିପ୍ସ (Sponsorships)"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2311,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "ଷ୍ଟ୍ରାଇକ୍"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "ସବ୍ରେଡିଟ୍ (Subreddit)"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "ସାରାଂଶ"
@@ -2322,10 +2285,6 @@ msgstr "ସାରାଂଶ"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "Reactive Resume କୁ ସମର୍ଥନ କରନ୍ତୁ"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "ଆପଣ ଯାହା କରିପାରିବେ ତାହା କରି ଆପ୍‌କୁ ସମର୍ଥନ କରନ୍ତୁ!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2411,6 +2370,10 @@ msgstr "ଆପଣ ଯେ ପାସୱାର୍ଡ ପ୍ରବେଶ କରି�
 msgid "The resume you are trying to access is password protected"
 msgstr "ଯେ ରେଜ୍ୟୁମେକୁ ଆପଣ ଆକ୍ସେସ୍ କରିବାକୁ ଚେଷ୍ଟା କରୁଛନ୍ତି ଏହା ପାସୱାର୍ଡ ସୁରକ୍ଷିତ"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "ଆପଣ ଦେଇଥିବା URL ଟି ସଠିକ୍ ନୁହେଁ।"
@@ -2453,14 +2416,14 @@ msgstr "ଏହି ବିଶେଷତା ପାଇଁ AI ସମିକ୍ତକର
 msgid "This is a URL-friendly name for your resume."
 msgstr "ଏହା ଆପଣଙ୍କ ରେଜ୍ୟୁମେ ପାଇଁ URL‑ଫ୍ରେଣ୍ଡଲି ନାମ।"
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "AI ପ୍ରଦାନକାରୀଙ୍କ ପ୍ରତିକ୍ରିୟା ଉପରେ ନିର୍ଭର କରି, ଏହାକୁ କିଛି ମିନିଟ୍ ଲାଗିପାରେ। ଦୟାକରି ଉଇଣ୍ଡୋଟିକୁ ବନ୍ଦ କରନ୍ତୁ ନାହିଁ କିମ୍ବା ପେଜ୍‌ଟିକୁ ରିଫ୍ରେଶ କରନ୍ତୁ ନାହିଁ।"
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "ସର୍ଭରର କ୍ଷମତା ଉପରେ ନିର୍ଭର କରି, ଏହାକୁ କିଛି ସମୟ ଲାଗିପାରେ। ଦୟାକରି ଉଇଣ୍ଡୋଟିକୁ ବନ୍ଦ କରନ୍ତୁ ନାହିଁ କିମ୍ବା ପେଜ୍‌ଟିକୁ ରିଫ୍ରେଶ କରନ୍ତୁ ନାହିଁ।"
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2504,11 +2467,6 @@ msgstr "ଆପଣଙ୍କ ଆକାଉଣ୍ଟ ବିଲୋପ କରିବା
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "ଆପଣଙ୍କ ରେଜ୍ୟୁମେର ଦେଖାଗଲା ଏବଂ ଡାଉନଲୋଡ୍‌ଗୁଡିକୁ ଟ୍ରାକ୍ କରନ୍ତୁ"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "ଅନୁବାଦଗୁଡିକ"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2567,7 +2525,11 @@ msgstr "ଦ୍ୱି-ଘଟକ ପରିଚୟ ପ୍ରମାଣିକରଣ �
 msgid "Two-factor authentication has been setup successfully."
 msgstr "ଦ୍ୱି-ଘଟକ ପରିଚୟ ପ୍ରମାଣିକରଣ ସଫଳତାର ସହ ସେଟ୍‌ଅପ୍ ହୋଇଛି।"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "ପ୍ରକାର"
@@ -2865,6 +2827,10 @@ msgstr "ଆପଣଙ୍କ API କି କ୍ଲିପ୍‌ବୋର୍ଡକୁ
 #: src/routes/builder/$resumeId/index.tsx
 msgid "Your changes are saved automatically."
 msgstr "ଆପଣଙ୍କ ପରିବର୍ତ୍ତନଗୁଡିକ ସ୍ୱୟଂ ଚାଳିତ ଭାବେ ସେଭ୍ ହୋଇଯାଉଛି।"
+
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr ""
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."

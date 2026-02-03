@@ -19,7 +19,7 @@
 	},
 	"i18n-ally.enabledParsers": ["po"],
 	"i18n-ally.localesPaths": ["locales"],
-	"i18n-ally.sourceLanguage": "en-US",
+	"i18n-ally.sourceLanguage": "en",
 	"search.exclude": {
 		"pnpm-lock.yaml": true,
 		"**/routeTree.gen.ts": true

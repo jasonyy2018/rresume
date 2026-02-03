@@ -68,7 +68,7 @@ export function CountUp({
 				maximumFractionDigits: hasDecimals ? maxDecimals : 0,
 			};
 
-			const formattedNumber = Intl.NumberFormat("en-US", options).format(latest);
+			const formattedNumber = Intl.NumberFormat("en", options).format(latest);
 
 			return separator ? formattedNumber.replace(/,/g, separator) : formattedNumber;
 		},

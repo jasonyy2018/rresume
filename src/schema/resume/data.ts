@@ -431,7 +431,7 @@ export const pageSchema = z.object({
 	locale: z
 		.string()
 		.describe("The locale of the page. Used for displaying pre-translated section headings, if not overridden.")
-		.catch("en-US"),
+		.catch("en"),
 	hideIcons: z.boolean().describe("Whether to hide the icons of the sections.").catch(false),
 });
 
@@ -625,7 +625,7 @@ export const defaultResumeData: ResumeData = {
 			],
 		},
 		css: { enabled: false, value: "" },
-		page: { gapX: 4, gapY: 6, marginX: 14, marginY: 12, format: "a4", locale: "en-US", hideIcons: false },
+		page: { gapX: 4, gapY: 6, marginX: 14, marginY: 12, format: "a4", locale: "en", hideIcons: false },
 		design: {
 			colors: {
 				primary: "rgba(220, 38, 38, 1)",

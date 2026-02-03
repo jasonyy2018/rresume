@@ -6,5 +6,5 @@ pull_request_labels: ["l10n"]
 pull_request_reviewers: ["amruthpillai"]
 
 files:
-  - source: /locales/en-US.po
+  - source: /locales/en.po
     translation: /locales/%locale%.%file_extension%

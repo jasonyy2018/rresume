@@ -33,10 +33,6 @@ msgstr "సృష్టించబడింది"
 msgid "Name"
 msgstr "పేరు"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(కొత్త ట్యాబ్‌లో తెరవబడుతుంది)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>చివరిగా,</0><1>ఉచిత మరియు ఓపె�
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>ప్రశ్నలు</0><1>వేడి</1><2>అడిగినవి</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>Reactive Resume వాడినందుకు ధన్యవాదాలు! ఈ యాప్ నాకు ఖాళీ సమయంలో, ప్రపంచవ్యాప్తంగా ఉన్న ఓపెన్-సోర్స్ సహాయదారుల అద్భుతమైన మద్దతుతో, ప్రేమతో సృజించబడింది.</0><1>Reactive Resume మీకు సహాయపడిందనుకుంటే, దీనిని అందరికీ ఉచితంగా మరియు ఓపెన్‌గా ఉంచేందుకు మీరు సహాయం చేయాలనుకుంటే, దయచేసి విరాళం ఇవ్వాలని పరిశీలించండి. ప్రతి చిన్న సహాయం అభినందించబడుతుంది!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "సంవత్సరాలుగా చాలా మందిని Rea
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "మీ ఇమెయిల్ చిరునామాకు కొత్త నిర్ధారణ లింక్ పంపబడింది. మీ ఖాతాను నిర్ధారించడానికి దయచేసి ఇన్బాక్స్‌ను పరిశీలించండి."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "<0>అమృత్ పిల్లై</0> రూపొందించిన ఒక అభిరుచి ప్రాజెక్ట్."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "ఆఫ్రికాన్స్"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "AI"
+msgid "import.ai"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "నేపథ్య రంగు"
 msgid "Backup codes copied to clipboard."
 msgstr "బ్యాకప్ కోడ్లు క్లిప్‌బోర్డుకు కాపీ చేయబడ్డాయి."
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "బేస్ URL (ఐచ్ఛికం)"
@@ -429,15 +422,15 @@ msgstr "బల్గేరియన్"
 msgid "Bullet List"
 msgstr "బుల్లెట్ జాబితా"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "కమ్యూనిటీ కోసం, కమ్యూనిటీ చేత."
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "థీమ్ మార్చండి..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "మీ అభిప్రాయం మారిందా? మీ రిజ్యూమ్‌కు మరింత వివరణాత్మకమైన పేరును పెట్టండి."
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "చేంజ్‌లాగ్"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "మీ పాస్‌వర్డ్‌ను రీసెట్ చేయడానికి లింక్ కోసం మీ ఇమెయిల్‌ను తనిఖీ చేయండి."
@@ -548,9 +537,10 @@ msgstr "వృత్తం"
 msgid "Clear selection"
 msgstr "ఎంపికను క్లియర్ చేయండి"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
-msgstr "ఇంపోర్ట్ చేయడానికి ఫైల్ ను ఎంచుకోవడానికి ఇక్కడ క్లిక్ చేయండి"
+msgid "import.click-to-select"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Code Block"
@@ -889,22 +879,9 @@ msgstr "రెండు దశల ధృవీకరణను నిలిపి
 msgid "Disconnect"
 msgstr "డిస్కనెక్ట్ చేయండి"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "డిస్కోర్డ్"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "డాక్యుమెంటేషన్"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "ఖాతా లేదా? <0><1>ఇప్పుడు ఖాతా సృష్టించండి <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "Reactive Resume కు దానం చేయండి"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1324,11 +1301,16 @@ msgstr "హంగేరియన్"
 msgid "Icon"
 msgstr "ఐకాన్"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "ఇంపోర్ట్"
+msgid "import.action"
+msgstr ""
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr ""
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1338,9 +1320,10 @@ msgstr "ఉన్న రిజ్యూమ్‌ను ఇంపోర్ట్ 
 msgid "Importing your resume..."
 msgstr "మీ రిజ్యూమ్‌ను ఇంపోర్ట్ చేస్తూ..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "ఇంపోర్ట్ చేస్తోంది..."
+msgid "import.importing"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1458,10 +1441,6 @@ msgstr "లాత్వియన్"
 msgid "Layout"
 msgstr "విన్యాసం"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "మరింత తెలుసుకోండి"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "పేజీలో కంటెంట్ ని సరిపడేలా ఎలా ఏర్పాటు చేయాలో మరింత తెలుసుకోండి"
@@ -1496,10 +1475,6 @@ msgstr "5లో {level} స్థాయి"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "లైసెన్సు పొందినది <0>MIT</0>."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2268,14 +2243,6 @@ msgstr "స్పేసింగ్ (నిలువుగా)"
 msgid "Spanish"
 msgstr "స్పానిష్"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "స్పాన్సర్లు"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "ప్రాయోజకత్వాలు"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2311,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "స్ట్రైక్"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "సబ్రెడిట్"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "సమ్మరీ"
@@ -2322,10 +2285,6 @@ msgstr "సమ్మరీ"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "Reactive Resume కి సపోర్ట్ ఇవ్వండి"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "మీకు వీలైనంత చేసి యాప్‌కు సపోర్ట్ ఇవ్వండి!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2411,6 +2370,10 @@ msgstr "మీరు నమోదు చేసిన పాస్‌వర్డ
 msgid "The resume you are trying to access is password protected"
 msgstr "మీరు యాక్సెస్ చేయడానికి ప్రయత్నిస్తున్న రెజ్యూమే పాస్‌వర్డ్ ద్వారా రక్షించబడింది"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "మీరు నమోదు చేసిన URL చెల్లుబాటు కాదు."
@@ -2453,14 +2416,14 @@ msgstr "ఈ ఫీచర్ పనికి రావడానికి AI ఇ�
 msgid "This is a URL-friendly name for your resume."
 msgstr "ఇది మీ రెజ్యూమ్‌కి URL-ప్రియమైన పేరు."
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "AI ప్రొవైడర్‌ స్పందనపై ఆధారపడి, ఇది కొన్ని నిమిషాలు పడవచ్చు. దయచేసి విండోను మూసివేయకండి లేదా పేజీ రిఫ్రెష్ చేయకండి."
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "సర్వర్ సామర్థ్యంపై ఆధారపడి ఇది కొంతసేపు పడవచ్చు. దయచేసి విండోను మూసి వేయకండి లేదా పేజీ రిఫ్రెష్ చేయకండి."
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2504,11 +2467,6 @@ msgstr "మీ ఖాతాను తొలగించడానికి, క�
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "మీ రెజ్యూమ్ వీవ్స్ మరియు డౌన్‌లోడ్స్‌ను ట్రాక్ చేయండి"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "ทรాన్స్‌లేషన్స్"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2567,7 +2525,11 @@ msgstr "రెండు-కారకాల ప్రామాణీకరణన�
 msgid "Two-factor authentication has been setup successfully."
 msgstr "రెండు-కారకాల ప్రామాణీకరణ విజయవంతంగా సెటప్ చేయబడింది."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "రకం"
@@ -2865,6 +2827,10 @@ msgstr "మీ API కీ క్లిప్‌బోర్డుకు కా�
 #: src/routes/builder/$resumeId/index.tsx
 msgid "Your changes are saved automatically."
 msgstr "మీ మార్పులు ఆటోమేటిక్‌గా సేవ్ చేయబడతాయి."
+
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr ""
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."

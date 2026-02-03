@@ -66,6 +66,12 @@ const providerOptions: (ComboboxOption<AIProvider> & { defaultBaseURL: string })
 		keywords: ["siliconflow", "glm", "flux"],
 		defaultBaseURL: "https://api.siliconflow.cn/v1",
 	},
+	{
+		value: "openrouter",
+		label: "OpenRouter",
+		keywords: ["openrouter", "gpt", "claude"],
+		defaultBaseURL: "https://openrouter.ai/api/v1",
+	},
 ];
 
 function AIForm() {

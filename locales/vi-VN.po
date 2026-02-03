@@ -33,10 +33,6 @@ msgstr "Đã tạo"
 msgid "Name"
 msgstr "Tên"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(mở ở tab mới)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>Cuối cùng,</0><1>Công cụ tạo sơ yếu lý lịch miễn phí
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>Thường xuyên</0><1>Được hỏi</1><2>Câu hỏi</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>Cảm ơn bạn đã sử dụng Reactive Resume! Ứng dụng này là kết quả của niềm đam mê, được tạo ra chủ yếu vào thời gian rảnh với sự hỗ trợ tuyệt vời từ các cộng tác viên mã nguồn mở trên toàn thế giới.</0><1>Nếu Reactive Resume đã hữu ích với bạn, và bạn muốn giúp ứng dụng luôn miễn phí và mở cho mọi người, hãy cân nhắc quyên góp. Mỗi sự đóng góp đều được trân trọng!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "Rất nhiều người đã gửi email cho tôi trong những năm qua 
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "Một liên kết xác minh mới đã được gửi tới địa chỉ email của bạn. Vui lòng kiểm tra hộp thư đến để xác minh tài khoản."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "Một dự án tâm huyết của <0>Amruth Pillai</0>."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "Tiếng Afrikaans"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "AI"
+msgid "import.ai"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "Màu nền"
 msgid "Backup codes copied to clipboard."
 msgstr "Mã dự phòng đã được sao chép vào bộ nhớ tạm."
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "URL gốc (Tùy chọn)"
@@ -429,15 +422,15 @@ msgstr "Tiếng Bulgaria"
 msgid "Bullet List"
 msgstr "Danh sách chấm tròn"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "Bởi cộng đồng, vì cộng đồng."
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "Thay đổi giao diện sang..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "Bạn đã đổi ý? Đổi tên sơ yếu lý lịch của bạn thành một cái tên mô tả hơn."
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "Nhật ký thay đổi"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "Hãy kiểm tra email của bạn để lấy đường link đặt lại mật khẩu."
@@ -548,9 +537,10 @@ msgstr "Vòng tròn"
 msgid "Clear selection"
 msgstr "Xóa lựa chọn"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
-msgstr "Nhấn vào đây để chọn file cần nhập khẩu"
+msgid "import.click-to-select"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Code Block"
@@ -889,22 +879,9 @@ msgstr "Đang tắt xác thực hai yếu tố..."
 msgid "Disconnect"
 msgstr "Ngắt kết nối"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "Discord"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "Tài liệu"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "Bạn chưa có tài khoản? <0><1>Tạo ngay bây giờ <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "Đóng góp cho Reactive Resume"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1324,11 +1301,16 @@ msgstr "Tiếng Hungary"
 msgid "Icon"
 msgstr "Icon"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "Nhập"
+msgid "import.action"
+msgstr ""
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr ""
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1338,9 +1320,10 @@ msgstr "Nhập sơ yếu lý lịch hiện có"
 msgid "Importing your resume..."
 msgstr "Đang nhập sơ yếu lý lịch của bạn..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "Nhập..."
+msgid "import.importing"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1458,10 +1441,6 @@ msgstr "Tiếng Latvia"
 msgid "Layout"
 msgstr "Bố cục"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "Tìm hiểu thêm"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "Tìm hiểu thêm về cách căn chỉnh nội dung vừa trang"
@@ -1496,10 +1475,6 @@ msgstr "Cấp độ {level} trên 5"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "Được cấp phép theo <0>MIT</0>."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2268,14 +2243,6 @@ msgstr "Khoảng cách (Dọc)"
 msgid "Spanish"
 msgstr "Tây Ban Nha"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "Nhà tài trợ"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "Tài trợ"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2311,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "Gạch ngang"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "Subreddit"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "Tóm tắt"
@@ -2322,10 +2285,6 @@ msgstr "Tóm tắt"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "Ủng hộ Reactive Resume"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "Hãy ủng hộ ứng dụng bằng cách làm bất cứ điều gì bạn có thể!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2411,6 +2370,10 @@ msgstr "Mật khẩu bạn đã nhập không đúng"
 msgid "The resume you are trying to access is password protected"
 msgstr "Hồ sơ bạn đang cố truy cập đã được bảo vệ bằng mật khẩu"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "URL bạn đã nhập không hợp lệ."
@@ -2453,14 +2416,14 @@ msgstr "Tính năng này yêu cầu Bật Tích hợp AI. Vui lòng bật trong 
 msgid "This is a URL-friendly name for your resume."
 msgstr "Đây là tên thân thiện với URL cho hồ sơ của bạn."
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "Sẽ mất vài phút, tùy thuộc vào tốc độ phản hồi của nhà cung cấp AI. Vui lòng không đóng cửa sổ hoặc làm mới trang."
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "Có thể sẽ mất một chút thời gian tuỳ vào tải của máy chủ. Vui lòng không đóng cửa sổ hoặc làm mới trang."
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2504,11 +2467,6 @@ msgstr "Để xóa tài khoản của bạn, bạn cần nhập văn bản xác 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "Theo dõi lượt xem và lượt tải xuống hồ sơ của bạn"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "Bản dịch"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2567,7 +2525,11 @@ msgstr "Đã tắt xác thực hai yếu tố thành công."
 msgid "Two-factor authentication has been setup successfully."
 msgstr "Xác thực hai yếu tố đã được thiết lập thành công."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "Loại"
@@ -2865,6 +2827,10 @@ msgstr "Khóa API của bạn đã được sao chép vào bộ nhớ tạm."
 #: src/routes/builder/$resumeId/index.tsx
 msgid "Your changes are saved automatically."
 msgstr "Thay đổi của bạn được lưu tự động."
+
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr ""
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."

@@ -33,10 +33,6 @@ msgstr "생성일"
 msgid "Name"
 msgstr "이름"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(새 탭에서 열림)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>마침내,</0><1>무료 오픈 소스 이력서 작성 도구</1>"
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>자주</0><1>묻는</1><2>질문</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>Reactive Resume를 사용해 주셔서 감사합니다! 이 앱은 전 세계 오픈 소스 기여자들의 훌륭한 지원을 받으며, 주로 제 개인 시간을 들여 애정을 담아 만든 프로젝트입니다.</0><1>Reactive Resume가 도움이 되었다면, 모두가 자유롭게 사용할 수 있도록 유지하는 데 힘을 보태 주세요. 크고 작은 모든 기부가 큰 도움이 됩니다!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "수년 동안 많은 분들이 Reactive Resume가 어떻게 도움이 �
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "새로운 인증 링크가 이메일 주소로 전송되었습니다. 받은 편지함을 확인해 계정을 인증해 주세요."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "<0>Amruth Pillai</0>가 만든 열정 프로젝트입니다."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "아프리칸스어"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "AI"
+msgid "import.ai"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "배경 색상"
 msgid "Backup codes copied to clipboard."
 msgstr "백업 코드가 클립보드에 복사되었습니다."
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "기본 URL(선택 사항)"
@@ -429,15 +422,15 @@ msgstr "불가리아어"
 msgid "Bullet List"
 msgstr "글머리 기호 목록"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "커뮤니티에 의해, 커뮤니티를 위해."
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "테마를 변경..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "생각이 바뀌셨나요? 이력서 이름을 더 잘 설명하는 이름으로 바꿔 보세요."
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "변경 로그"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "비밀번호를 재설정할 수 있는 링크가 이메일로 전송되었습니다."
@@ -548,9 +537,10 @@ msgstr "원"
 msgid "Clear selection"
 msgstr "선택 해제"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
-msgstr "가져올 파일을 선택하려면 여기를 클릭하세요"
+msgid "import.click-to-select"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Code Block"
@@ -889,22 +879,9 @@ msgstr "2단계 인증을 비활성화하는 중입니다..."
 msgid "Disconnect"
 msgstr "연결 해제"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "디스코드"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "문서"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "계정이 없으신가요? <0><1>지금 가입하기 <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "Reactive Resume에 기부하기"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1324,11 +1301,16 @@ msgstr "헝가리어"
 msgid "Icon"
 msgstr "아이콘"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "가져오기"
+msgid "import.action"
+msgstr ""
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr ""
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1338,9 +1320,10 @@ msgstr "기존 이력서 가져오기"
 msgid "Importing your resume..."
 msgstr "이력서를 가져오는 중입니다..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "가져오는 중..."
+msgid "import.importing"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1458,10 +1441,6 @@ msgstr "라트비아어"
 msgid "Layout"
 msgstr "레이아웃"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "자세히 알아보기"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "페이지에 콘텐츠를 맞추는 방법에 대해 자세히 알아보세요"
@@ -1496,10 +1475,6 @@ msgstr "5점 만점에 {level}점"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "<0>MIT</0> 라이선스로 배포됩니다."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2268,14 +2243,6 @@ msgstr "간격(세로)"
 msgid "Spanish"
 msgstr "스페인어"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "스폰서"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "후원"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2311,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "취소선"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "서브레딧"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "요약"
@@ -2322,10 +2285,6 @@ msgstr "요약"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "Reactive Resume 후원하기"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "가능한 방식으로 앱을 지원해 주세요!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2411,6 +2370,10 @@ msgstr "입력하신 비밀번호가 올바르지 않습니다"
 msgid "The resume you are trying to access is password protected"
 msgstr "접근하려는 이력서는 비밀번호로 보호되어 있습니다"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "입력하신 URL이 올바르지 않습니다."
@@ -2453,14 +2416,14 @@ msgstr "이 기능을 사용하려면 AI 통합을 활성화해야 합니다. �
 msgid "This is a URL-friendly name for your resume."
 msgstr "이것은 이력서에 사용할 URL 친화적인 이름입니다."
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "AI 제공자의 응답 속도에 따라 몇 분 정도 걸릴 수 있습니다. 창을 닫거나 페이지를 새로 고치지 마세요."
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "서버 용량에 따라 시간이 다소 걸릴 수 있습니다. 창을 닫거나 페이지를 새로 고치지 마세요."
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2504,11 +2467,6 @@ msgstr "계정을 삭제하려면 확인 문구를 입력한 뒤 아래 버튼�
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "이력서 조회 수와 다운로드 수 추적"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "번역"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2567,7 +2525,11 @@ msgstr "2단계 인증이 성공적으로 비활성화되었습니다."
 msgid "Two-factor authentication has been setup successfully."
 msgstr "2단계 인증이 성공적으로 설정되었습니다."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "유형"
@@ -2865,6 +2827,10 @@ msgstr "API 키가 클립보드에 복사되었습니다."
 #: src/routes/builder/$resumeId/index.tsx
 msgid "Your changes are saved automatically."
 msgstr "변경 사항은 자동으로 저장됩니다."
+
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr ""
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."

@@ -33,10 +33,6 @@ msgstr "Létrehozva"
 msgid "Name"
 msgstr "Név"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(új lapon nyílik meg)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>Végre</0><1>egy ingyenes és nyílt forráskódú önéletrajz‑ké
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>Gyakran</0><1>Ismételt</1><2>Kérdések</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>Köszönjük, hogy a Reactive Resume‑t használod! Ez az alkalmazás szerelemprojekt, amelyet többnyire szabadidőmben készítettem, a világ minden tájáról érkező nyílt forráskódú közreműködők fantasztikus támogatásával.</0><1>Ha a Reactive Resume hasznos volt számodra, és szeretnél segíteni abban, hogy mindenki számára ingyenes és nyílt maradjon, fontold meg az adományozást. Minden apró hozzájárulást nagyra értékelünk!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "Évek óta rengetegen írtak nekem, hogy megosszák a Reactive Resume‑
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "Új megerősítő linket küldtünk az e‑mail‑címedre. Kérjük, ellenőrizd a postafiókodat a fiókod hitelesítéséhez."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "Egy szenvedélyprojekt <0>Amruth Pillai</0> tollából."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "afrikaans"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "AI"
+msgid "import.ai"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "Háttérszín"
 msgid "Backup codes copied to clipboard."
 msgstr "Biztonsági kódok a vágólapra másolva."
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "Alap URL (opcionális)"
@@ -429,15 +422,15 @@ msgstr "bolgár"
 msgid "Bullet List"
 msgstr "Felsorolásjelezett lista"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "A közösség által, a közösségért."
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "Téma módosítása erre..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "Meggondoltad magad? Nevezd át az önéletrajzodat valami beszédesebbre."
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "Változásnapló"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "Ellenőrizd az e‑mailedet a jelszó visszaállításához szükséges linkért."
@@ -548,9 +537,10 @@ msgstr "Kör"
 msgid "Clear selection"
 msgstr "Kijelölés törlése"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
-msgstr "Kattints ide az importálandó fájl kiválasztásához"
+msgid "import.click-to-select"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Code Block"
@@ -889,22 +879,9 @@ msgstr "Kétlépcsős hitelesítés kikapcsolása..."
 msgid "Disconnect"
 msgstr "Leválasztás"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "Discord"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "Dokumentáció"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "Nincs fiókod? <0><1>Hozz létre egyet most <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "Adományozás a Reactive Resumenak"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1324,11 +1301,16 @@ msgstr "magyar"
 msgid "Icon"
 msgstr "Ikon"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "Importálás"
+msgid "import.action"
+msgstr ""
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr ""
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1338,9 +1320,10 @@ msgstr "Meglévő önéletrajz importálása"
 msgid "Importing your resume..."
 msgstr "Önéletrajz importálása..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "Importálás..."
+msgid "import.importing"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1458,10 +1441,6 @@ msgstr "lett"
 msgid "Layout"
 msgstr "Elrendezés"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "Tudj meg többet"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "Tudjon meg többet arról, hogyan illesztheti a tartalmat egy oldalra"
@@ -1496,10 +1475,6 @@ msgstr "Szint: {level} / 5"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "<0>MIT</0> licenc alatt."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2268,14 +2243,6 @@ msgstr "Térköz (függőleges)"
 msgid "Spanish"
 msgstr "spanyol"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "Támogatók"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "Szponzorációk"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2311,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "Áthúzás"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "Subreddit"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "Összegzés"
@@ -2322,10 +2285,6 @@ msgstr "Összegzés"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "A Reactive Resume támogatása"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "Támogasd az alkalmazást, amivel csak tudod!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2411,6 +2370,10 @@ msgstr "A megadott jelszó helytelen"
 msgid "The resume you are trying to access is password protected"
 msgstr "A megnyitni kívánt önéletrajz jelszóval védett"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "A megadott URL érvénytelen."
@@ -2453,14 +2416,14 @@ msgstr "Ehhez a funkcióhoz engedélyezett AI integráció szükséges. Kérjük
 msgid "This is a URL-friendly name for your resume."
 msgstr "Ez az önéletrajzod URL‑barát neve."
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "Ez néhány percet igénybe vehet, az AI szolgáltató válaszidejétől függően. Kérjük, ne zárd be az ablakot, és ne frissítsd az oldalt."
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "Ez eltarthat egy ideig a szerver kapacitásától függően. Kérjük, ne zárd be az ablakot, és ne frissítsd az oldalt."
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2504,11 +2467,6 @@ msgstr "A fiókod törléséhez add meg a megerősítő szöveget, majd kattints
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "Kövesd nyomon az önéletrajzod megtekintéseinek és letöltéseinek számát"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "Fordítások"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2567,7 +2525,11 @@ msgstr "A kétlépcsős hitelesítés sikeresen ki lett kapcsolva."
 msgid "Two-factor authentication has been setup successfully."
 msgstr "A kétlépcsős hitelesítés beállítása sikeresen megtörtént."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "Típus"
@@ -2865,6 +2827,10 @@ msgstr "Az API kulcsodat a vágólapra másoltuk."
 #: src/routes/builder/$resumeId/index.tsx
 msgid "Your changes are saved automatically."
 msgstr "A módosításaid automatikusan mentésre kerülnek."
+
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr ""
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."

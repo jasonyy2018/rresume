@@ -5,7 +5,7 @@ msgstr ""
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: @lingui/cli\n"
-"Language: en-US\n"
+"Language: en\n"
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "PO-Revision-Date: \n"
@@ -28,10 +28,6 @@ msgstr "Created"
 msgid "Name"
 msgstr "Name"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(opens in new tab)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -50,10 +46,6 @@ msgstr "<0>Finally,</0><1>A free and open-source resume builder</1>"
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>Frequently</0><1>Asked</1><2>Questions</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -95,10 +87,6 @@ msgstr "A lot of people have written to me over the years to share their experie
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "A new verification link has been sent to your email address. Please check your inbox to verify your account."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "A passion project by <0>Amruth Pillai</0>."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -219,9 +207,10 @@ msgstr "Adjust the picture to your liking."
 msgid "Afrikaans"
 msgstr "Afrikaans"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
+msgid "import.ai"
 msgstr "AI"
 
 #: src/utils/locale.ts
@@ -379,6 +368,10 @@ msgstr "Background Color"
 msgid "Backup codes copied to clipboard."
 msgstr "Backup codes copied to clipboard."
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr "Bad Gateway (502)"
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "Base URL (Optional)"
@@ -424,14 +417,14 @@ msgstr "Bulgarian"
 msgid "Bullet List"
 msgstr "Bullet List"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr "By the community, for the community."
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
+msgstr "By the community, for the community."
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
 msgstr "By the community, for the community."
 
 #: src/routes/_home/-sections/faq.tsx
@@ -515,10 +508,6 @@ msgstr "Change theme to..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "Changed your mind? Rename your resume to something more descriptive."
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "Changelog"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "Check your email for a link to reset your password."
@@ -543,8 +532,9 @@ msgstr "Circle"
 msgid "Clear selection"
 msgstr "Clear selection"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
+msgid "import.click-to-select"
 msgstr "Click here to select a file to import"
 
 #: src/components/input/rich-input.tsx
@@ -628,18 +618,6 @@ msgstr "Copy this secret key and use it in your applications to access your data
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Copy URL"
 msgstr "Copy URL"
-
-#: src/components/ui/copyright.tsx
-#~ msgid "copyright.by-the-community"
-#~ msgstr "By the community, for the community."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "copyright.licensed-under"
-#~ msgstr "Licensed under <0>MIT</0>."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "copyright.maintained-by"
-#~ msgstr "Maintained by <0>Jason Yu</0>."
 
 #: src/utils/resume/section.tsx
 msgid "Cover Letter"
@@ -896,22 +874,9 @@ msgstr "Disabling two-factor authentication..."
 msgid "Disconnect"
 msgstr "Disconnect"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "Discord"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "Documentation"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "Don't have an account? <0><1>Create one now <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "Donate to Reactive Resume"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1331,11 +1296,16 @@ msgstr "Hungarian"
 msgid "Icon"
 msgstr "Icon"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "Import"
+msgid "import.action"
+msgstr "Import (Action)"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr "Import an existing resume"
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1345,8 +1315,9 @@ msgstr "Import an existing resume"
 msgid "Importing your resume..."
 msgstr "Importing your resume..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
+msgid "import.importing"
 msgstr "Importing..."
 
 #: src/utils/locale.ts
@@ -1465,10 +1436,6 @@ msgstr "Latvian"
 msgid "Layout"
 msgstr "Layout"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "Learn More"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "Learn more about how to fit content on a page"
@@ -1503,10 +1470,6 @@ msgstr "Level {level} of 5"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr "Licensed under <0>MIT</0>."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "Licensed under <0>MIT</0>."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2275,14 +2238,6 @@ msgstr "Spacing (Vertical)"
 msgid "Spanish"
 msgstr "Spanish"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "Sponsors"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "Sponsorships"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2318,10 +2273,6 @@ msgstr "Stay"
 msgid "Strike"
 msgstr "Strike"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "Subreddit"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "Summary"
@@ -2329,10 +2280,6 @@ msgstr "Summary"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "Support Reactive Resume"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "Support the app by doing what you can!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2418,6 +2365,10 @@ msgstr "The password you entered is incorrect"
 msgid "The resume you are trying to access is password protected"
 msgstr "The resume you are trying to access is password protected"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "The URL you entered is not valid."
@@ -2460,14 +2411,14 @@ msgstr "This feature requires AI Integration to be enabled. Please enable it in 
 msgid "This is a URL-friendly name for your resume."
 msgstr "This is a URL-friendly name for your resume."
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2511,11 +2462,6 @@ msgstr "To delete your account, you need to enter the confirmation text and clic
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "Track your resume's views and downloads"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "Translations"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2574,7 +2520,11 @@ msgstr "Two-factor authentication has been disabled successfully."
 msgid "Two-factor authentication has been setup successfully."
 msgstr "Two-factor authentication has been setup successfully."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr "Type"
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "Type"
@@ -2873,6 +2823,10 @@ msgstr "Your API key has been copied to the clipboard."
 msgid "Your changes are saved automatically."
 msgstr "Your changes are saved automatically."
 
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."
 msgstr "Your data is secure, and never shared or sold to anyone."
@@ -2951,43 +2905,3 @@ msgstr "Zoom out"
 #: src/utils/locale.ts
 msgid "Zulu"
 msgstr "Zulu"
-
-#: src/components/ui/copyright.tsx
-msgid "copyright.licensed-under"
-msgstr "Licensed under <0>MIT</0>."
-
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr "By the community, for the community."
-
-#: src/components/ui/copyright.tsx
-msgid "copyright.maintained-by"
-msgstr "Maintained by <0>Jason Yu</0>."
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.title"
-msgstr "Import an existing resume"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.description"
-msgstr "Continue where you left off by importing an existing resume you created using Reactive Resume or any another resume builder. Supported formats include PDF, Microsoft Word, as well as JSON files from Reactive Resume."
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.type"
-msgstr "Type"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.ai"
-msgstr "AI"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.click-to-select"
-msgstr "Click here to select a file to import"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.importing-button"
-msgstr "Importing..."
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.import-button"
-msgstr "Import"

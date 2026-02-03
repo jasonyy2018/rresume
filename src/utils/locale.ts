@@ -17,7 +17,7 @@ const localeSchema = z.union([
 	z.literal("da-DK"),
 	z.literal("de-DE"),
 	z.literal("el-GR"),
-	z.literal("en-US"),
+	z.literal("en"),
 	z.literal("es-ES"),
 	z.literal("fa-IR"),
 	z.literal("fi-FI"),
@@ -64,7 +64,7 @@ const localeSchema = z.union([
 export type Locale = z.infer<typeof localeSchema>;
 
 const storageKey = "locale";
-const defaultLocale: Locale = "en-US";
+const defaultLocale: Locale = "en";
 
 export const localeMap = {
 	"af-ZA": msg`Afrikaans`,
@@ -78,7 +78,7 @@ export const localeMap = {
 	"da-DK": msg`Danish`,
 	"de-DE": msg`German`,
 	"el-GR": msg`Greek`,
-	"en-US": msg`English`,
+	en: msg`English`,
 	"es-ES": msg`Spanish`,
 	"fa-IR": msg`Persian`,
 	"fi-FI": msg`Finnish`,

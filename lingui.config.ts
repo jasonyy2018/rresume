@@ -1,7 +1,7 @@
 import { defineConfig } from "@lingui/cli";
 
 export default defineConfig({
-	sourceLocale: "en-US",
+	sourceLocale: "en",
 	pseudoLocale: "zu-ZA",
 	locales: [
 		"af-ZA",
@@ -15,7 +15,7 @@ export default defineConfig({
 		"da-DK",
 		"de-DE",
 		"el-GR",
-		"en-US",
+		"en",
 		"es-ES",
 		"fa-IR",
 		"fi-FI",
@@ -59,8 +59,8 @@ export default defineConfig({
 		"zu-ZA",
 	],
 	fallbackLocales: {
-		"zu-ZA": "en-US",
-		default: "en-US",
+		"zu-ZA": "en",
+		default: "en",
 	},
 	formatOptions: {
 		lineNumbers: false,

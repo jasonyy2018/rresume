@@ -33,10 +33,6 @@ msgstr "Izveidots"
 msgid "Name"
 msgstr "Nosaukums"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "(atveras jaunā cilnē)"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>Beidzot,</0><1>bezmaksas un atvērtā pirmkoda CV veidotājs</1>"
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>Biežāk</0><1>Uzdotie</1><2>Jautājumi</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>Paldies, ka izmantojat Reactive Resume! Šī lietotne ir mīlestības darbs, ko pārsvarā veidoju savā brīvajā laikā ar lielisku atbalstu no atvērtā pirmkoda veidotājiem visā pasaulē.</0><1>Ja Reactive Resume jums ir bijis noderīgs un jūs vēlaties palīdzēt saglabāt to bezmaksas un atvērtu ikvienam, lūdzu, apsveriet ziedojuma veikšanu. Katrs mazākais ieguldījums ir nozīmīgs!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "Gadu gaitā daudzi cilvēki man rakstījuši, lai dalītos savā pieredz
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "Uz jūsu e-pasta adresi ir nosūtīta jauna verifikācijas saite. Lūdzu, pārbaudiet savu iesūtni, lai verificētu kontu."
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "Aizrautības projekts, ko veidojis <0>Amruth Pillai</0>."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "Afrikandu"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "MI"
+msgid "import.ai"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "Fona krāsa"
 msgid "Backup codes copied to clipboard."
 msgstr "Rezerves kodi ir nokopēti starpliktuvē."
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "Bāzes URL (pēc izvēles)"
@@ -429,15 +422,15 @@ msgstr "Bulgāru"
 msgid "Bullet List"
 msgstr "Aizzīmju saraksts"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "No kopienas kopienai."
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "Mainīt tēmu uz..."
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "Pārdomājāt? Pārsauciet savu CV par kaut ko aprakstošāku."
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "Izmaiņu žurnāls"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "Pārbaudiet savu e-pastu, lai atrastu saiti paroles atiestatīšanai."
@@ -548,9 +537,10 @@ msgstr "Aplis"
 msgid "Clear selection"
 msgstr "Notīrīt izvēli"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
-msgstr "Noklikšķiniet šeit, lai izvēlētos importējamo failu"
+msgid "import.click-to-select"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Code Block"
@@ -889,22 +879,9 @@ msgstr "Tiek deaktivēta divu faktoru autentifikācija..."
 msgid "Disconnect"
 msgstr "Atvienot"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "Discord"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "Dokumentācija"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "Nav konta? <0><1>Izveidojiet to tagad <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "Ziedot Reactive Resume"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1324,11 +1301,16 @@ msgstr "Ungāru"
 msgid "Icon"
 msgstr "Ikona"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
-msgstr "Importēt"
+msgid "import.action"
+msgstr ""
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr ""
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1338,9 +1320,10 @@ msgstr "Importēt esošu CV"
 msgid "Importing your resume..."
 msgstr "Tiek importēts jūsu CV..."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "Notiek importēšana..."
+msgid "import.importing"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1458,10 +1441,6 @@ msgstr "Latviešu"
 msgid "Layout"
 msgstr "Izkārtojums"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "Uzzināt vairāk"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "Uzziniet vairāk par to, kā pielāgot saturu lapai"
@@ -1496,10 +1475,6 @@ msgstr "Līmenis {level} no 5"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "Licencēts ar <0>MIT</0>."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2268,14 +2243,6 @@ msgstr "Atstatums (vertikāli)"
 msgid "Spanish"
 msgstr "Spāņu"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "Sponsori"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "Sponsori"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2311,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "Pārsvītrot"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "Subreddits"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "Kopsavilkums"
@@ -2322,10 +2285,6 @@ msgstr "Kopsavilkums"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "Atbalstiet Reactive Resume"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "Atbalstiet lietotni, darot, ko vien varat!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2411,6 +2370,10 @@ msgstr "Ievadītā parole ir nepareiza"
 msgid "The resume you are trying to access is password protected"
 msgstr "CV, kam mēģināt piekļūt, ir aizsargāts ar paroli"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "Ievadītais URL nav derīgs."
@@ -2453,14 +2416,14 @@ msgstr "Šai funkcijai nepieciešama ieslēgta MI integrācija. Lūdzu, ieslēdz
 msgid "This is a URL-friendly name for your resume."
 msgstr "Tas ir URL-draudzīgs nosaukums jūsu CV."
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "Tas var aizņemt dažas minūtes atkarībā no MI pakalpojumu sniedzēja atbildes. Lūdzu, neaizveriet logu un neatjaunojiet lapu."
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "Tas var aizņemt kādu laiku atkarībā no servera jaudas. Lūdzu, neaizveriet logu un neatjaunojiet lapu."
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2504,11 +2467,6 @@ msgstr "Lai dzēstu savu kontu, jums jāievada apstiprinājuma teksts un jānokl
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "Izsekojiet sava CV skatījumiem un lejupielādēm"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "Tulkojumi"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2567,7 +2525,11 @@ msgstr "Divu faktoru autentifikācija ir veiksmīgi deaktivēta."
 msgid "Two-factor authentication has been setup successfully."
 msgstr "Divu faktoru autentifikācija ir veiksmīgi iestatīta."
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "Tips"
@@ -2865,6 +2827,10 @@ msgstr "Jūsu API atslēga ir nokopēta starpliktuvē."
 #: src/routes/builder/$resumeId/index.tsx
 msgid "Your changes are saved automatically."
 msgstr "Jūsu izmaiņas tiek saglabātas automātiski."
+
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr ""
 
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."

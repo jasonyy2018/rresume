@@ -10,7 +10,8 @@ export type AIProvider =
 	| "anthropic"
 	| "ollama"
 	| "cerebras"
-	| "siliconflow";
+	| "siliconflow"
+	| "openrouter";
 
 type TestStatus = "unverified" | "success" | "failure";
 

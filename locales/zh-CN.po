@@ -33,10 +33,6 @@ msgstr "创建时间"
 msgid "Name"
 msgstr "姓名"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "(opens in new tab)"
-#~ msgstr "（在新标签页中打开）"
-
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
 msgid "{0, plural, one {# item} other {# items}}"
@@ -55,10 +51,6 @@ msgstr "<0>终于，</0><1>一款免费、开源的简历生成器</1>"
 msgctxt "Every word needs to be wrapped in a tag"
 msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>常见</0><1>问题</1><2>解答</2>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-#~ msgstr "<0>感谢你使用 Reactive Resume！这个应用是我在业余时间倾心打造的作品，并得到了全球开源贡献者的鼎力支持。</0><1>如果 Reactive Resume 对你有所帮助，并且你希望它能继续为所有人免费开放，请考虑捐赠支持。每一份心意我们都万分感激！</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -100,10 +92,6 @@ msgstr "多年来，许多人给我写信分享他们与 Reactive Resume 的故�
 #: src/routes/dashboard/settings/profile.tsx
 msgid "A new verification link has been sent to your email address. Please check your inbox to verify your account."
 msgstr "新的验证链接已发送到你的电子邮箱地址。请检查收件箱并完成账号验证。"
-
-#: src/components/ui/copyright.tsx
-#~ msgid "A passion project by <0>Amruth Pillai</0>."
-#~ msgstr "由 <0>Amruth Pillai</0> 倾情打造的热忱项目。"
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -224,10 +212,11 @@ msgstr ""
 msgid "Afrikaans"
 msgstr "南非语"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
 #: src/dialogs/resume/import.tsx
-msgid "AI"
-msgstr "AI（人工智能）"
+msgid "import.ai"
+msgstr "AI"
 
 #: src/utils/locale.ts
 msgid "Albanian"
@@ -384,6 +373,10 @@ msgstr "背景色"
 msgid "Backup codes copied to clipboard."
 msgstr "备份码已复制到剪贴板。"
 
+#: src/dialogs/resume/import.tsx
+msgid "Bad Gateway (502)"
+msgstr ""
+
 #: src/routes/dashboard/settings/ai.tsx
 msgid "Base URL (Optional)"
 msgstr "基础 URL（可选）"
@@ -429,15 +422,15 @@ msgstr "保加利亚语"
 msgid "Bullet List"
 msgstr "项目符号列表"
 
-#. js-lingui-explicit-id
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr ""
-
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
 msgstr "由社群贡献，为社群服务。"
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
 
 #: src/routes/_home/-sections/faq.tsx
 msgid "Can I customize the templates?"
@@ -520,10 +513,6 @@ msgstr "将主题更改为…"
 msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "改变主意了？那就把简历重命名得更具体一些吧。"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Changelog"
-#~ msgstr "更新日志"
-
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
 msgstr "请检查你的电子邮件，点击邮件中的链接重置密码。"
@@ -548,8 +537,9 @@ msgstr "圆形"
 msgid "Clear selection"
 msgstr "清除选择"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Click here to select a file to import"
+msgid "import.click-to-select"
 msgstr "点击此处选择要导入的文件"
 
 #: src/components/input/rich-input.tsx
@@ -588,7 +578,7 @@ msgstr "连接"
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 msgid "Content"
-msgstr ""
+msgstr "内容"
 
 #: src/components/input/rich-input.tsx
 msgid "Content optimized successfully!"
@@ -633,18 +623,6 @@ msgstr "复制此密钥，并在你的应用程序中使用它来访问你的数
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Copy URL"
 msgstr "复制 URL"
-
-#: src/components/ui/copyright.tsx
-#~ msgid "copyright.by-the-community"
-#~ msgstr "由社群贡献，为社群服务。"
-
-#: src/components/ui/copyright.tsx
-#~ msgid "copyright.licensed-under"
-#~ msgstr "已获得 <0>MIT</0> 许可。"
-
-#: src/components/ui/copyright.tsx
-#~ msgid "copyright.maintained-by"
-#~ msgstr "由 <0>Jason Yu</0> 维护。"
 
 #: src/utils/resume/section.tsx
 msgid "Cover Letter"
@@ -901,22 +879,9 @@ msgstr "正在禁用双重身份验证…"
 msgid "Disconnect"
 msgstr "断开连接"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Discord"
-#~ msgstr "Discord 频道"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Documentation"
-#~ msgstr "文档"
-
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "没有账号？<0><1>立即创建 <2/></1></0>"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Donate to Reactive Resume"
-#~ msgstr "为 Reactive Resume 捐款"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
@@ -1336,11 +1301,16 @@ msgstr "匈牙利语"
 msgid "Icon"
 msgstr "图标"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Import"
+msgid "import.action"
 msgstr "导入"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.title"
+msgstr "导入现有简历"
+
 #: src/routes/dashboard/resumes/-components/cards/import-card.tsx
 #: src/routes/dashboard/resumes/-components/list-view.tsx
 msgid "Import an existing resume"
@@ -1350,9 +1320,10 @@ msgstr "导入现有简历"
 msgid "Importing your resume..."
 msgstr "正在导入你的简历…"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
-msgid "Importing..."
-msgstr "导入…"
+msgid "import.importing"
+msgstr "正在导入..."
 
 #: src/utils/locale.ts
 msgid "Indonesian"
@@ -1372,7 +1343,7 @@ msgstr "插入表格"
 
 #: src/components/input/rich-input.tsx
 msgid "Instructions (Optional)"
-msgstr ""
+msgstr "指令（可选）"
 
 #: src/utils/resume/section.tsx
 msgid "Interests"
@@ -1404,7 +1375,7 @@ msgstr "日语"
 
 #: src/components/input/rich-input.tsx
 msgid "Job Description (Optional)"
-msgstr ""
+msgstr "职位描述（可选）"
 
 #: src/components/input/rich-input.tsx
 msgid "Justify Align"
@@ -1470,10 +1441,6 @@ msgstr "拉脱维亚语"
 msgid "Layout"
 msgstr "布局"
 
-#: src/routes/_home/-sections/hero.tsx
-#~ msgid "Learn More"
-#~ msgstr "了解详情"
-
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
 msgstr "了解更多关于如何让内容适应页面的信息"
@@ -1508,10 +1475,6 @@ msgstr "5 级中的第 {level} 级"
 #: src/components/ui/copyright.tsx
 msgid "copyright.licensed-under"
 msgstr ""
-
-#: src/components/ui/copyright.tsx
-#~ msgid "Licensed under <0>MIT</0>."
-#~ msgstr "已获得 <0>MIT 许可</0>。"
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -2280,14 +2243,6 @@ msgstr "间距（垂直）"
 msgid "Spanish"
 msgstr "西班牙语"
 
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Sponsors"
-#~ msgstr "赞助者"
-
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Sponsorships"
-#~ msgstr "赞助"
-
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "Square"
@@ -2323,10 +2278,6 @@ msgstr ""
 msgid "Strike"
 msgstr "删除线"
 
-#: src/routes/_home/-sections/footer.tsx
-#~ msgid "Subreddit"
-#~ msgstr "Subreddit 论坛"
-
 #: src/utils/resume/section.tsx
 msgid "Summary"
 msgstr "总结"
@@ -2334,10 +2285,6 @@ msgstr "总结"
 #: src/routes/_home/-sections/donate.tsx
 msgid "Support Reactive Resume"
 msgstr "支持 Reactive Resume"
-
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Support the app by doing what you can!"
-#~ msgstr "尽你所能支持这个应用！"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2423,6 +2370,10 @@ msgstr "你输入的密码不正确"
 msgid "The resume you are trying to access is password protected"
 msgstr "你尝试访问的这份简历已启用密码保护"
 
+#: src/dialogs/resume/import.tsx
+msgid "The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider."
+msgstr ""
+
 #: src/components/input/rich-input.tsx
 msgid "The URL you entered is not valid."
 msgstr "你输入的 URL 无效。"
@@ -2465,14 +2416,14 @@ msgstr "此功能需要启用 AI 集成。请在设置中启用后再试。"
 msgid "This is a URL-friendly name for your resume."
 msgstr "这是一个适合放在 URL 中的简历名称。"
 
-#: src/dialogs/resume/import.tsx
-msgid "This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
-msgstr "这可能需要几分钟时间，具体取决于 AI 服务提供商的响应速度。请不要关闭窗口或刷新页面。"
-
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "This may take a while depending on the server capacity. Please do not close the window or refresh the page."
 msgstr "根据服务器性能，这可能需要一段时间。请不要关闭窗口或刷新页面。"
+
+#: src/dialogs/resume/import.tsx
+msgid "This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page."
+msgstr ""
 
 #: src/components/resume/store/resume.ts
 msgid "This resume is locked and cannot be updated."
@@ -2516,11 +2467,6 @@ msgstr "要删除你的账号，你需要输入确认文本，然后点击下方
 #: src/routes/builder/$resumeId/-sidebar/right/sections/statistics.tsx
 msgid "Track your resume's views and downloads"
 msgstr "跟踪你的简历被查看和下载的次数"
-
-#: src/routes/_home/-sections/footer.tsx
-#: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-#~ msgid "Translations"
-#~ msgstr "翻译"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2579,7 +2525,11 @@ msgstr "已成功禁用双重身份验证。"
 msgid "Two-factor authentication has been setup successfully."
 msgstr "双重身份验证已成功设置。"
 
+#. js-lingui-explicit-id
 #: src/dialogs/resume/import.tsx
+msgid "import.type"
+msgstr "类型"
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/design.tsx
 msgid "Type"
 msgstr "类型"
@@ -2878,6 +2828,10 @@ msgstr "你的 API key 已复制到剪贴板。"
 msgid "Your changes are saved automatically."
 msgstr "你的更改会自动保存。"
 
+#: src/dialogs/resume/import.tsx
+msgid "Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or Gemini for best results."
+msgstr "你当前使用的 AI 提供商 ({provider}) 可能不支持 PDF/Word 解析。为了获得最佳效果，请使用 OpenAI 或 Gemini。"
+
 #: src/routes/_home/-sections/features.tsx
 msgid "Your data is secure, and never shared or sold to anyone."
 msgstr "你的数据是安全的，且绝不会与任何人共享或出售。"
@@ -2956,43 +2910,3 @@ msgstr "缩小"
 #: src/utils/locale.ts
 msgid "Zulu"
 msgstr "祖鲁语"
-
-#: src/components/ui/copyright.tsx
-msgid "copyright.licensed-under"
-msgstr "已获得 <0>MIT</0> 许可。"
-
-#: src/components/ui/copyright.tsx
-msgid "copyright.by-the-community"
-msgstr "由社群贡献，为社群服务。"
-
-#: src/components/ui/copyright.tsx
-msgid "copyright.maintained-by"
-msgstr "由 <0>Jason Yu</0> 维护。"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.title"
-msgstr "导入现有简历"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.description"
-msgstr "通过导入你使用 Reactive Resume 或其他简历生成器创建的现有简历，从上次中断的地方继续。支持的格式包括 PDF、Microsoft Word 以及来自 Reactive Resume 的 JSON 文件。"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.type"
-msgstr "类型"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.ai"
-msgstr "AI (人工智能)"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.click-to-select"
-msgstr "点击此处选择要导入的文件"
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.importing-button"
-msgstr "导入中..."
-
-#: src/dialogs/resume/import.tsx
-msgid "import.resume.import-button"
-msgstr "导入"
