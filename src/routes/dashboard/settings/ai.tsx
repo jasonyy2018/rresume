@@ -60,6 +60,12 @@ const providerOptions: (ComboboxOption<AIProvider> & { defaultBaseURL: string })
 		keywords: ["cerebras", "llama", "fast"],
 		defaultBaseURL: "https://api.cerebras.ai/v1",
 	},
+	{
+		value: "siliconflow",
+		label: "SiliconFlow",
+		keywords: ["siliconflow", "glm", "flux"],
+		defaultBaseURL: "https://api.siliconflow.cn/v1",
+	},
 ];
 
 function AIForm() {

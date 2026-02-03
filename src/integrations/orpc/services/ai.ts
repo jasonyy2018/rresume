@@ -15,7 +15,15 @@ import pdfParserUserPrompt from "@/integrations/ai/prompts/pdf-parser-user.md?ra
 import type { ResumeData } from "@/schema/resume/data";
 import { defaultResumeData, resumeDataSchema } from "@/schema/resume/data";
 
-export const aiProviderSchema = z.enum(["ollama", "openai", "gemini", "anthropic", "vercel-ai-gateway", "cerebras"]);
+export const aiProviderSchema = z.enum([
+	"ollama",
+	"openai",
+	"gemini",
+	"anthropic",
+	"vercel-ai-gateway",
+	"cerebras",
+	"siliconflow",
+]);
 
 export type AIProvider = z.infer<typeof aiProviderSchema>;
 
@@ -31,7 +39,7 @@ function getModel(input: GetModelInput) {
 	const baseURL = input.baseURL || undefined;
 
 	return match(provider)
-		.with("openai", () => createOpenAI({ apiKey, baseURL }).languageModel(model))
+		.with("openai", () => createOpenAI({ apiKey, baseURL })(model))
 		.with("ollama", () => createOllama({ apiKey, baseURL }).languageModel(model))
 		.with("anthropic", () => createAnthropic({ apiKey, baseURL }).languageModel(model))
 		.with("vercel-ai-gateway", () => createGateway({ apiKey, baseURL }).languageModel(model))
@@ -43,8 +51,9 @@ function getModel(input: GetModelInput) {
 				model,
 			});
 			const openai = createOpenAI({ apiKey, baseURL: baseURL || "https://api.cerebras.ai/v1" });
-			return openai.languageModel(model);
+			return openai(model);
 		})
+		.with("siliconflow", () => createOpenAI({ apiKey, baseURL: baseURL || "https://api.siliconflow.cn/v1" })(model))
 		.exhaustive();
 }
 
@@ -94,9 +103,13 @@ export type ParsePdfInput = z.infer<typeof aiCredentialsSchema> & {
 };
 
 export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
-	if (!["openai", "gemini"].includes(input.provider)) {
+	const isSupportedProvider = ["openai", "gemini"].includes(input.provider);
+	const isSiliconFlow = input.provider === "siliconflow";
+	const isNonOpenAIURL = input.provider === "openai" && input.baseURL && !input.baseURL.includes("api.openai.com");
+
+	if (!isSupportedProvider || isNonOpenAIURL || isSiliconFlow) {
 		throw new ORPCError("BAD_REQUEST", {
-			message: `The provider "${input.provider}" does not support PDF parsing. Please use OpenAI or Gemini.`,
+			message: `The provider "${input.provider}" (with baseURL "${input.baseURL}") does not support PDF parsing. This feature requires official OpenAI or Google Gemini.`,
 		});
 	}
 
@@ -163,9 +176,13 @@ export type ParseDocxInput = z.infer<typeof aiCredentialsSchema> & {
 };
 
 export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
-	if (!["openai", "gemini"].includes(input.provider)) {
+	const isSupportedProvider = ["openai", "gemini"].includes(input.provider);
+	const isSiliconFlow = input.provider === "siliconflow";
+	const isNonOpenAIURL = input.provider === "openai" && input.baseURL && !input.baseURL.includes("api.openai.com");
+
+	if (!isSupportedProvider || isNonOpenAIURL || isSiliconFlow) {
 		throw new ORPCError("BAD_REQUEST", {
-			message: `The provider "${input.provider}" does not support Word document parsing. Please use OpenAI or Gemini.`,
+			message: `The provider "${input.provider}" (with baseURL "${input.baseURL}") does not support Word document parsing. This feature requires official OpenAI or Google Gemini.`,
 		});
 	}
 
