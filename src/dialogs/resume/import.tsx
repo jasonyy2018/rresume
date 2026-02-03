@@ -21,7 +21,6 @@ import { ReactiveResumeJSONImporter } from "@/integrations/import/reactive-resum
 import { ReactiveResumeV4JSONImporter } from "@/integrations/import/reactive-resume-v4-json";
 import { client, orpc } from "@/integrations/orpc/client";
 import type { ResumeData } from "@/schema/resume/data";
-import { fileToBase64 } from "@/utils/file";
 import { cn } from "@/utils/style";
 import { type DialogProps, useDialogStore } from "../store";
 
@@ -136,7 +135,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 				if (!isAIEnabled)
 					throw new Error(t`This feature requires AI Integration to be enabled. Please enable it in the settings.`);
 
-				const base64 = await fileToBase64(values.file);
+				const base64 = await convertFileToBase64(values.file);
 
 				data = await client.ai.parsePdf({
 					provider,
@@ -151,7 +150,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 				if (!isAIEnabled)
 					throw new Error(t`This feature requires AI Integration to be enabled. Please enable it in the settings.`);
 
-				const base64 = await fileToBase64(values.file);
+				const base64 = await convertFileToBase64(values.file);
 				const mediaType =
 					values.file.type === "application/msword"
 						? ("application/msword" as const)

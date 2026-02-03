@@ -45,7 +45,8 @@ export async function downloadFromUrl(url: string, filename: string) {
  * Uses FileReader to avoid "Maximum call stack size exceeded" errors
  * that occur when using the spread operator on large byte arrays.
  */
-export function fileToBase64(file: File): Promise<string> {
+export function convertFileToBase64(file: File): Promise<string> {
+	console.log("[convertFileToBase64] Converting file:", file.name);
 	return new Promise((resolve, reject) => {
 		const reader = new FileReader();
 		reader.readAsDataURL(file);
@@ -55,6 +56,9 @@ export function fileToBase64(file: File): Promise<string> {
 			const base64 = result.split(",")[1];
 			resolve(base64);
 		};
-		reader.onerror = (error) => reject(error);
+		reader.onerror = (error) => {
+			console.error("[convertFileToBase64] Error converting file:", error);
+			reject(error);
+		};
 	});
 }
