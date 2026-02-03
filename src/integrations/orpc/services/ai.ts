@@ -91,17 +91,28 @@ export async function testConnection(input: TestConnectionInput): Promise<boolea
 	console.log("[AI Test Connection] Starting...", { provider: input.provider, model: input.model });
 
 	try {
+		console.log("[AI Test Connection] Sending request...");
+
 		// Simple text check instead of structured output (Output.choice) for better compatibility
 		const result = await generateText({
 			model: getModel(input),
 			messages: [{ role: "user", content: `Respond with only the number "${RESPONSE_OK}".` }],
+			abortSignal: AbortSignal.timeout(30000), // 30s timeout
 		});
 
-		console.log("[AI Test Connection] Result:", result.text);
+		console.log("[AI Test Connection] Result received:", {
+			text: result.text,
+			usage: result.usage,
+			finishReason: result.finishReason,
+		});
 
 		return result.text.trim().includes(RESPONSE_OK);
 	} catch (error) {
-		console.error("[AI Test Connection] Error:", error);
+		console.error("[AI Test Connection] Caught Error:", {
+			name: error instanceof Error ? error.name : "Unknown",
+			message: error instanceof Error ? error.message : String(error),
+			stack: error instanceof Error ? error.stack : undefined,
+		});
 		throw error;
 	}
 }
