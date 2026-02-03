@@ -1,7 +1,8 @@
 import { createAnthropic } from "@ai-sdk/anthropic";
 import { createGoogleGenerativeAI } from "@ai-sdk/google";
 import { createOpenAI } from "@ai-sdk/openai";
-import { createGateway, generateText, Output } from "ai";
+import { ORPCError } from "@orpc/server";
+import { AISDKError, createGateway, generateText, Output } from "ai";
 import { createOllama } from "ai-sdk-ollama";
 import { match } from "ts-pattern";
 import type { ZodError } from "zod";
@@ -30,22 +31,19 @@ function getModel(input: GetModelInput) {
 	const baseURL = input.baseURL || undefined;
 
 	return match(provider)
-		.with("openai", () => {
-			const openai = createOpenAI({ apiKey, baseURL });
-			return "chat" in openai ? (openai as any).chat(model) : openai.languageModel(model);
-		})
+		.with("openai", () => createOpenAI({ apiKey, baseURL }).languageModel(model))
 		.with("ollama", () => createOllama({ apiKey, baseURL }).languageModel(model))
 		.with("anthropic", () => createAnthropic({ apiKey, baseURL }).languageModel(model))
 		.with("vercel-ai-gateway", () => createGateway({ apiKey, baseURL }).languageModel(model))
 		.with("gemini", () => createGoogleGenerativeAI({ apiKey, baseURL }).languageModel(model))
 		.with("cerebras", () => {
 			console.log("[Cerebras Config]", {
-				apiKey: apiKey?.substring(0, 5) + "...",
+				apiKey: `${apiKey?.substring(0, 5)}...`,
 				baseURL: baseURL || "https://api.cerebras.ai/v1",
 				model,
 			});
 			const openai = createOpenAI({ apiKey, baseURL: baseURL || "https://api.cerebras.ai/v1" });
-			return "chat" in openai ? (openai as any).chat(model) : openai.languageModel(model);
+			return openai.languageModel(model);
 		})
 		.exhaustive();
 }
@@ -97,9 +95,17 @@ export type ParsePdfInput = z.infer<typeof aiCredentialsSchema> & {
 
 export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
 	if (!["openai", "gemini"].includes(input.provider)) {
-		throw new Error(
-			`The provider "${input.provider}" does not support PDF parsing yet. Please use OpenAI or Gemini for this feature.`,
-		);
+		throw new ORPCError("BAD_REQUEST", {
+			message: `The provider "${input.provider}" does not support PDF parsing. Please use OpenAI or Gemini.`,
+		});
+	}
+
+	const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
+	const decodedData = Buffer.from(input.file.data, "base64");
+	if (decodedData.length > MAX_FILE_SIZE) {
+		throw new ORPCError("BAD_REQUEST", {
+			message: "The PDF file is too large. Please upload a file smaller than 4MB.",
+		});
 	}
 
 	const model = getModel(input);
@@ -136,6 +142,12 @@ export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
 		});
 	} catch (error) {
 		console.error("[AI Parse PDF Error]", error);
+		if (error instanceof AISDKError) {
+			throw new ORPCError("BAD_GATEWAY", {
+				message: `AI Provider Error: ${error.message}`,
+				data: { originalError: error },
+			});
+		}
 		throw error;
 	}
 }
@@ -147,9 +159,17 @@ export type ParseDocxInput = z.infer<typeof aiCredentialsSchema> & {
 
 export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
 	if (!["openai", "gemini"].includes(input.provider)) {
-		throw new Error(
-			`The provider "${input.provider}" does not support Word document parsing yet. Please use OpenAI or Gemini for this feature.`,
-		);
+		throw new ORPCError("BAD_REQUEST", {
+			message: `The provider "${input.provider}" does not support Word document parsing. Please use OpenAI or Gemini.`,
+		});
+	}
+
+	const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
+	const decodedData = Buffer.from(input.file.data, "base64");
+	if (decodedData.length > MAX_FILE_SIZE) {
+		throw new ORPCError("BAD_REQUEST", {
+			message: "The Word document is too large. Please upload a file smaller than 4MB.",
+		});
 	}
 
 	const model = getModel(input);
@@ -183,6 +203,12 @@ export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
 		});
 	} catch (error) {
 		console.error("[AI Parse Docx Error]", error);
+		if (error instanceof AISDKError) {
+			throw new ORPCError("BAD_GATEWAY", {
+				message: `AI Provider Error: ${error.message}`,
+				data: { originalError: error },
+			});
+		}
 		throw error;
 	}
 }

@@ -26,7 +26,9 @@
 		"docs:dev": "cd docs && npx mint dev",
 		"knip": "knip",
 		"lingui:extract": "lingui extract --clean --overwrite",
+		"lingui:compile": "lingui compile",
 		"lint": "biome check --write .",
+		"prebuild": "pnpm lingui:compile",
 		"start": "node .output/server/index.mjs",
 		"typecheck": "tsc --noEmit"
 	},

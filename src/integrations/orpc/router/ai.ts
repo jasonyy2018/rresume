@@ -1,13 +1,12 @@
 import { ORPCError } from "@orpc/server";
 import { AISDKError } from "ai";
-import z, { ZodError } from "zod";
+import z from "zod";
 import { protectedProcedure } from "../context";
 import {
 	aiCredentialsSchema,
 	aiProviderSchema,
 	aiService,
 	fileInputSchema,
-	formatZodError,
 	improveContentSchema,
 } from "../services/ai";
 
@@ -45,18 +44,11 @@ export const aiRouter = {
 			try {
 				return await aiService.parsePdf(input);
 			} catch (error) {
-				console.error("[AI Parse PDF Error]", error);
-				if (error instanceof AISDKError) {
-					throw new ORPCError("BAD_GATEWAY", {
-						message: `AI Provider Error: ${error.message}`,
-						data: { originalError: error },
-					});
-				}
-
-				if (error instanceof ZodError) {
-					throw new Error(formatZodError(error));
-				}
-				throw error;
+				console.error("[AI Parse PDF Router Error]", error);
+				if (error instanceof ORPCError) throw error;
+				throw new ORPCError("INTERNAL_SERVER_ERROR", {
+					message: error instanceof Error ? error.message : "An unexpected error occurred during PDF parsing",
+				});
 			}
 		}),
 
@@ -75,19 +67,11 @@ export const aiRouter = {
 			try {
 				return await aiService.parseDocx(input);
 			} catch (error) {
-				console.error("[AI Parse Docx Error]", error);
-				if (error instanceof AISDKError) {
-					throw new ORPCError("BAD_GATEWAY", {
-						message: `AI Provider Error: ${error.message}`,
-						data: { originalError: error },
-					});
-				}
-
-				if (error instanceof ZodError) {
-					throw new Error(formatZodError(error));
-				}
-
-				throw error;
+				console.error("[AI Parse Docx Router Error]", error);
+				if (error instanceof ORPCError) throw error;
+				throw new ORPCError("INTERNAL_SERVER_ERROR", {
+					message: error instanceof Error ? error.message : "An unexpected error occurred during Docx parsing",
+				});
 			}
 		}),
 

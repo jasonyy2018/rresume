@@ -165,15 +165,27 @@ export const setLocaleServerFn = createServerFn({ method: "POST" })
 export const loadLocale = async (locale: string) => {
 	if (!isLocale(locale)) locale = defaultLocale;
 
-	let messages: Messages;
+	try {
+		let messages: Messages;
 
-	if (import.meta.env.PROD) {
-		const module = await (import(`../../locales/${locale}.js`) as Promise<{ messages: Messages }>);
-		messages = module.messages;
-	} else {
-		const module = await (import(`../../locales/${locale}.po`) as Promise<{ messages: Messages }>);
-		messages = module.messages;
+		if (import.meta.env.PROD) {
+			const module = (await import(`../../locales/${locale}.js`)) as {
+				messages?: Messages;
+				default?: { messages: Messages };
+			};
+			messages = (module.messages || module.default?.messages) as Messages;
+		} else {
+			const module = (await import(`../../locales/${locale}.po`)) as { messages: Messages };
+			messages = module.messages;
+		}
+
+		if (!messages) {
+			console.error(`[loadLocale] Failed to find messages for locale: ${locale}`);
+			return;
+		}
+
+		i18n.loadAndActivate({ locale, messages });
+	} catch (error) {
+		console.error(`[loadLocale] Error loading locale "${locale}":`, error);
 	}
-
-	i18n.loadAndActivate({ locale, messages });
 };
