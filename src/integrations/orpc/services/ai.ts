@@ -100,11 +100,11 @@ export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
 		});
 	}
 
-	const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
+	const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 	const decodedData = Buffer.from(input.file.data, "base64");
 	if (decodedData.length > MAX_FILE_SIZE) {
 		throw new ORPCError("BAD_REQUEST", {
-			message: "The PDF file is too large. Please upload a file smaller than 4MB.",
+			message: "The PDF file is too large. Please upload a file smaller than 10MB.",
 		});
 	}
 
@@ -164,11 +164,11 @@ export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
 		});
 	}
 
-	const MAX_FILE_SIZE = 4 * 1024 * 1024; // 4MB
+	const MAX_FILE_SIZE = 10 * 1024 * 1024; // 10MB
 	const decodedData = Buffer.from(input.file.data, "base64");
 	if (decodedData.length > MAX_FILE_SIZE) {
 		throw new ORPCError("BAD_REQUEST", {
-			message: "The Word document is too large. Please upload a file smaller than 4MB.",
+			message: "The Word document is too large. Please upload a file smaller than 10MB.",
 		});
 	}
 

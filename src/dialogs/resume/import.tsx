@@ -194,13 +194,25 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 			await importResume({ data });
 			toast.success(t`Your resume has been imported successfully.`, { id: toastId, description: null });
 			closeDialog();
-		} catch (error: unknown) {
+		} catch (error: any) {
 			console.error("[Import Resume Error]", error);
-			if (error instanceof Error) {
-				toast.error(error.message, { id: toastId, description: null });
-			} else {
-				toast.error(t`An unknown error occurred while importing your resume.`, { id: toastId, description: null });
+
+			let message = t`An unknown error occurred while importing your resume.`;
+			let description: string | null = null;
+
+			if (error && typeof error === "object") {
+				// Handle ORPC / HTTP errors
+				if ("message" in error) message = String(error.message);
+				if ("status" in error && error.status === 502) {
+					message = t`Bad Gateway (502)`;
+					description = t`The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider.`;
+				}
+				if ("data" in error && error.data && typeof error.data === "object" && "message" in error.data) {
+					description = String((error.data as any).message);
+				}
 			}
+
+			toast.error(message, { id: toastId, description });
 		} finally {
 			setIsLoading(false);
 		}
@@ -211,10 +223,10 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 			<DialogHeader>
 				<DialogTitle className="flex items-center gap-x-2">
 					<DownloadSimpleIcon />
-					<Trans id="import.resume.title">Import an existing resume</Trans>
+					<Trans>Import an existing resume</Trans>
 				</DialogTitle>
 				<DialogDescription>
-					<Trans id="import.resume.description">
+					<Trans>
 						Continue where you left off by importing an existing resume you created using Reactive Resume or any another
 						resume builder. Supported formats include PDF, Microsoft Word, as well as JSON files from Reactive Resume.
 					</Trans>
@@ -229,7 +241,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>
-									<Trans id="import.resume.type">Type</Trans>
+									<Trans>Type</Trans>
 								</FormLabel>
 								<FormControl>
 									<Combobox
@@ -244,7 +256,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 												value: "pdf",
 												label: (
 													<div className="flex items-center gap-x-2">
-														PDF <Badge>{t({ message: "AI", id: "import.resume.ai" })}</Badge>
+														PDF <Badge>{t`AI`}</Badge>
 													</div>
 												),
 											},
@@ -287,7 +299,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 											) : (
 												<>
 													<UploadSimpleIcon weight="thin" size={32} />
-													<Trans id="import.resume.click-to-select">Click here to select a file to import</Trans>
+													<Trans>Click here to select a file to import</Trans>
 												</>
 											)}
 										</Button>
