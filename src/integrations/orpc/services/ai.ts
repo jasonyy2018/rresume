@@ -96,37 +96,48 @@ export type ParsePdfInput = z.infer<typeof aiCredentialsSchema> & {
 };
 
 export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
+	if (!["openai", "gemini"].includes(input.provider)) {
+		throw new Error(
+			`The provider "${input.provider}" does not support PDF parsing yet. Please use OpenAI or Gemini for this feature.`,
+		);
+	}
+
 	const model = getModel(input);
 
-	const result = await generateText({
-		model,
-		output: Output.object({ schema: resumeDataSchema }),
-		messages: [
-			{
-				role: "system",
-				content: pdfParserSystemPrompt,
-			},
-			{
-				role: "user",
-				content: [
-					{ type: "text", text: pdfParserUserPrompt },
-					{
-						type: "file",
-						filename: input.file.name,
-						mediaType: "application/pdf",
-						data: input.file.data,
-					},
-				],
-			},
-		],
-	});
+	try {
+		const result = await generateText({
+			model,
+			output: Output.object({ schema: resumeDataSchema }),
+			messages: [
+				{
+					role: "system",
+					content: pdfParserSystemPrompt,
+				},
+				{
+					role: "user",
+					content: [
+						{ type: "text", text: pdfParserUserPrompt },
+						{
+							type: "file",
+							filename: input.file.name,
+							mediaType: "application/pdf",
+							data: input.file.data,
+						},
+					],
+				},
+			],
+		});
 
-	return resumeDataSchema.parse({
-		...result.output,
-		customSections: [],
-		picture: defaultResumeData.picture,
-		metadata: defaultResumeData.metadata,
-	});
+		return resumeDataSchema.parse({
+			...result.output,
+			customSections: [],
+			picture: defaultResumeData.picture,
+			metadata: defaultResumeData.metadata,
+		});
+	} catch (error) {
+		console.error("[AI Parse PDF Error]", error);
+		throw error;
+	}
 }
 
 export type ParseDocxInput = z.infer<typeof aiCredentialsSchema> & {
@@ -135,34 +146,45 @@ export type ParseDocxInput = z.infer<typeof aiCredentialsSchema> & {
 };
 
 export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
+	if (!["openai", "gemini"].includes(input.provider)) {
+		throw new Error(
+			`The provider "${input.provider}" does not support Word document parsing yet. Please use OpenAI or Gemini for this feature.`,
+		);
+	}
+
 	const model = getModel(input);
 
-	const result = await generateText({
-		model,
-		output: Output.object({ schema: resumeDataSchema }),
-		messages: [
-			{ role: "system", content: docxParserSystemPrompt },
-			{
-				role: "user",
-				content: [
-					{ type: "text", text: docxParserUserPrompt },
-					{
-						type: "file",
-						filename: input.file.name,
-						mediaType: input.mediaType,
-						data: input.file.data,
-					},
-				],
-			},
-		],
-	});
+	try {
+		const result = await generateText({
+			model,
+			output: Output.object({ schema: resumeDataSchema }),
+			messages: [
+				{ role: "system", content: docxParserSystemPrompt },
+				{
+					role: "user",
+					content: [
+						{ type: "text", text: docxParserUserPrompt },
+						{
+							type: "file",
+							filename: input.file.name,
+							mediaType: input.mediaType,
+							data: input.file.data,
+						},
+					],
+				},
+			],
+		});
 
-	return resumeDataSchema.parse({
-		...result.output,
-		customSections: [],
-		picture: defaultResumeData.picture,
-		metadata: defaultResumeData.metadata,
-	});
+		return resumeDataSchema.parse({
+			...result.output,
+			customSections: [],
+			picture: defaultResumeData.picture,
+			metadata: defaultResumeData.metadata,
+		});
+	} catch (error) {
+		console.error("[AI Parse Docx Error]", error);
+		throw error;
+	}
 }
 
 export type ImproveContentInput = z.infer<typeof aiCredentialsSchema> & z.infer<typeof improveContentSchema>;

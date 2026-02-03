@@ -164,6 +164,16 @@ export const setLocaleServerFn = createServerFn({ method: "POST" })
 
 export const loadLocale = async (locale: string) => {
 	if (!isLocale(locale)) locale = defaultLocale;
-	const { messages } = await (import(`../../locales/${locale}.po`) as Promise<{ messages: Messages }>);
+
+	let messages: Messages;
+
+	if (import.meta.env.PROD) {
+		const module = await (import(`../../locales/${locale}.js`) as Promise<{ messages: Messages }>);
+		messages = module.messages;
+	} else {
+		const module = await (import(`../../locales/${locale}.po`) as Promise<{ messages: Messages }>);
+		messages = module.messages;
+	}
+
 	i18n.loadAndActivate({ locale, messages });
 };
