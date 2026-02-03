@@ -130,7 +130,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 		setIsLoading(true);
 
 		const toastId = toast.loading(t`Importing your resume...`, {
-			description: t`This may take a few minutes, depending on the response of the AI provider. Please do not close the window or refresh the page.`,
+			description: t`This may take multiple minutes, depending on the response of the AI provider. Please do not close the window or refresh the page.`,
 		});
 
 		try {
@@ -194,21 +194,23 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 			await importResume({ data });
 			toast.success(t`Your resume has been imported successfully.`, { id: toastId, description: null });
 			closeDialog();
-		} catch (error: any) {
+		} catch (error: unknown) {
 			console.error("[Import Resume Error]", error);
 
 			let message = t`An unknown error occurred while importing your resume.`;
 			let description: string | null = null;
 
 			if (error && typeof error === "object") {
+				const errorObj = error as Record<string, unknown>;
 				// Handle ORPC / HTTP errors
-				if ("message" in error) message = String(error.message);
-				if ("status" in error && error.status === 502) {
+				if ("message" in errorObj) message = String(errorObj.message);
+				if ("status" in errorObj && errorObj.status === 502) {
 					message = t`Bad Gateway (502)`;
 					description = t`The server took too long to respond or encountered an error. Please try again with a smaller file or a different AI provider.`;
 				}
-				if ("data" in error && error.data && typeof error.data === "object" && "message" in error.data) {
-					description = String((error.data as any).message);
+				if ("data" in errorObj && errorObj.data && typeof errorObj.data === "object") {
+					const dataObj = errorObj.data as Record<string, unknown>;
+					if ("message" in dataObj) description = String(dataObj.message);
 				}
 			}
 
@@ -244,32 +246,43 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 									<Trans>Type</Trans>
 								</FormLabel>
 								<FormControl>
-									<Combobox
-										clearable={false}
-										value={field.value}
-										onValueChange={field.onChange}
-										options={[
-											{ value: "reactive-resume-json", label: "Reactive Resume (JSON)" },
-											{ value: "reactive-resume-v4-json", label: "Reactive Resume v4 (JSON)" },
-											{ value: "json-resume-json", label: "JSON Resume" },
-											{
-												value: "pdf",
-												label: (
-													<div className="flex items-center gap-x-2">
-														PDF <Badge>{t`AI`}</Badge>
-													</div>
-												),
-											},
-											{
-												value: "docx",
-												label: (
-													<div className="flex items-center gap-x-2">
-														Microsoft Word <Badge>{t({ message: "AI", id: "import.resume.ai" })}</Badge>
-													</div>
-												),
-											},
-										]}
-									/>
+									<div className="space-y-2">
+										<Combobox
+											clearable={false}
+											value={field.value}
+											onValueChange={field.onChange}
+											options={[
+												{ value: "reactive-resume-json", label: "Reactive Resume (JSON)" },
+												{ value: "reactive-resume-v4-json", label: "Reactive Resume v4 (JSON)" },
+												{ value: "json-resume-json", label: "JSON Resume" },
+												{
+													value: "pdf",
+													label: (
+														<div className="flex items-center gap-x-2">
+															PDF <Badge>{t`AI`}</Badge>
+														</div>
+													),
+												},
+												{
+													value: "docx",
+													label: (
+														<div className="flex items-center gap-x-2">
+															Microsoft Word <Badge>{t`AI`}</Badge>
+														</div>
+													),
+												},
+											]}
+										/>
+
+										{(field.value === "pdf" || field.value === "docx") && !["openai", "gemini"].includes(provider) && (
+											<p className="text-warning text-xs">
+												<Trans>
+													Your current AI provider ({provider}) might not support PDF/Word parsing. Please use OpenAI or
+													Gemini for best results.
+												</Trans>
+											</p>
+										)}
+									</div>
 								</FormControl>
 								<FormMessage />
 							</FormItem>
@@ -313,9 +326,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 					<DialogFooter>
 						<Button type="submit" disabled={!type || isLoading}>
 							{isLoading ? <Spinner /> : null}
-							{isLoading
-								? t({ message: "Importing...", id: "import.resume.importing-button" })
-								: t({ message: "Import", id: "import.resume.import-button" })}
+							{isLoading ? t`Importing...` : t`Import`}
 						</Button>
 					</DialogFooter>
 				</form>

@@ -108,6 +108,10 @@ export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
 		});
 	}
 
+	console.log(
+		`[AI Parse PDF] Starting parsing: ${input.file.name} (${decodedData.length} bytes) using ${input.provider}/${input.model}`,
+	);
+	const startTime = Date.now();
 	const model = getModel(input);
 
 	try {
@@ -134,6 +138,7 @@ export async function parsePdf(input: ParsePdfInput): Promise<ResumeData> {
 			],
 		});
 
+		console.log(`[AI Parse PDF] Successfully parsed PDF in ${Date.now() - startTime}ms`);
 		return resumeDataSchema.parse({
 			...result.output,
 			customSections: [],
@@ -172,6 +177,10 @@ export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
 		});
 	}
 
+	console.log(
+		`[AI Parse Docx] Starting parsing: ${input.file.name} (${decodedData.length} bytes) using ${input.provider}/${input.model}`,
+	);
+	const startTime = Date.now();
 	const model = getModel(input);
 
 	try {
@@ -195,6 +204,7 @@ export async function parseDocx(input: ParseDocxInput): Promise<ResumeData> {
 			],
 		});
 
+		console.log(`[AI Parse Docx] Successfully parsed Docx in ${Date.now() - startTime}ms`);
 		return resumeDataSchema.parse({
 			...result.output,
 			customSections: [],
