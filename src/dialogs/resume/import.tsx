@@ -135,8 +135,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 				if (!isAIEnabled)
 					throw new Error(t`This feature requires AI Integration to be enabled. Please enable it in the settings.`);
 
-				const arrayBuffer = await values.file.arrayBuffer();
-				const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+				const base64 = await fileToBase64(values.file);
 
 				data = await client.ai.parsePdf({
 					provider,
@@ -151,8 +150,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 				if (!isAIEnabled)
 					throw new Error(t`This feature requires AI Integration to be enabled. Please enable it in the settings.`);
 
-				const arrayBuffer = await values.file.arrayBuffer();
-				const base64 = btoa(String.fromCharCode(...new Uint8Array(arrayBuffer)));
+				const base64 = await fileToBase64(values.file);
 				const mediaType =
 					values.file.type === "application/msword"
 						? ("application/msword" as const)

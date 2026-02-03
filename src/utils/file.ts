@@ -39,3 +39,22 @@ export async function downloadFromUrl(url: string, filename: string) {
 
 	downloadWithAnchor(blob, filename);
 }
+
+/**
+ * Safely converts a File to a base64 string.
+ * Uses FileReader to avoid "Maximum call stack size exceeded" errors
+ * that occur when using the spread operator on large byte arrays.
+ */
+export function fileToBase64(file: File): Promise<string> {
+	return new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = () => {
+			const result = reader.result as string;
+			// Remove the "data:application/pdf;base64," prefix
+			const base64 = result.split(",")[1];
+			resolve(base64);
+		};
+		reader.onerror = (error) => reject(error);
+	});
+}

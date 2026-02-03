@@ -170,22 +170,18 @@ export type ImproveContentInput = z.infer<typeof aiCredentialsSchema> & z.infer<
 export async function improveContent(input: ImproveContentInput): Promise<string> {
 	const model = getModel(input);
 
+	const systemPrompt = improveContentPrompt
+		.replace("{{content}}", input.content)
+		.replace("{{jobDescription}}", input.jobDescription || "Not provided")
+		.replace("{{instruction}}", input.instructions || "Not provided");
+
 	const result = await generateText({
 		model,
 		messages: [
-			{ role: "system", content: improveContentPrompt },
+			{ role: "system", content: systemPrompt },
 			{
 				role: "user",
-				content: `
-      Job Description:
-      ${input.jobDescription || "Not provided"}
-
-      Instructions:
-      ${input.instructions || "Not provided"}
-
-      Content to Improve:
-      ${input.content}
-      `,
+				content: "Please improve the content as instructed in the system prompt.",
 			},
 		],
 	});

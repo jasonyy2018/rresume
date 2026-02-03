@@ -74,6 +74,7 @@ import { usePrompt } from "@/hooks/use-prompt";
 import { useAIStore } from "@/integrations/ai/store";
 import { orpc } from "@/integrations/orpc/client";
 import { isRTL } from "@/utils/locale";
+import { sanitizeHtml } from "@/utils/sanitize";
 import { cn } from "@/utils/style";
 import { Toggle } from "../ui/toggle";
 import styles from "./rich-input.module.css";
@@ -733,7 +734,7 @@ function AIOptimizeButton({ editor, isFullscreen }: { editor: Editor; isFullscre
 			{
 				content,
 				jobDescription,
-				instruction,
+				instructions: instruction,
 				provider,
 				apiKey,
 				baseURL,
