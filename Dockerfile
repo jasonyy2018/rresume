@@ -19,10 +19,10 @@ COPY package.json pnpm-lock.yaml /tmp/dev/
 COPY package.json pnpm-lock.yaml /tmp/prod/
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    cd /tmp/dev && pnpm install --frozen-lockfile
+    cd /tmp/dev && pnpm install
 
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    cd /tmp/prod && pnpm install --frozen-lockfile --prod
+    cd /tmp/prod && pnpm install --prod
 
 # ---------- Builder Layer ----------
 FROM base AS builder
