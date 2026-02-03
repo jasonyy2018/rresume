@@ -211,10 +211,10 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 			<DialogHeader>
 				<DialogTitle className="flex items-center gap-x-2">
 					<DownloadSimpleIcon />
-					<Trans>Import an existing resume</Trans>
+					<Trans id="import.resume.title">Import an existing resume</Trans>
 				</DialogTitle>
 				<DialogDescription>
-					<Trans>
+					<Trans id="import.resume.description">
 						Continue where you left off by importing an existing resume you created using Reactive Resume or any another
 						resume builder. Supported formats include PDF, Microsoft Word, as well as JSON files from Reactive Resume.
 					</Trans>
@@ -229,7 +229,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 						render={({ field }) => (
 							<FormItem>
 								<FormLabel>
-									<Trans>Type</Trans>
+									<Trans id="import.resume.type">Type</Trans>
 								</FormLabel>
 								<FormControl>
 									<Combobox
@@ -244,7 +244,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 												value: "pdf",
 												label: (
 													<div className="flex items-center gap-x-2">
-														PDF <Badge>{t`AI`}</Badge>
+														PDF <Badge>{t({ message: "AI", id: "import.resume.ai" })}</Badge>
 													</div>
 												),
 											},
@@ -252,7 +252,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 												value: "docx",
 												label: (
 													<div className="flex items-center gap-x-2">
-														Microsoft Word <Badge>{t`AI`}</Badge>
+														Microsoft Word <Badge>{t({ message: "AI", id: "import.resume.ai" })}</Badge>
 													</div>
 												),
 											},
@@ -287,7 +287,7 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 											) : (
 												<>
 													<UploadSimpleIcon weight="thin" size={32} />
-													<Trans>Click here to select a file to import</Trans>
+													<Trans id="import.resume.click-to-select">Click here to select a file to import</Trans>
 												</>
 											)}
 										</Button>
@@ -301,7 +301,9 @@ export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 					<DialogFooter>
 						<Button type="submit" disabled={!type || isLoading}>
 							{isLoading ? <Spinner /> : null}
-							{isLoading ? t`Importing...` : t`Import`}
+							{isLoading
+								? t({ message: "Importing...", id: "import.resume.importing-button" })
+								: t({ message: "Import", id: "import.resume.import-button" })}
 						</Button>
 					</DialogFooter>
 				</form>

@@ -29,8 +29,8 @@ msgid "Name"
 msgstr ""
 
 #: src/routes/_home/-sections/hero.tsx
-msgid "(opens in new tab)"
-msgstr ""
+#~ msgid "(opens in new tab)"
+#~ msgstr ""
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -52,8 +52,8 @@ msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-msgstr ""
+#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
+#~ msgstr ""
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -97,8 +97,8 @@ msgid "A new verification link has been sent to your email address. Please check
 msgstr ""
 
 #: src/components/ui/copyright.tsx
-msgid "A passion project by <0>Amruth Pillai</0>."
-msgstr ""
+#~ msgid "A passion project by <0>Amruth Pillai</0>."
+#~ msgstr ""
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -209,6 +209,10 @@ msgstr ""
 
 #: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
 msgid "Adding your passkey..."
+msgstr ""
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Adjust the picture to your liking."
 msgstr ""
 
 #: src/utils/locale.ts
@@ -420,7 +424,11 @@ msgstr ""
 msgid "Bullet List"
 msgstr ""
 
+#. js-lingui-explicit-id
 #: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
+
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
@@ -434,6 +442,7 @@ msgstr ""
 msgid "Can I export my resume to PDF?"
 msgstr ""
 
+#: src/components/input/rich-input.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/award.tsx
@@ -466,6 +475,7 @@ msgstr ""
 #: src/dialogs/resume/sections/volunteer.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
 #: src/hooks/use-prompt.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 #: src/routes/dashboard/settings/api-keys.tsx
 #: src/routes/dashboard/settings/danger-zone.tsx
@@ -506,8 +516,8 @@ msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr ""
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Changelog"
-msgstr ""
+#~ msgid "Changelog"
+#~ msgstr ""
 
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
@@ -547,6 +557,7 @@ msgid "Columns"
 msgstr ""
 
 #: src/routes/_home/-sections/footer.tsx
+#: src/routes/_home/-sections/footer.tsx
 msgid "Community"
 msgstr ""
 
@@ -572,6 +583,10 @@ msgstr ""
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 msgid "Content"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Content optimized successfully!"
 msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -731,6 +746,10 @@ msgstr ""
 msgid "Creating your resume..."
 msgstr ""
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Crop Picture"
+msgstr ""
+
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
 msgstr ""
@@ -866,25 +885,29 @@ msgid "Disconnect"
 msgstr ""
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Discord"
-msgstr ""
+#~ msgid "Discord"
+#~ msgstr ""
 
 #: src/routes/_home/-sections/footer.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Documentation"
-msgstr ""
+#~ msgid "Documentation"
+#~ msgstr ""
 
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Donate to Reactive Resume"
-msgstr ""
+#~ msgid "Donate to Reactive Resume"
+#~ msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
 msgid "Download"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "Download a copy of your resume in HTML format. This file is a standalone HTML file that you can host on your own website."
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
@@ -938,6 +961,10 @@ msgstr ""
 
 #: src/utils/locale.ts
 msgid "Dutch"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "e.g. Fix grammar, make it more professional, highlight leadership..."
 msgstr ""
 
 #: src/utils/resume/section.tsx
@@ -1055,6 +1082,10 @@ msgstr ""
 
 #: src/utils/resume/section.tsx
 msgid "Export"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Failed to crop image"
 msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -1322,6 +1353,10 @@ msgstr ""
 msgid "Insert Table"
 msgstr ""
 
+#: src/components/input/rich-input.tsx
+msgid "Instructions (Optional)"
+msgstr ""
+
 #: src/utils/resume/section.tsx
 msgid "Interests"
 msgstr ""
@@ -1348,6 +1383,10 @@ msgstr ""
 
 #: src/utils/locale.ts
 msgid "Japanese"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Job Description (Optional)"
 msgstr ""
 
 #: src/components/input/rich-input.tsx
@@ -1415,8 +1454,8 @@ msgid "Layout"
 msgstr ""
 
 #: src/routes/_home/-sections/hero.tsx
-msgid "Learn More"
-msgstr ""
+#~ msgid "Learn More"
+#~ msgstr ""
 
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
@@ -1448,9 +1487,14 @@ msgstr ""
 msgid "Level {level} of 5"
 msgstr ""
 
+#. js-lingui-explicit-id
 #: src/components/ui/copyright.tsx
-msgid "Licensed under <0>MIT</0>."
+msgid "copyright.licensed-under"
 msgstr ""
+
+#: src/components/ui/copyright.tsx
+#~ msgid "Licensed under <0>MIT</0>."
+#~ msgstr ""
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -1517,6 +1561,11 @@ msgstr ""
 
 #: src/routes/_home/-sections/header.tsx
 msgid "Main navigation"
+msgstr ""
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.maintained-by"
 msgstr ""
 
 #: src/utils/locale.ts
@@ -1641,6 +1690,18 @@ msgstr ""
 msgid "opens in new tab"
 msgstr ""
 
+#: src/components/input/rich-input.tsx
+msgid "Optimize"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Optimize Content"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Optimize with AI"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Optionally, set a password so that only people with the password can view your resume through the link."
 msgstr ""
@@ -1709,6 +1770,10 @@ msgstr ""
 msgid "Password protection has been enabled."
 msgstr ""
 
+#: src/components/input/rich-input.tsx
+msgid "Paste the job description here..."
+msgstr ""
+
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -1743,6 +1808,10 @@ msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Please enter the URL you want to link to:"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "Please wait while your HTML resume is being generated..."
 msgstr ""
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
@@ -1960,6 +2029,10 @@ msgstr ""
 
 #: src/utils/locale.ts
 msgid "Russian"
+msgstr ""
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Save & Upload"
 msgstr ""
 
 #: src/dialogs/resume/index.tsx
@@ -2191,12 +2264,12 @@ msgid "Spanish"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Sponsors"
-msgstr ""
+#~ msgid "Sponsors"
+#~ msgstr ""
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Sponsorships"
-msgstr ""
+#~ msgid "Sponsorships"
+#~ msgstr ""
 
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -2234,8 +2307,8 @@ msgid "Strike"
 msgstr ""
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Subreddit"
-msgstr ""
+#~ msgid "Subreddit"
+#~ msgstr ""
 
 #: src/utils/resume/section.tsx
 msgid "Summary"
@@ -2246,8 +2319,8 @@ msgid "Support Reactive Resume"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Support the app by doing what you can!"
-msgstr ""
+#~ msgid "Support the app by doing what you can!"
+#~ msgstr ""
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2347,6 +2420,10 @@ msgstr ""
 msgid "Then, enter the 6 digit code that the app provides to continue."
 msgstr ""
 
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "There was a problem while generating the HTML resume, please try again in some time."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "There was a problem while generating the PDF, please try again in some time."
@@ -2425,8 +2502,8 @@ msgstr ""
 
 #: src/routes/_home/-sections/footer.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Translations"
-msgstr ""
+#~ msgid "Translations"
+#~ msgstr ""
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2629,6 +2706,10 @@ msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "URL"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Use AI to improve your content. You can optionally provide a job description to tailor the result."
 msgstr ""
 
 #: src/dialogs/resume/sections/profile.tsx
@@ -2841,6 +2922,10 @@ msgstr ""
 
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support ensures the project remains free and accessible for everyone, now and in the future."
+msgstr ""
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Zoom"
 msgstr ""
 
 #: src/routes/builder/$resumeId/-components/dock.tsx

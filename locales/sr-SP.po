@@ -34,8 +34,8 @@ msgid "Name"
 msgstr "Име"
 
 #: src/routes/_home/-sections/hero.tsx
-msgid "(opens in new tab)"
-msgstr "(отвара се у новом језичку)"
+#~ msgid "(opens in new tab)"
+#~ msgstr "(отвара се у новом језичку)"
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -57,8 +57,8 @@ msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>Често</0><1>Постављана</1><2>Питања</2>"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-msgstr "<0>Хвала вам што користите Реактивни Резиме! Ова апликација је рад из љубави, настао углавном у моје слободно време, уз дивну подршку сарадника отвореног кода широм света.</0><1>Ако вам је Реактивни Резиме био од помоћи и желите да помогнете да остане бесплатан и отворен за све, размислите о донацији. Свака, па и најмања подршка, много значи!</1>"
+#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
+#~ msgstr "<0>Хвала вам што користите Реактивни Резиме! Ова апликација је рад из љубави, настао углавном у моје слободно време, уз дивну подршку сарадника отвореног кода широм света.</0><1>Ако вам је Реактивни Резиме био од помоћи и желите да помогнете да остане бесплатан и отворен за све, размислите о донацији. Свака, па и најмања подршка, много значи!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -102,8 +102,8 @@ msgid "A new verification link has been sent to your email address. Please check
 msgstr "Нова веза за верификацију је послата на вашу адресу е-поште. Проверите пријемно сандуче да бисте верификовали налог."
 
 #: src/components/ui/copyright.tsx
-msgid "A passion project by <0>Amruth Pillai</0>."
-msgstr "Страстни пројекат аутора <0>Амрута Пилаија</0>."
+#~ msgid "A passion project by <0>Amruth Pillai</0>."
+#~ msgstr "Страстни пројекат аутора <0>Амрута Пилаија</0>."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -215,6 +215,10 @@ msgstr "Додато дана {0}"
 #: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
 msgid "Adding your passkey..."
 msgstr "Додавање ваше приступне лозинке..."
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Adjust the picture to your liking."
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Afrikaans"
@@ -425,7 +429,11 @@ msgstr "Бугарски"
 msgid "Bullet List"
 msgstr "Списак са ставкама"
 
+#. js-lingui-explicit-id
 #: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
+
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
@@ -439,6 +447,7 @@ msgstr "Могу ли да прилагодим шаблоне?"
 msgid "Can I export my resume to PDF?"
 msgstr "Могу ли да извезем свој резиме у PDF?"
 
+#: src/components/input/rich-input.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/award.tsx
@@ -471,6 +480,7 @@ msgstr "Могу ли да извезем свој резиме у PDF?"
 #: src/dialogs/resume/sections/volunteer.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
 #: src/hooks/use-prompt.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 #: src/routes/dashboard/settings/api-keys.tsx
 #: src/routes/dashboard/settings/danger-zone.tsx
@@ -511,8 +521,8 @@ msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "Променили сте мишљење? Преименујте свој резиме у нешто описније."
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Changelog"
-msgstr "Дневник измена"
+#~ msgid "Changelog"
+#~ msgstr "Дневник измена"
 
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
@@ -552,6 +562,7 @@ msgid "Columns"
 msgstr "Колоне"
 
 #: src/routes/_home/-sections/footer.tsx
+#: src/routes/_home/-sections/footer.tsx
 msgid "Community"
 msgstr "Заједница"
 
@@ -577,6 +588,10 @@ msgstr "Повежи"
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 msgid "Content"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Content optimized successfully!"
 msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -736,6 +751,10 @@ msgstr "Креирање вашег API кључа..."
 msgid "Creating your resume..."
 msgstr "Креирање вашег резимеа..."
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Crop Picture"
+msgstr ""
+
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
 msgstr "Тренутна лозинка"
@@ -871,26 +890,30 @@ msgid "Disconnect"
 msgstr "Прекини повезивање"
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Discord"
-msgstr "Дискорд"
+#~ msgid "Discord"
+#~ msgstr "Дискорд"
 
 #: src/routes/_home/-sections/footer.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Documentation"
-msgstr "Документација"
+#~ msgid "Documentation"
+#~ msgstr "Документација"
 
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "Немате налог? <0><1>Креирајте га сада <2/></1></0>"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Donate to Reactive Resume"
-msgstr "Донирајте Реактивном Резимеу"
+#~ msgid "Donate to Reactive Resume"
+#~ msgstr "Донирајте Реактивном Резимеу"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
 msgid "Download"
 msgstr "Преузми"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "Download a copy of your resume in HTML format. This file is a standalone HTML file that you can host on your own website."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Download a copy of your resume in JSON format. Use this file for backup or to import your resume into other applications, including AI assistants."
@@ -944,6 +967,10 @@ msgstr "Дуплирање вашег резимеа..."
 #: src/utils/locale.ts
 msgid "Dutch"
 msgstr "Холандски"
+
+#: src/components/input/rich-input.tsx
+msgid "e.g. Fix grammar, make it more professional, highlight leadership..."
+msgstr ""
 
 #: src/utils/resume/section.tsx
 msgid "Education"
@@ -1061,6 +1088,10 @@ msgstr "Истражите API документацију да бисте саз
 #: src/utils/resume/section.tsx
 msgid "Export"
 msgstr "Извоз"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Failed to crop image"
+msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Failed to setup two-factor authentication."
@@ -1327,6 +1358,10 @@ msgstr "Унутрашњи кôд"
 msgid "Insert Table"
 msgstr "Уметни табелу"
 
+#: src/components/input/rich-input.tsx
+msgid "Instructions (Optional)"
+msgstr ""
+
 #: src/utils/resume/section.tsx
 msgid "Interests"
 msgstr "Интересовања"
@@ -1354,6 +1389,10 @@ msgstr "Курзив"
 #: src/utils/locale.ts
 msgid "Japanese"
 msgstr "Јапански"
+
+#: src/components/input/rich-input.tsx
+msgid "Job Description (Optional)"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Justify Align"
@@ -1420,8 +1459,8 @@ msgid "Layout"
 msgstr "Распоред"
 
 #: src/routes/_home/-sections/hero.tsx
-msgid "Learn More"
-msgstr "Сазнај више"
+#~ msgid "Learn More"
+#~ msgstr "Сазнај више"
 
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
@@ -1453,9 +1492,14 @@ msgstr "Ниво"
 msgid "Level {level} of 5"
 msgstr "Ниво {level} од 5"
 
+#. js-lingui-explicit-id
 #: src/components/ui/copyright.tsx
-msgid "Licensed under <0>MIT</0>."
-msgstr "Лиценцирано под <0>MIT</0>."
+msgid "copyright.licensed-under"
+msgstr ""
+
+#: src/components/ui/copyright.tsx
+#~ msgid "Licensed under <0>MIT</0>."
+#~ msgstr "Лиценцирано под <0>MIT</0>."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -1523,6 +1567,11 @@ msgstr "Главно"
 #: src/routes/_home/-sections/header.tsx
 msgid "Main navigation"
 msgstr "Главна навигација"
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.maintained-by"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Malay"
@@ -1646,6 +1695,18 @@ msgstr "Отворени код"
 msgid "opens in new tab"
 msgstr "отвара се у новом језичку"
 
+#: src/components/input/rich-input.tsx
+msgid "Optimize"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Optimize Content"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Optimize with AI"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Optionally, set a password so that only people with the password can view your resume through the link."
 msgstr "Опционално подесите лозинку тако да само особе са лозинком могу да виде ваш резиме путем везе."
@@ -1714,6 +1775,10 @@ msgstr "Заштита лозинком је онемогућена."
 msgid "Password protection has been enabled."
 msgstr "Заштита лозинком је омогућена."
 
+#: src/components/input/rich-input.tsx
+msgid "Paste the job description here..."
+msgstr ""
+
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -1749,6 +1814,10 @@ msgstr "Унесите лозинку коју вам је поделио вла
 #: src/components/input/rich-input.tsx
 msgid "Please enter the URL you want to link to:"
 msgstr "Унесите URL на који желите да води веза:"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "Please wait while your HTML resume is being generated..."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
@@ -1966,6 +2035,10 @@ msgstr "Ротација"
 #: src/utils/locale.ts
 msgid "Russian"
 msgstr "Руски"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Save & Upload"
+msgstr ""
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/sections/award.tsx
@@ -2196,12 +2269,12 @@ msgid "Spanish"
 msgstr "Шпански"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Sponsors"
-msgstr "Спонзори"
+#~ msgid "Sponsors"
+#~ msgstr "Спонзори"
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Sponsorships"
-msgstr "Спонзорства"
+#~ msgid "Sponsorships"
+#~ msgstr "Спонзорства"
 
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -2239,8 +2312,8 @@ msgid "Strike"
 msgstr "Прецртано"
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Subreddit"
-msgstr "Субредит"
+#~ msgid "Subreddit"
+#~ msgstr "Субредит"
 
 #: src/utils/resume/section.tsx
 msgid "Summary"
@@ -2251,8 +2324,8 @@ msgid "Support Reactive Resume"
 msgstr "Подржите Реактивни Резиме"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Support the app by doing what you can!"
-msgstr "Подржите апликацију колико можете!"
+#~ msgid "Support the app by doing what you can!"
+#~ msgstr "Подржите апликацију колико можете!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2352,6 +2425,10 @@ msgstr "Тема"
 msgid "Then, enter the 6 digit code that the app provides to continue."
 msgstr "Затим унесите шестоцифрени кôд који апликација приказује да бисте наставили."
 
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "There was a problem while generating the HTML resume, please try again in some time."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "There was a problem while generating the PDF, please try again in some time."
@@ -2430,8 +2507,8 @@ msgstr "Пратите прегледе и преузимања свог рез�
 
 #: src/routes/_home/-sections/footer.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Translations"
-msgstr "Преводи"
+#~ msgid "Translations"
+#~ msgstr "Преводи"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2635,6 +2712,10 @@ msgstr "Отпремање слике..."
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "URL"
 msgstr "URL"
+
+#: src/components/input/rich-input.tsx
+msgid "Use AI to improve your content. You can optionally provide a job description to tailor the result."
+msgstr ""
 
 #: src/dialogs/resume/sections/profile.tsx
 #: src/routes/auth/register.tsx
@@ -2847,6 +2928,10 @@ msgstr "Јавна веза вашег резимеа је тренутно за
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support ensures the project remains free and accessible for everyone, now and in the future."
 msgstr "Ваша подршка осигурава да пројекат остане бесплатан и доступан свима, сада и у будућности."
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Zoom"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Zoom in"

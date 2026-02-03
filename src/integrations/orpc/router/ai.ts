@@ -45,8 +45,12 @@ export const aiRouter = {
 			try {
 				return await aiService.parsePdf(input);
 			} catch (error) {
+				console.error("[AI Parse PDF Error]", error);
 				if (error instanceof AISDKError) {
-					throw new ORPCError("BAD_GATEWAY", { message: error.message });
+					throw new ORPCError("BAD_GATEWAY", {
+						message: `AI Provider Error: ${error.message}`,
+						data: { originalError: error },
+					});
 				}
 
 				if (error instanceof ZodError) {
@@ -71,8 +75,12 @@ export const aiRouter = {
 			try {
 				return await aiService.parseDocx(input);
 			} catch (error) {
+				console.error("[AI Parse Docx Error]", error);
 				if (error instanceof AISDKError) {
-					throw new ORPCError("BAD_GATEWAY", { message: error.message });
+					throw new ORPCError("BAD_GATEWAY", {
+						message: `AI Provider Error: ${error.message}`,
+						data: { originalError: error },
+					});
 				}
 
 				if (error instanceof ZodError) {
@@ -94,8 +102,12 @@ export const aiRouter = {
 			try {
 				return await aiService.improveContent(input);
 			} catch (error) {
+				console.error("[AI Improve Content Error]", error);
 				if (error instanceof AISDKError) {
-					throw new ORPCError("BAD_GATEWAY", { message: error.message });
+					throw new ORPCError("BAD_GATEWAY", {
+						message: `AI Provider Error: ${error.message}`,
+						data: { originalError: error },
+					});
 				}
 				throw error;
 			}

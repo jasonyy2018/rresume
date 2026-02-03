@@ -34,8 +34,8 @@ msgid "Name"
 msgstr "Όνομα"
 
 #: src/routes/_home/-sections/hero.tsx
-msgid "(opens in new tab)"
-msgstr "(ανοίγει σε νέα καρτέλα)"
+#~ msgid "(opens in new tab)"
+#~ msgstr "(ανοίγει σε νέα καρτέλα)"
 
 #. placeholder {0}: section.items.length
 #: src/routes/builder/$resumeId/-sidebar/left/sections/custom.tsx
@@ -57,8 +57,8 @@ msgid "<0>Frequently</0><1>Asked</1><2>Questions</2>"
 msgstr "<0>Συχνές</0><1>Ερωτήσεις</1><2>Χρηστών</2>"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
-msgstr "<0>Σας ευχαριστώ που χρησιμοποιείτε το Reactive Resume! Αυτή η εφαρμογή είναι έργο αγάπης, δημιουργημένη κυρίως στον ελεύθερο χρόνο μου, με υπέροχη υποστήριξη από συνεισφέροντες ανοικτού κώδικα σε όλο τον κόσμο.</0><1>Εάν το Reactive Resume σας βοήθησε και θα θέλατε να συμβάλετε ώστε να παραμείνει δωρεάν και ανοικτό για όλους, σκεφτείτε να κάνετε μια δωρεά. Κάθε μικρή συμβολή εκτιμάται!</1>"
+#~ msgid "<0>Thank you for using Reactive Resume! This app is a labor of love, created mostly in my spare time, with wonderful support from open-source contributors around the world.</0><1>If Reactive Resume has been helpful to you, and you'd like to help keep it free and open for everyone, please consider making a donation. Every little bit is appreciated!</1>"
+#~ msgstr "<0>Σας ευχαριστώ που χρησιμοποιείτε το Reactive Resume! Αυτή η εφαρμογή είναι έργο αγάπης, δημιουργημένη κυρίως στον ελεύθερο χρόνο μου, με υπέροχη υποστήριξη από συνεισφέροντες ανοικτού κώδικα σε όλο τον κόσμο.</0><1>Εάν το Reactive Resume σας βοήθησε και θα θέλατε να συμβάλετε ώστε να παραμείνει δωρεάν και ανοικτό για όλους, σκεφτείτε να κάνετε μια δωρεά. Κάθε μικρή συμβολή εκτιμάται!</1>"
 
 #: src/dialogs/api-key/create.tsx
 msgid "1 month"
@@ -102,8 +102,8 @@ msgid "A new verification link has been sent to your email address. Please check
 msgstr "Ένας νέος σύνδεσμος επαλήθευσης στάλθηκε στη διεύθυνση email σας. Ελέγξτε τα εισερχόμενά σας για να επαληθεύσετε τον λογαριασμό σας."
 
 #: src/components/ui/copyright.tsx
-msgid "A passion project by <0>Amruth Pillai</0>."
-msgstr "Ένα έργο πάθους από τον <0>Amruth Pillai</0>."
+#~ msgid "A passion project by <0>Amruth Pillai</0>."
+#~ msgstr "Ένα έργο πάθους από τον <0>Amruth Pillai</0>."
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/index.tsx
@@ -215,6 +215,10 @@ msgstr "Προστέθηκε στις {0}"
 #: src/routes/dashboard/settings/authentication/-components/passkeys.tsx
 msgid "Adding your passkey..."
 msgstr "Προσθήκη κλειδιού πρόσβασης..."
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Adjust the picture to your liking."
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Afrikaans"
@@ -425,7 +429,11 @@ msgstr "Βουλγαρικά"
 msgid "Bullet List"
 msgstr "Λίστα κουκκίδων"
 
+#. js-lingui-explicit-id
 #: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr ""
+
 #: src/routes/_home/-sections/features.tsx
 #: src/routes/_home/-sections/prefooter.tsx
 msgid "By the community, for the community."
@@ -439,6 +447,7 @@ msgstr "Μπορώ να προσαρμόσω τα πρότυπα;"
 msgid "Can I export my resume to PDF?"
 msgstr "Μπορώ να εξαγάγω το βιογραφικό μου σημείωμα σε PDF;"
 
+#: src/components/input/rich-input.tsx
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/dialogs/resume/sections/award.tsx
 #: src/dialogs/resume/sections/award.tsx
@@ -471,6 +480,7 @@ msgstr "Μπορώ να εξαγάγω το βιογραφικό μου σημε
 #: src/dialogs/resume/sections/volunteer.tsx
 #: src/dialogs/resume/sections/volunteer.tsx
 #: src/hooks/use-prompt.tsx
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 #: src/routes/dashboard/settings/api-keys.tsx
 #: src/routes/dashboard/settings/danger-zone.tsx
@@ -511,8 +521,8 @@ msgid "Changed your mind? Rename your resume to something more descriptive."
 msgstr "Αλλάξατε γνώμη; Μετονομάστε το βιογραφικό σας σημείωμα σε κάτι πιο περιγραφικό."
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Changelog"
-msgstr "Αρχείο αλλαγών"
+#~ msgid "Changelog"
+#~ msgstr "Αρχείο αλλαγών"
 
 #: src/routes/auth/forgot-password.tsx
 msgid "Check your email for a link to reset your password."
@@ -552,6 +562,7 @@ msgid "Columns"
 msgstr "Στήλες"
 
 #: src/routes/_home/-sections/footer.tsx
+#: src/routes/_home/-sections/footer.tsx
 msgid "Community"
 msgstr "Κοινότητα"
 
@@ -577,6 +588,10 @@ msgstr "Σύνδεση"
 #: src/dialogs/resume/sections/cover-letter.tsx
 #: src/dialogs/resume/sections/summary-item.tsx
 msgid "Content"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Content optimized successfully!"
 msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
@@ -736,6 +751,10 @@ msgstr "Δημιουργία κλειδιού API..."
 msgid "Creating your resume..."
 msgstr "Δημιουργία του βιογραφικού σας σημειώματος..."
 
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Crop Picture"
+msgstr ""
+
 #: src/dialogs/auth/change-password.tsx
 msgid "Current Password"
 msgstr "Τρέχων κωδικός πρόσβασης"
@@ -871,26 +890,30 @@ msgid "Disconnect"
 msgstr "Αποσύνδεση"
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Discord"
-msgstr "Discord"
+#~ msgid "Discord"
+#~ msgstr "Discord"
 
 #: src/routes/_home/-sections/footer.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Documentation"
-msgstr "Τεκμηρίωση"
+#~ msgid "Documentation"
+#~ msgstr "Τεκμηρίωση"
 
 #: src/routes/auth/login.tsx
 msgid "Don't have an account? <0><1>Create one now <2/></1></0>"
 msgstr "Δεν έχετε λογαριασμό; <0><1>Δημιουργήστε έναν τώρα <2/></1></0>"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Donate to Reactive Resume"
-msgstr "Κάντε μία δωρεά στο Reactive Resume"
+#~ msgid "Donate to Reactive Resume"
+#~ msgstr "Κάντε μία δωρεά στο Reactive Resume"
 
 #: src/dialogs/auth/enable-two-factor.tsx
 #: src/routes/$username/$slug.tsx
 msgid "Download"
 msgstr "Λήψη"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "Download a copy of your resume in HTML format. This file is a standalone HTML file that you can host on your own website."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "Download a copy of your resume in JSON format. Use this file for backup or to import your resume into other applications, including AI assistants."
@@ -944,6 +967,10 @@ msgstr "Δημιουργία αντιγράφου του βιογραφικού 
 #: src/utils/locale.ts
 msgid "Dutch"
 msgstr "Ολλανδικά"
+
+#: src/components/input/rich-input.tsx
+msgid "e.g. Fix grammar, make it more professional, highlight leadership..."
+msgstr ""
 
 #: src/utils/resume/section.tsx
 msgid "Education"
@@ -1061,6 +1088,10 @@ msgstr "Εξερευνήστε την τεκμηρίωση του API για ν�
 #: src/utils/resume/section.tsx
 msgid "Export"
 msgstr "Εξαγωγή"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Failed to crop image"
+msgstr ""
 
 #: src/dialogs/auth/enable-two-factor.tsx
 msgid "Failed to setup two-factor authentication."
@@ -1327,6 +1358,10 @@ msgstr "Ενσωματωμένος κώδικας"
 msgid "Insert Table"
 msgstr "Εισαγωγή πίνακα"
 
+#: src/components/input/rich-input.tsx
+msgid "Instructions (Optional)"
+msgstr ""
+
 #: src/utils/resume/section.tsx
 msgid "Interests"
 msgstr "Ενδιαφέροντα"
@@ -1354,6 +1389,10 @@ msgstr "Πλάγια"
 #: src/utils/locale.ts
 msgid "Japanese"
 msgstr "Ιαπωνικά"
+
+#: src/components/input/rich-input.tsx
+msgid "Job Description (Optional)"
+msgstr ""
 
 #: src/components/input/rich-input.tsx
 msgid "Justify Align"
@@ -1420,8 +1459,8 @@ msgid "Layout"
 msgstr "Διάταξη"
 
 #: src/routes/_home/-sections/hero.tsx
-msgid "Learn More"
-msgstr "Μάθετε περισσότερα"
+#~ msgid "Learn More"
+#~ msgstr "Μάθετε περισσότερα"
 
 #: src/components/resume/preview.tsx
 msgid "Learn more about how to fit content on a page"
@@ -1453,9 +1492,14 @@ msgstr "Επίπεδο"
 msgid "Level {level} of 5"
 msgstr "Επίπεδο {level} από 5"
 
+#. js-lingui-explicit-id
 #: src/components/ui/copyright.tsx
-msgid "Licensed under <0>MIT</0>."
-msgstr "Άδεια χρήσης υπό την άδεια <0>MIT</0>."
+msgid "copyright.licensed-under"
+msgstr ""
+
+#: src/components/ui/copyright.tsx
+#~ msgid "Licensed under <0>MIT</0>."
+#~ msgstr "Άδεια χρήσης υπό την άδεια <0>MIT</0>."
 
 #: src/components/user/dropdown-menu.tsx
 #: src/utils/theme.ts
@@ -1523,6 +1567,11 @@ msgstr "Κύρια"
 #: src/routes/_home/-sections/header.tsx
 msgid "Main navigation"
 msgstr "Κύρια πλοήγηση"
+
+#. js-lingui-explicit-id
+#: src/components/ui/copyright.tsx
+msgid "copyright.maintained-by"
+msgstr ""
 
 #: src/utils/locale.ts
 msgid "Malay"
@@ -1646,6 +1695,18 @@ msgstr "Ανοικτού κώδικα"
 msgid "opens in new tab"
 msgstr "ανοίγει σε νέα καρτέλα"
 
+#: src/components/input/rich-input.tsx
+msgid "Optimize"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Optimize Content"
+msgstr ""
+
+#: src/components/input/rich-input.tsx
+msgid "Optimize with AI"
+msgstr ""
+
 #: src/routes/builder/$resumeId/-sidebar/right/sections/sharing.tsx
 msgid "Optionally, set a password so that only people with the password can view your resume through the link."
 msgstr "Προαιρετικά, ορίστε έναν κωδικό πρόσβασης ώστε μόνο τα άτομα που γνωρίζουν τον κωδικό να μπορούν να βλέπουν το βιογραφικό σας σημείωμα μέσω του συνδέσμου."
@@ -1714,6 +1775,10 @@ msgstr "Η προστασία με κωδικό πρόσβασης έχει απ
 msgid "Password protection has been enabled."
 msgstr "Η προστασία με κωδικό πρόσβασης έχει ενεργοποιηθεί."
 
+#: src/components/input/rich-input.tsx
+msgid "Paste the job description here..."
+msgstr ""
+
 #: src/dialogs/resume/sections/education.tsx
 #: src/dialogs/resume/sections/experience.tsx
 #: src/dialogs/resume/sections/project.tsx
@@ -1749,6 +1814,10 @@ msgstr "Εισαγάγετε τον κωδικό πρόσβασης που μο�
 #: src/components/input/rich-input.tsx
 msgid "Please enter the URL you want to link to:"
 msgstr "Εισαγάγετε το URL στο οποίο θέλετε να γίνεται ο σύνδεσμος:"
+
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "Please wait while your HTML resume is being generated..."
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
@@ -1966,6 +2035,10 @@ msgstr "Περιστροφή"
 #: src/utils/locale.ts
 msgid "Russian"
 msgstr "Ρωσικά"
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Save & Upload"
+msgstr ""
 
 #: src/dialogs/resume/index.tsx
 #: src/dialogs/resume/sections/award.tsx
@@ -2196,12 +2269,12 @@ msgid "Spanish"
 msgstr "Ισπανικά"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Sponsors"
-msgstr "Χορηγοί"
+#~ msgid "Sponsors"
+#~ msgstr "Χορηγοί"
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Sponsorships"
-msgstr "Χορηγίες"
+#~ msgid "Sponsorships"
+#~ msgstr "Χορηγίες"
 
 #: src/components/level/combobox.tsx
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
@@ -2239,8 +2312,8 @@ msgid "Strike"
 msgstr "Διακριτική διαγραφή"
 
 #: src/routes/_home/-sections/footer.tsx
-msgid "Subreddit"
-msgstr "Subreddit"
+#~ msgid "Subreddit"
+#~ msgstr "Subreddit"
 
 #: src/utils/resume/section.tsx
 msgid "Summary"
@@ -2251,8 +2324,8 @@ msgid "Support Reactive Resume"
 msgstr "Υποστήριξη Reactive Resume"
 
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Support the app by doing what you can!"
-msgstr "Υποστηρίξτε την εφαρμογή κάνοντας ό,τι μπορείτε!"
+#~ msgid "Support the app by doing what you can!"
+#~ msgstr "Υποστηρίξτε την εφαρμογή κάνοντας ό,τι μπορείτε!"
 
 #: src/utils/locale.ts
 msgid "Swedish"
@@ -2352,6 +2425,10 @@ msgstr "Θέμα"
 msgid "Then, enter the 6 digit code that the app provides to continue."
 msgstr "Στη συνέχεια, εισαγάγετε τον 6ψήφιο κωδικό που σας δίνει η εφαρμογή για να συνεχίσετε."
 
+#: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
+msgid "There was a problem while generating the HTML resume, please try again in some time."
+msgstr ""
+
 #: src/routes/builder/$resumeId/-components/dock.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/export.tsx
 msgid "There was a problem while generating the PDF, please try again in some time."
@@ -2430,8 +2507,8 @@ msgstr "Παρακολουθήστε τις προβολές και τις λή�
 
 #: src/routes/_home/-sections/footer.tsx
 #: src/routes/builder/$resumeId/-sidebar/right/sections/information.tsx
-msgid "Translations"
-msgstr "Μεταφράσεις"
+#~ msgid "Translations"
+#~ msgstr "Μεταφράσεις"
 
 #: src/utils/locale.ts
 msgid "Turkish"
@@ -2635,6 +2712,10 @@ msgstr "Μεταφόρτωση φωτογραφίας..."
 #: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
 msgid "URL"
 msgstr "URL"
+
+#: src/components/input/rich-input.tsx
+msgid "Use AI to improve your content. You can optionally provide a job description to tailor the result."
+msgstr ""
 
 #: src/dialogs/resume/sections/profile.tsx
 #: src/routes/auth/register.tsx
@@ -2847,6 +2928,10 @@ msgstr "Ο δημόσιος σύνδεσμος του βιογραφικού σ�
 #: src/routes/_home/-sections/donate.tsx
 msgid "Your support ensures the project remains free and accessible for everyone, now and in the future."
 msgstr "Η υποστήριξή σας διασφαλίζει ότι το έργο θα παραμείνει δωρεάν και προσβάσιμο για όλους, τώρα και στο μέλλον."
+
+#: src/routes/builder/$resumeId/-sidebar/left/sections/picture.tsx
+msgid "Zoom"
+msgstr ""
 
 #: src/routes/builder/$resumeId/-components/dock.tsx
 msgid "Zoom in"
