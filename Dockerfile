@@ -1,12 +1,17 @@
 # syntax=docker/dockerfile:1
 
-# ---------- Dependencies Layer ----------
-FROM docker.m.daocloud.io/library/node:24-slim AS dependencies
+# ---------- Base Layer ----------
+FROM docker.m.daocloud.io/library/node:24-slim AS base
 
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
+ENV NPM_CONFIG_REGISTRY=https://registry.npmmirror.com
 ENV COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
-RUN corepack enable
+
+RUN npm install -g pnpm@10.28.2
+
+# ---------- Dependencies Layer ----------
+FROM base AS dependencies
 
 RUN mkdir -p /tmp/dev /tmp/prod
 
@@ -20,12 +25,7 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
     cd /tmp/prod && pnpm install --frozen-lockfile --prod
 
 # ---------- Builder Layer ----------
-FROM docker.m.daocloud.io/library/node:24-slim AS builder
-
-ENV PNPM_HOME="/pnpm"
-ENV PATH="$PNPM_HOME:$PATH"
-ENV COREPACK_NPM_REGISTRY=https://registry.npmmirror.com
-RUN corepack enable
+FROM base AS builder
 
 WORKDIR /app
 
