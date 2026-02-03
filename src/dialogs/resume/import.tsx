@@ -21,7 +21,6 @@ import { ReactiveResumeJSONImporter } from "@/integrations/import/reactive-resum
 import { ReactiveResumeV4JSONImporter } from "@/integrations/import/reactive-resume-v4-json";
 import { client, orpc } from "@/integrations/orpc/client";
 import type { ResumeData } from "@/schema/resume/data";
-import { convertFileToBase64 } from "@/utils/file";
 import { cn } from "@/utils/style";
 import { type DialogProps, useDialogStore } from "../store";
 
@@ -63,6 +62,29 @@ const formSchema = z.discriminatedUnion("type", [
 ]);
 
 type FormValues = z.infer<typeof formSchema>;
+
+/**
+ * Safely converts a File to a base64 string.
+ * Uses FileReader to avoid "Maximum call stack size exceeded" errors
+ * that occur when using the spread operator on large byte arrays.
+ */
+function convertFileToBase64(file: File): Promise<string> {
+	console.log("[convertFileToBase64] Converting file (local):", file.name);
+	return new Promise((resolve, reject) => {
+		const reader = new FileReader();
+		reader.readAsDataURL(file);
+		reader.onload = () => {
+			const result = reader.result as string;
+			// Remove the "data:application/pdf;base64," prefix
+			const base64 = result.split(",")[1];
+			resolve(base64);
+		};
+		reader.onerror = (error) => {
+			console.error("[convertFileToBase64] Error converting file:", error);
+			reject(error);
+		};
+	});
+}
 
 export function ImportResumeDialog(_: DialogProps<"resume.import">) {
 	const { enabled: isAIEnabled, provider, model, apiKey, baseURL } = useAIStore();
