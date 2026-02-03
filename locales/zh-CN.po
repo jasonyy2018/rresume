@@ -2859,3 +2859,15 @@ msgstr "缩小"
 #: src/utils/locale.ts
 msgid "Zulu"
 msgstr "祖鲁语"
+
+#: src/components/ui/copyright.tsx
+msgid "copyright.licensed-under"
+msgstr "已获得 <0>MIT</0> 许可。"
+
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr "由社群贡献，为社群服务。"
+
+#: src/components/ui/copyright.tsx
+msgid "copyright.maintained-by"
+msgstr "由 <0>Jason Yu</0> 维护。"

@@ -7,7 +7,7 @@ export function Copyright({ className, ...props }: Props) {
 	return (
 		<div className={cn("text-muted-foreground/80 text-xs leading-relaxed", className)} {...props}>
 			<p>
-				<Trans>
+				<Trans id="copyright.licensed-under">
 					Licensed under{" "}
 					<a
 						href="https://github.com/jasonyy2018/rresume/blob/main/LICENSE"
@@ -22,11 +22,11 @@ export function Copyright({ className, ...props }: Props) {
 			</p>
 
 			<p>
-				<Trans>By the community, for the community.</Trans>
+				<Trans id="copyright.by-the-community">By the community, for the community.</Trans>
 			</p>
 
 			<p>
-				<Trans>
+				<Trans id="copyright.maintained-by">
 					Maintained by{" "}
 					<a
 						target="_blank"

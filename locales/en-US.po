@@ -2854,3 +2854,15 @@ msgstr "Zoom out"
 #: src/utils/locale.ts
 msgid "Zulu"
 msgstr "Zulu"
+
+#: src/components/ui/copyright.tsx
+msgid "copyright.licensed-under"
+msgstr "Licensed under <0>MIT</0>."
+
+#: src/components/ui/copyright.tsx
+msgid "copyright.by-the-community"
+msgstr "By the community, for the community."
+
+#: src/components/ui/copyright.tsx
+msgid "copyright.maintained-by"
+msgstr "Maintained by <0>Jason Yu</0>."
