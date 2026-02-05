@@ -134,7 +134,7 @@ const metaSchema = z.looseObject({
 
 const jsonResumeSchema = z.looseObject({
 	$schema: z.url().optional(),
-	basics: basicsSchema.optional(),
+	basics: z.union([basicsSchema, z.string()]).optional(),
 	work: z.array(workSchema).optional(),
 	volunteer: z.array(volunteerSchema).optional(),
 	education: z.array(educationSchema).optional(),
@@ -366,28 +366,36 @@ export class JSONResumeImporter {
 		// Map basics
 		if (jsonResume.basics) {
 			const basics = jsonResume.basics;
-			result.basics = {
-				name: basics.name || "",
-				headline: basics.label || "",
-				email: basics.email || "",
-				phone: basics.phone || "",
-				location: basics.location ? formatLocation(basics.location) : "",
-				website: createUrl(basics.url),
-				customFields: [],
-			};
 
-			// Map image to picture
-			if (basics.image) {
-				result.picture = {
-					...defaultResumeData.picture,
-					url: basics.image,
-					hidden: false,
+			if (typeof basics === "string") {
+				result.basics = {
+					...defaultResumeData.basics,
+					name: basics,
 				};
+			} else {
+				result.basics = {
+					name: basics.name || "",
+					headline: basics.label || "",
+					email: basics.email || "",
+					phone: basics.phone || "",
+					location: basics.location ? formatLocation(basics.location) : "",
+					website: createUrl(basics.url),
+					customFields: [],
+				};
+
+				// Map image to picture
+				if (basics.image) {
+					result.picture = {
+						...defaultResumeData.picture,
+						url: basics.image,
+						hidden: false,
+					};
+				}
 			}
 		}
 
 		// Map summary
-		if (jsonResume.basics?.summary) {
+		if (typeof jsonResume.basics === "object" && jsonResume.basics?.summary) {
 			result.summary = {
 				...defaultResumeData.summary,
 				content: `<p>${jsonResume.basics.summary}</p>`,
@@ -593,7 +601,7 @@ export class JSONResumeImporter {
 		}
 
 		// Map profiles (from basics.profiles) to profiles section
-		if (jsonResume.basics?.profiles && jsonResume.basics.profiles.length > 0) {
+		if (typeof jsonResume.basics === "object" && jsonResume.basics?.profiles && jsonResume.basics.profiles.length > 0) {
 			result.sections.profiles = {
 				...defaultResumeData.sections.profiles,
 				items: jsonResume.basics.profiles
