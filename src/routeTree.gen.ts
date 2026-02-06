@@ -14,9 +14,11 @@ import { Route as DashboardRouteRouteImport } from "./routes/dashboard/route";
 import { Route as AuthRouteRouteImport } from "./routes/auth/route";
 import { Route as HomeRouteRouteImport } from "./routes/_home/route";
 import { Route as DashboardIndexRouteImport } from "./routes/dashboard/index";
+import { Route as BlogIndexRouteImport } from "./routes/blog/index";
 import { Route as AuthIndexRouteImport } from "./routes/auth/index";
 import { Route as HomeIndexRouteImport } from "./routes/_home/index";
 import { Route as PrinterResumeIdRouteImport } from "./routes/printer/$resumeId";
+import { Route as BlogSlugRouteImport } from "./routes/blog/$slug";
 import { Route as AuthVerify2faBackupRouteImport } from "./routes/auth/verify-2fa-backup";
 import { Route as AuthVerify2faRouteImport } from "./routes/auth/verify-2fa";
 import { Route as AuthResumePasswordRouteImport } from "./routes/auth/resume-password";
@@ -64,6 +66,11 @@ const DashboardIndexRoute = DashboardIndexRouteImport.update({
   path: "/",
   getParentRoute: () => DashboardRouteRoute,
 } as any);
+const BlogIndexRoute = BlogIndexRouteImport.update({
+  id: "/blog/",
+  path: "/blog/",
+  getParentRoute: () => rootRouteImport,
+} as any);
 const AuthIndexRoute = AuthIndexRouteImport.update({
   id: "/",
   path: "/",
@@ -77,6 +84,11 @@ const HomeIndexRoute = HomeIndexRouteImport.update({
 const PrinterResumeIdRoute = PrinterResumeIdRouteImport.update({
   id: "/printer/$resumeId",
   path: "/printer/$resumeId",
+  getParentRoute: () => rootRouteImport,
+} as any);
+const BlogSlugRoute = BlogSlugRouteImport.update({
+  id: "/blog/$slug",
+  path: "/blog/$slug",
   getParentRoute: () => rootRouteImport,
 } as any);
 const AuthVerify2faBackupRoute = AuthVerify2faBackupRouteImport.update({
@@ -210,8 +222,10 @@ export interface FileRoutesByFullPath {
   "/auth/resume-password": typeof AuthResumePasswordRoute;
   "/auth/verify-2fa": typeof AuthVerify2faRoute;
   "/auth/verify-2fa-backup": typeof AuthVerify2faBackupRoute;
+  "/blog/$slug": typeof BlogSlugRoute;
   "/printer/$resumeId": typeof PrinterResumeIdRoute;
   "/auth/": typeof AuthIndexRoute;
+  "/blog/": typeof BlogIndexRoute;
   "/dashboard/": typeof DashboardIndexRoute;
   "/api/auth/$": typeof ApiAuthSplatRoute;
   "/api/openapi/$": typeof ApiOpenapiSplatRoute;
@@ -237,9 +251,11 @@ export interface FileRoutesByTo {
   "/auth/resume-password": typeof AuthResumePasswordRoute;
   "/auth/verify-2fa": typeof AuthVerify2faRoute;
   "/auth/verify-2fa-backup": typeof AuthVerify2faBackupRoute;
+  "/blog/$slug": typeof BlogSlugRoute;
   "/printer/$resumeId": typeof PrinterResumeIdRoute;
   "/": typeof HomeIndexRoute;
   "/auth": typeof AuthIndexRoute;
+  "/blog": typeof BlogIndexRoute;
   "/dashboard": typeof DashboardIndexRoute;
   "/api/auth/$": typeof ApiAuthSplatRoute;
   "/api/openapi/$": typeof ApiOpenapiSplatRoute;
@@ -270,9 +286,11 @@ export interface FileRoutesById {
   "/auth/resume-password": typeof AuthResumePasswordRoute;
   "/auth/verify-2fa": typeof AuthVerify2faRoute;
   "/auth/verify-2fa-backup": typeof AuthVerify2faBackupRoute;
+  "/blog/$slug": typeof BlogSlugRoute;
   "/printer/$resumeId": typeof PrinterResumeIdRoute;
   "/_home/": typeof HomeIndexRoute;
   "/auth/": typeof AuthIndexRoute;
+  "/blog/": typeof BlogIndexRoute;
   "/dashboard/": typeof DashboardIndexRoute;
   "/api/auth/$": typeof ApiAuthSplatRoute;
   "/api/openapi/$": typeof ApiOpenapiSplatRoute;
@@ -304,8 +322,10 @@ export interface FileRouteTypes {
     | "/auth/resume-password"
     | "/auth/verify-2fa"
     | "/auth/verify-2fa-backup"
+    | "/blog/$slug"
     | "/printer/$resumeId"
     | "/auth/"
+    | "/blog/"
     | "/dashboard/"
     | "/api/auth/$"
     | "/api/openapi/$"
@@ -331,9 +351,11 @@ export interface FileRouteTypes {
     | "/auth/resume-password"
     | "/auth/verify-2fa"
     | "/auth/verify-2fa-backup"
+    | "/blog/$slug"
     | "/printer/$resumeId"
     | "/"
     | "/auth"
+    | "/blog"
     | "/dashboard"
     | "/api/auth/$"
     | "/api/openapi/$"
@@ -363,9 +385,11 @@ export interface FileRouteTypes {
     | "/auth/resume-password"
     | "/auth/verify-2fa"
     | "/auth/verify-2fa-backup"
+    | "/blog/$slug"
     | "/printer/$resumeId"
     | "/_home/"
     | "/auth/"
+    | "/blog/"
     | "/dashboard/"
     | "/api/auth/$"
     | "/api/openapi/$"
@@ -389,7 +413,9 @@ export interface RootRouteChildren {
   BuilderResumeIdRouteRoute: typeof BuilderResumeIdRouteRouteWithChildren;
   UsernameSlugRoute: typeof UsernameSlugRoute;
   ApiHealthRoute: typeof ApiHealthRoute;
+  BlogSlugRoute: typeof BlogSlugRoute;
   PrinterResumeIdRoute: typeof PrinterResumeIdRoute;
+  BlogIndexRoute: typeof BlogIndexRoute;
   ApiAuthSplatRoute: typeof ApiAuthSplatRoute;
   ApiOpenapiSplatRoute: typeof ApiOpenapiSplatRoute;
   ApiRpcSplatRoute: typeof ApiRpcSplatRoute;
@@ -433,6 +459,13 @@ declare module "@tanstack/react-router" {
       preLoaderRoute: typeof DashboardIndexRouteImport;
       parentRoute: typeof DashboardRouteRoute;
     };
+    "/blog/": {
+      id: "/blog/";
+      path: "/blog";
+      fullPath: "/blog/";
+      preLoaderRoute: typeof BlogIndexRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
     "/auth/": {
       id: "/auth/";
       path: "/";
@@ -452,6 +485,13 @@ declare module "@tanstack/react-router" {
       path: "/printer/$resumeId";
       fullPath: "/printer/$resumeId";
       preLoaderRoute: typeof PrinterResumeIdRouteImport;
+      parentRoute: typeof rootRouteImport;
+    };
+    "/blog/$slug": {
+      id: "/blog/$slug";
+      path: "/blog/$slug";
+      fullPath: "/blog/$slug";
+      preLoaderRoute: typeof BlogSlugRouteImport;
       parentRoute: typeof rootRouteImport;
     };
     "/auth/verify-2fa-backup": {
@@ -695,7 +735,9 @@ const rootRouteChildren: RootRouteChildren = {
   BuilderResumeIdRouteRoute: BuilderResumeIdRouteRouteWithChildren,
   UsernameSlugRoute: UsernameSlugRoute,
   ApiHealthRoute: ApiHealthRoute,
+  BlogSlugRoute: BlogSlugRoute,
   PrinterResumeIdRoute: PrinterResumeIdRoute,
+  BlogIndexRoute: BlogIndexRoute,
   ApiAuthSplatRoute: ApiAuthSplatRoute,
   ApiOpenapiSplatRoute: ApiOpenapiSplatRoute,
   ApiRpcSplatRoute: ApiRpcSplatRoute,
