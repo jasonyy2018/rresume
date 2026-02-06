@@ -1,0 +1,36 @@
+[
+	{
+		"id": "3",
+		"title": "Unlocking the Power of Keywords in Your Resume",
+		"slug": "unlocking-power-of-keywords-in-your-resume",
+		"excerpt": "Keywords are the key to passing Applicant Tracking Systems (ATS). Here's how to find and use them effectively.",
+		"content": "<p>Applicant Tracking Systems (ATS) are the gatekeepers of modern hiring. To get past them, your resume must speak their language: keywords...</p><h2>How to Find Relevant Keywords</h2><p>Start by analyzing job descriptions for the roles you're interested in. Look for recurring skills, tools, and certifications...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-03",
+		"author": { "name": "SEO Specialist" },
+		"categories": ["Resume Tips", "SEO"],
+		"tags": ["keywords", "ats", "resume", "jobsearch"],
+		"seo": {
+			"title": "Resume Keyword Optimization Guide | Reactive Resume",
+			"description": "Learn how to optimize your resume with the right keywords to beat the ATS and get more interviews.",
+			"keywords": ["resume keywords", "ats optimization", "job application tips"]
+		}
+	},
+	{
+		"id": "4",
+		"title": "The Ultimate Guide to Remote Job Applications",
+		"slug": "ultimate-guide-to-remote-job-applications",
+		"excerpt": "Applying for remote jobs requires a different strategy. Learn how to highlight your remote-work skills and land the role.",
+		"content": "<p>Remote work is here to stay, but the competition is global. To win, you need a resume that proves you can thrive outside a traditional office...</p><h2>Emphasize Communication and Autonomy</h2><p>In a remote setting, clear communication and the ability to work independently are paramount...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-04",
+		"author": { "name": "Remote Work Guru" },
+		"categories": ["Career Advice", "Remote Work"],
+		"tags": ["remote work", "career", "jobsearch", "workfromhome"],
+		"seo": {
+			"title": "Remote Job Application Guide | Reactive Resume",
+			"description": "Expert tips on how to apply for and land remote jobs in the modern economy.",
+			"keywords": ["remote work resume", "wfh tips", "global job search"]
+		}
+	}
+]

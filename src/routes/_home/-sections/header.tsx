@@ -71,6 +71,10 @@ export function Header() {
 					<ThemeToggleButton />
 
 					<div className="hidden items-center gap-x-4 sm:flex">
+						<Button asChild variant="ghost">
+							<Link to="/blog">{t`Blog`}</Link>
+						</Button>
+
 						<Button asChild size="icon" aria-label={t`Go to dashboard`}>
 							<Link to="/dashboard">
 								<ArrowRightIcon aria-hidden="true" />

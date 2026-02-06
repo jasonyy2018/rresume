@@ -1,0 +1,36 @@
+[
+	{
+		"id": "5",
+		"title": "Top Resume Skills That Employers Want in 2026",
+		"slug": "top-resume-skills-employers-want-2026",
+		"excerpt": "Wondering which skills to add to your resume? We've compiled a list of the most in-demand skills for 2026.",
+		"content": "<p>The skills landscape is constantly shifting. To stay relevant, you need to know which skills are truly in demand. In 2026, it's all about hybrid skills...</p><h2>1. Digital Literacy and AI Fluency</h2><p>It's not just for techies anymore. Every role requires some level of digital competence and the ability to work alongside AI tools...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1454165833762-02ae4f2463ae?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-05",
+		"author": { "name": "Talent Acquirer" },
+		"categories": ["Resume Tips", "Career Advice"],
+		"tags": ["skills", "resume", "2026", "hiring"],
+		"seo": {
+			"title": "In-Demand Resume Skills for 2026 | Reactive Resume",
+			"description": "A guide to the most essential skills to include on your resume in 2026 to impress hiring managers.",
+			"keywords": ["resume skills", "hiring trends 2026", "professional skills"]
+		}
+	},
+	{
+		"id": "6",
+		"title": "Mastering the Art of the Cover Letter in the AI Era",
+		"slug": "mastering-art-of-cover-letter-ai-era",
+		"excerpt": "Is the cover letter dead? Not quite. Learn how to write a personalized cover letter that complements your AI-built resume.",
+		"content": "<p>While some say cover letters are obsolete, they still offer a unique opportunity to tell your story in a way a resume can't. Here's how to do it right...</p><h2>Focus on the 'Why'</h2><p>Your resume shows what you've done. Your cover letter should explain why you want this specific job and why you're a good fit for the company culture...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1512486130939-2c4f79935e4f?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-06",
+		"author": { "name": "Career Coach" },
+		"categories": ["Career Advice", "Cover Letter"],
+		"tags": ["cover letter", "jobsearch", "writing", "career"],
+		"seo": {
+			"title": "Cover Letter Writing Guide 2026 | Reactive Resume",
+			"description": "Learn the best strategies for writing effective cover letters that get you noticed in the age of AI.",
+			"keywords": ["cover letter tips", "job application", "career writing"]
+		}
+	}
+]

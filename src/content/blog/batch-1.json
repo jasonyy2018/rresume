@@ -1,0 +1,36 @@
+[
+	{
+		"id": "1",
+		"title": "10 Essential Resume Tips for 2026",
+		"slug": "10-essential-resume-tips-for-2026",
+		"excerpt": "Stay ahead of the competition with these 10 essential resume tips tailored for the 2026 job market.",
+		"content": "<p>In 2026, the job market is more competitive than ever. To stand out, your resume needs to be more than just a list of your past jobs...</p><h2>1. Focus on AI-Friendly Formatting</h2><p>Many companies now use AI to screen resumes. Ensure yours is readable by both humans and machines...</p><h2>2. Highlight Soft Skills</h2><p>In the age of automation, soft skills like empathy, leadership, and complex problem-solving are highly valued...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-01",
+		"author": { "name": "Resume Expert" },
+		"categories": ["Career Advice", "Resume Tips"],
+		"tags": ["resume", "career", "2026", "jobsearch"],
+		"seo": {
+			"title": "10 Essential Resume Tips for 2026 | Reactive Resume",
+			"description": "Discover the top 10 resume tips for 2026 to help you land your dream job in a competitive market.",
+			"keywords": ["resume tips", "career advice", "job search 2026"]
+		}
+	},
+	{
+		"id": "2",
+		"title": "How to Use AI to Build Your Resume",
+		"slug": "how-to-use-ai-to-build-your-resume",
+		"excerpt": "Learn how to leverage AI tools to create a professional and effective resume in minutes.",
+		"content": "<p>AI is transforming the way we work, and resume building is no exception. Tools like Reactive Resume use AI to help you craft compelling descriptions...</p><h2>Step 1: Choose the Right Tool</h2><p>Not all AI resume builders are created equal. Look for ones that offer privacy and customization...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-02",
+		"author": { "name": "AI Specialist" },
+		"categories": ["AI", "Resume Tips"],
+		"tags": ["ai", "resume", "technology"],
+		"seo": {
+			"title": "How to Use AI to Build Your Resume | Reactive Resume",
+			"description": "A comprehensive guide on using AI to create a standout resume efficiently.",
+			"keywords": ["ai resume builder", "resume technology", "ai career tools"]
+		}
+	}
+]

@@ -1,0 +1,67 @@
+[
+	{
+		"id": "1",
+		"title": "10 Essential Resume Tips for 2026",
+		"slug": "10-essential-resume-tips-for-2026",
+		"excerpt": "Stay ahead of the competition with these 10 essential resume tips tailored for the 2026 job market.",
+		"content": "<p>In 2026, the job market is more competitive than ever. To stand out, your resume needs to be more than just a list of your past jobs...</p><h2>1. Focus on AI-Friendly Formatting</h2><p>Many companies now use AI to screen resumes. Ensure yours is readable by both humans and machines...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1586281380349-632531db7ed4?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-01",
+		"author": { "name": "Resume Expert" },
+		"categories": ["Career Advice", "Resume Tips"],
+		"tags": ["resume", "career", "2026", "jobsearch"],
+		"seo": { "title": "10 Essential Resume Tips for 2026", "description": "Top 10 resume tips for 2026." }
+	},
+	{
+		"id": "2",
+		"title": "How to Use AI to Build Your Resume",
+		"slug": "how-to-use-ai-to-build-your-resume",
+		"excerpt": "Learn how to leverage AI tools to create a professional and effective resume in minutes.",
+		"content": "<p>AI is transforming the way we work, and resume building is no exception...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1677442136019-21780ecad995?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-02",
+		"author": { "name": "AI Specialist" },
+		"categories": ["AI", "Resume Tips"],
+		"tags": ["ai", "resume"],
+		"seo": { "title": "How to Use AI to Build Your Resume", "description": "Guide on using AI for resumes." }
+	},
+	{
+		"id": "3",
+		"title": "Unlocking the Power of Keywords",
+		"slug": "unlocking-power-of-keywords",
+		"excerpt": "Keywords are the key to passing Applicant Tracking Systems (ATS).",
+		"content": "<p>ATS are the gatekeepers of modern hiring...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1542435503-956c469947f6?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-03",
+		"author": { "name": "SEO Specialist" },
+		"categories": ["Resume Tips"],
+		"tags": ["keywords", "ats"],
+		"seo": { "title": "Resume Keyword Optimization", "description": "Optimize your resume with keywords." }
+	},
+	{
+		"id": "4",
+		"title": "The Ultimate Guide to Remote Job Applications",
+		"slug": "ultimate-guide-to-remote-job-applications",
+		"excerpt": "Applying for remote jobs requires a different strategy.",
+		"content": "<p>Remote work is here to stay...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1593642532400-2682810df593?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-04",
+		"author": { "name": "Remote Guru" },
+		"categories": ["Career Advice"],
+		"tags": ["remote", "career"],
+		"seo": { "title": "Remote Job Application Guide", "description": "How to land remote jobs." }
+	},
+	{
+		"id": "5",
+		"title": "Top Resume Skills That Employers Want",
+		"slug": "top-resume-skills-employers-want",
+		"excerpt": "The most in-demand skills for 2026.",
+		"content": "<p>The skills landscape is shifting...</p>",
+		"heroImage": "https://images.unsplash.com/photo-1454165833762-02ae4f2463ae?auto=format&fit=crop&q=80&w=800",
+		"date": "2026-02-05",
+		"author": { "name": "Talent Acquirer" },
+		"categories": ["Resume Tips"],
+		"tags": ["skills", "2026"],
+		"seo": { "title": "In-Demand Resume Skills", "description": "Skills for 2026 resumes." }
+	}
+]

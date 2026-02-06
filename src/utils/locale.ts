@@ -144,16 +144,48 @@ export function isRTL(locale: string): boolean {
 	return RTL_LANGUAGES.has(language);
 }
 
+function getBrowserLocale(): Locale | undefined {
+	if (typeof navigator === "undefined") return undefined;
+
+	const browserLocales = navigator.languages || [navigator.language];
+
+	for (const locale of browserLocales) {
+		if (isLocale(locale)) return locale;
+
+		const baseLanguage = locale.split("-")[0];
+		if (isLocale(baseLanguage)) return baseLanguage;
+
+		// Handle cases like 'zh-HK' mapping to 'zh-TW' if 'zh-HK' is not directly supported
+		if (baseLanguage === "zh") {
+			const sub = locale.split("-")[1]?.toUpperCase();
+			if (sub === "CN" || sub === "SG") return "zh-CN";
+			if (sub === "TW" || sub === "HK" || sub === "MO") return "zh-TW";
+			return "zh-CN";
+		}
+	}
+
+	return undefined;
+}
+
 export const getLocale = createIsomorphicFn()
 	.client(() => {
 		const locale = Cookies.get(storageKey);
-		if (!locale || !isLocale(locale)) return defaultLocale;
-		return locale;
+		if (locale && isLocale(locale)) return locale;
+
+		const browserLocale = getBrowserLocale();
+		if (browserLocale) return browserLocale;
+
+		return defaultLocale;
 	})
 	.server(async () => {
 		const cookieLocale = getCookie(storageKey);
-		if (!cookieLocale || !isLocale(cookieLocale)) return defaultLocale;
-		return cookieLocale;
+		if (cookieLocale && isLocale(cookieLocale)) return cookieLocale;
+
+		// Server-side language detection from Accept-Language header could be complex here
+		// without direct access to the request in this isomorphic function,
+		// but TanStack Start might provide it. For now, we'll fall back to default
+		// or wait for the client to sync if needed.
+		return defaultLocale;
 	});
 
 export const setLocaleServerFn = createServerFn({ method: "POST" })

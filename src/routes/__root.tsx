@@ -59,6 +59,12 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 				{ charSet: "UTF-8" },
 				{ name: "description", content: description },
 				{ name: "viewport", content: "width=device-width, initial-scale=1" },
+				{
+					name: "keywords",
+					content:
+						"resume builder, curriculum vitae, cv, careers, job applications, free resume builder, open source resume builder, ai resume, professional resume",
+				},
+				{ name: "author", content: appName },
 				// Twitter Tags
 				{ property: "twitter:image", content: `${appUrl}/opengraph/banner.jpg` },
 				{ property: "twitter:card", content: "summary_large_image" },
@@ -70,9 +76,36 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 				{ property: "og:title", content: title },
 				{ property: "og:description", content: description },
 				{ property: "og:url", content: appUrl },
+				{ property: "og:type", content: "website" },
 			],
-			// Register service worker via script tag
+			// Register service worker and SEO scripts
 			scripts: [
+				{
+					type: "application/ld+json",
+					children: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "Organization",
+						name: appName,
+						url: appUrl,
+						logo: `${appUrl}/favicon.svg`,
+						sameAs: ["https://github.com/AmruthPillai/Reactive-Resume"],
+						description: description,
+					}),
+				},
+				{
+					type: "application/ld+json",
+					children: JSON.stringify({
+						"@context": "https://schema.org",
+						"@type": "WebSite",
+						name: appName,
+						url: appUrl,
+						potentialAction: {
+							"@type": "SearchAction",
+							target: `${appUrl}/search?q={search_term_string}`,
+							"query-input": "required name=search_term_string",
+						},
+					}),
+				},
 				{
 					children: `
 						if('serviceWorker' in navigator) {
