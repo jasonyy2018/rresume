@@ -1,4 +1,5 @@
 import z from "zod";
+import { generateId } from "@/utils/string";
 import { templateSchema } from "../templates";
 
 export const iconSchema = z
@@ -19,8 +20,11 @@ export const itemOptionsSchema = z
 	.catch({ showLinkInTitle: false });
 
 export const urlSchema = z.object({
-	url: z.string().describe("The URL to show as a link. Must be a valid URL with a protocol (http:// or https://)."),
-	label: z.string().describe("The label to display for the URL. Leave blank to display the URL as-is."),
+	url: z
+		.string()
+		.catch("")
+		.describe("The URL to show as a link. Must be a valid URL with a protocol (http:// or https://)."),
+	label: z.string().catch("").describe("The label to display for the URL. Leave blank to display the URL as-is."),
 });
 
 export const pictureSchema = z.object({
@@ -70,31 +74,34 @@ export const pictureSchema = z.object({
 
 export const customFieldSchema = z.object({
 	id: z.string().describe("The unique identifier for the custom field. Usually generated as a UUID."),
-	icon: iconSchema,
-	text: z.string().describe("The text to display for the custom field."),
-	link: z.string().describe("If the custom field should be a link, the URL to link to.").catch(""),
+	icon: iconSchema.catch(""),
+	text: z.string().catch("").describe("The text to display for the custom field."),
+	link: z.string().catch("").describe("If the custom field should be a link, the URL to link to."),
 });
 
 export const basicsSchema = z.object({
-	name: z.string().describe("The full name of the author of the resume."),
-	headline: z.string().describe("The headline of the author of the resume."),
-	email: z.string().describe("The email address of the author of the resume."),
-	phone: z.string().describe("The phone number of the author of the resume."),
-	location: z.string().describe("The location of the author of the resume."),
-	website: urlSchema.describe("The website of the author of the resume."),
-	customFields: z.array(customFieldSchema).describe("The custom fields to display on the resume."),
+	name: z.string().catch("").describe("The full name of the author of the resume."),
+	headline: z.string().catch("").describe("The headline of the author of the resume."),
+	email: z.string().catch("").describe("The email address of the author of the resume."),
+	phone: z.string().catch("").describe("The phone number of the author of the resume."),
+	location: z.string().catch("").describe("The location of the author of the resume."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The website of the author of the resume."),
+	customFields: z.array(customFieldSchema).catch([]).describe("The custom fields to display on the resume."),
 });
 
 export const summarySchema = z.object({
-	title: z.string().describe("The title of the summary of the resume."),
-	columns: z.number().describe("The number of columns the summary should span across."),
-	hidden: z.boolean().describe("Whether to hide the summary from the resume."),
-	content: z.string().describe("The content of the summary of the resume. This should be a HTML-formatted string."),
+	title: z.string().catch("").describe("The title of the summary of the resume."),
+	columns: z.number().catch(1).describe("The number of columns the summary should span across."),
+	hidden: z.boolean().catch(false).describe("Whether to hide the summary from the resume."),
+	content: z
+		.string()
+		.catch("")
+		.describe("The content of the summary of the resume. This should be a HTML-formatted string."),
 });
 
 export const baseItemSchema = z.object({
-	id: z.string().describe("The unique identifier for the item. Usually generated as a UUID."),
-	hidden: z.boolean().describe("Whether to hide the item from the resume."),
+	id: z.string().catch(generateId).describe("The unique identifier for the item. Usually generated as a UUID."),
+	hidden: z.boolean().catch(false).describe("Whether to hide the item from the resume."),
 	options: itemOptionsSchema.optional().describe("Display options for this item."),
 });
 
@@ -105,39 +112,48 @@ export const summaryItemSchema = baseItemSchema.extend({
 export type SummaryItem = z.infer<typeof summaryItemSchema>;
 
 export const awardItemSchema = baseItemSchema.extend({
-	title: z.string().min(1).describe("The title of the award."),
-	awarder: z.string().describe("The awarder of the award."),
-	date: z.string().describe("The date when the award was received."),
-	website: urlSchema.describe("The website of the award, if any."),
-	description: z.string().describe("The description of the award. This should be a HTML-formatted string."),
+	title: z.string().min(1).catch("").describe("The title of the award."),
+	awarder: z.string().catch("").describe("The awarder of the award."),
+	date: z.string().catch("").describe("The date when the award was received."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The website of the award, if any."),
+	description: z.string().catch("").describe("The description of the award. This should be a HTML-formatted string."),
 });
 
 export const certificationItemSchema = baseItemSchema.extend({
-	title: z.string().min(1).describe("The title of the certification."),
-	issuer: z.string().describe("The issuer of the certification."),
-	date: z.string().describe("The date when the certification was received."),
-	website: urlSchema.describe("The website of the certification, if any."),
-	description: z.string().describe("The description of the certification. This should be a HTML-formatted string."),
+	title: z.string().min(1).catch("").describe("The title of the certification."),
+	issuer: z.string().catch("").describe("The issuer of the certification."),
+	date: z.string().catch("").describe("The date when the certification was received."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The website of the certification, if any."),
+	description: z
+		.string()
+		.catch("")
+		.describe("The description of the certification. This should be a HTML-formatted string."),
 });
 
 export const educationItemSchema = baseItemSchema.extend({
-	school: z.string().min(1).describe("The name of the school or institution."),
-	degree: z.string().describe("The degree or qualification obtained."),
-	area: z.string().describe("The area of study or specialization."),
-	grade: z.string().describe("The grade or score achieved."),
-	location: z.string().describe("The location of the school or institution."),
-	period: z.string().describe("The period of time the education was obtained over."),
-	website: urlSchema.describe("The website of the school or institution, if any."),
-	description: z.string().describe("The description of the education. This should be a HTML-formatted string."),
+	school: z.string().min(1).catch("").describe("The name of the school or institution."),
+	degree: z.string().catch("").describe("The degree or qualification obtained."),
+	area: z.string().catch("").describe("The area of study or specialization."),
+	grade: z.string().catch("").describe("The grade or score achieved."),
+	location: z.string().catch("").describe("The location of the school or institution."),
+	period: z.string().catch("").describe("The period of time the education was obtained over."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The website of the school or institution, if any."),
+	description: z
+		.string()
+		.catch("")
+		.describe("The description of the education. This should be a HTML-formatted string."),
 });
 
 export const experienceItemSchema = baseItemSchema.extend({
-	company: z.string().min(1).describe("The name of the company or organization."),
-	position: z.string().describe("The position held at the company or organization."),
-	location: z.string().describe("The location of the company or organization."),
-	period: z.string().describe("The period of time the author was employed at the company or organization."),
-	website: urlSchema.describe("The website of the company or organization, if any."),
-	description: z.string().describe("The description of the experience. This should be a HTML-formatted string."),
+	company: z.string().min(1).catch("").describe("The name of the company or organization."),
+	position: z.string().catch("").describe("The position held at the company or organization."),
+	location: z.string().catch("").describe("The location of the company or organization."),
+	period: z.string().catch("").describe("The period of time the author was employed at the company or organization."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The website of the company or organization, if any."),
+	description: z
+		.string()
+		.catch("")
+		.describe("The description of the experience. This should be a HTML-formatted string."),
 });
 
 export const interestItemSchema = baseItemSchema.extend({
@@ -150,9 +166,10 @@ export const interestItemSchema = baseItemSchema.extend({
 });
 
 export const languageItemSchema = baseItemSchema.extend({
-	language: z.string().min(1).describe("The name of the language the author knows."),
+	language: z.string().min(1).catch("").describe("The name of the language the author knows."),
 	fluency: z
 		.string()
+		.catch("")
 		.describe(
 			"The fluency level of the language. Can be any text, such as 'Native', 'Fluent', 'Conversational', etc. or can also be a CEFR level (A1, A2, B1, B2, C1, C2).",
 		),
@@ -167,44 +184,53 @@ export const languageItemSchema = baseItemSchema.extend({
 });
 
 export const profileItemSchema = baseItemSchema.extend({
-	icon: iconSchema,
-	network: z.string().min(1).describe("The name of the network or platform."),
-	username: z.string().describe("The username of the author on the network or platform."),
-	website: urlSchema.describe("The link to the profile of the author on the network or platform, if any."),
+	icon: iconSchema.catch(""),
+	network: z.string().min(1).catch("").describe("The name of the network or platform."),
+	username: z.string().catch("").describe("The username of the author on the network or platform."),
+	website: urlSchema
+		.catch({ url: "", label: "" })
+		.describe("The link to the profile of the author on the network or platform, if any."),
 });
 
 export const projectItemSchema = baseItemSchema.extend({
-	name: z.string().min(1).describe("The name of the project."),
-	period: z.string().describe("The period of time the project was worked on."),
-	website: urlSchema.describe("The link to the project, if any."),
-	description: z.string().describe("The description of the project. This should be a HTML-formatted string."),
+	name: z.string().min(1).catch("").describe("The name of the project."),
+	period: z.string().catch("").describe("The period of time the project was worked on."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The link to the project, if any."),
+	description: z.string().catch("").describe("The description of the project. This should be a HTML-formatted string."),
 });
 
 export const publicationItemSchema = baseItemSchema.extend({
-	title: z.string().min(1).describe("The title of the publication."),
-	publisher: z.string().describe("The publisher of the publication."),
-	date: z.string().describe("The date when the publication was published."),
-	website: urlSchema.describe("The link to the publication, if any."),
-	description: z.string().describe("The description of the publication. This should be a HTML-formatted string."),
+	title: z.string().min(1).catch("").describe("The title of the publication."),
+	publisher: z.string().catch("").describe("The publisher of the publication."),
+	date: z.string().catch("").describe("The date when the publication was published."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The link to the publication, if any."),
+	description: z
+		.string()
+		.catch("")
+		.describe("The description of the publication. This should be a HTML-formatted string."),
 });
 
 export const referenceItemSchema = baseItemSchema.extend({
-	name: z.string().min(1).describe("The name of the reference, or a note such as 'Available upon request'."),
-	position: z.string().describe("The position or job title of the reference."),
-	website: urlSchema.describe("The website or LinkedIn profile of the reference, if any."),
-	phone: z.string().describe("The phone number of the reference."),
+	name: z.string().min(1).catch("").describe("The name of the reference, or a note such as 'Available upon request'."),
+	position: z.string().catch("").describe("The position or job title of the reference."),
+	website: urlSchema
+		.catch({ url: "", label: "" })
+		.describe("The website or LinkedIn profile of the reference, if any."),
+	phone: z.string().catch("").describe("The phone number of the reference."),
 	description: z
 		.string()
+		.catch("")
 		.describe(
 			"The description of the reference. Can be used to display a quote, a testimonial, etc. This should be a HTML-formatted string.",
 		),
 });
 
 export const skillItemSchema = baseItemSchema.extend({
-	icon: iconSchema,
-	name: z.string().min(1).describe("The name of the skill."),
+	icon: iconSchema.catch(""),
+	name: z.string().min(1).catch("").describe("The name of the skill."),
 	proficiency: z
 		.string()
+		.catch("")
 		.describe(
 			"The proficiency level of the skill. Can be any text, such as 'Beginner', 'Intermediate', 'Advanced', etc.",
 		),
@@ -223,26 +249,33 @@ export const skillItemSchema = baseItemSchema.extend({
 });
 
 export const volunteerItemSchema = baseItemSchema.extend({
-	organization: z.string().min(1).describe("The name of the organization or company."),
-	location: z.string().describe("The location of the organization or company."),
-	period: z.string().describe("The period of time the author was volunteered at the organization or company."),
-	website: urlSchema.describe("The link to the organization or company, if any."),
+	organization: z.string().min(1).catch("").describe("The name of the organization or company."),
+	location: z.string().catch("").describe("The location of the organization or company."),
+	period: z
+		.string()
+		.catch("")
+		.describe("The period of time the author was volunteered at the organization or company."),
+	website: urlSchema.catch({ url: "", label: "" }).describe("The link to the organization or company, if any."),
 	description: z
 		.string()
+		.catch("")
 		.describe("The description of the volunteer experience. This should be a HTML-formatted string."),
 });
 
 export const coverLetterItemSchema = baseItemSchema.extend({
-	recipient: z.string().describe("The recipient's address block as HTML (name, title, company, address, email)."),
-	content: z.string().describe("The cover letter body as HTML (salutation, paragraphs, closing, signature)."),
+	recipient: z
+		.string()
+		.catch("")
+		.describe("The recipient's address block as HTML (name, title, company, address, email)."),
+	content: z.string().catch("").describe("The cover letter body as HTML (salutation, paragraphs, closing, signature)."),
 });
 
 export type CoverLetterItem = z.infer<typeof coverLetterItemSchema>;
 
 export const baseSectionSchema = z.object({
-	title: z.string().describe("The title of the section."),
-	columns: z.number().describe("The number of columns the section should span across."),
-	hidden: z.boolean().describe("Whether to hide the section from the resume."),
+	title: z.string().catch("").describe("The title of the section."),
+	columns: z.number().catch(1).describe("The number of columns the section should span across."),
+	hidden: z.boolean().catch(false).describe("Whether to hide the section from the resume."),
 });
 
 export const awardsSectionSchema = baseSectionSchema.extend({
@@ -294,18 +327,42 @@ export const volunteerSectionSchema = baseSectionSchema.extend({
 });
 
 export const sectionsSchema = z.object({
-	profiles: profilesSectionSchema.describe("The section to display the profiles of the author."),
-	experience: experienceSectionSchema.describe("The section to display the experience of the author."),
-	education: educationSectionSchema.describe("The section to display the education of the author."),
-	projects: projectsSectionSchema.describe("The section to display the projects of the author."),
-	skills: skillsSectionSchema.describe("The section to display the skills of the author."),
-	languages: languagesSectionSchema.describe("The section to display the languages of the author."),
-	interests: interestsSectionSchema.describe("The section to display the interests of the author."),
-	awards: awardsSectionSchema.describe("The section to display the awards of the author."),
-	certifications: certificationsSectionSchema.describe("The section to display the certifications of the author."),
-	publications: publicationsSectionSchema.describe("The section to display the publications of the author."),
-	volunteer: volunteerSectionSchema.describe("The section to display the volunteer experience of the author."),
-	references: referencesSectionSchema.describe("The section to display the references of the author."),
+	profiles: profilesSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the profiles of the author."),
+	experience: experienceSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the experience of the author."),
+	education: educationSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the education of the author."),
+	projects: projectsSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the projects of the author."),
+	skills: skillsSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the skills of the author."),
+	languages: languagesSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the languages of the author."),
+	interests: interestsSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the interests of the author."),
+	awards: awardsSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the awards of the author."),
+	certifications: certificationsSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the certifications of the author."),
+	publications: publicationsSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the publications of the author."),
+	volunteer: volunteerSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the volunteer experience of the author."),
+	references: referencesSectionSchema
+		.catch({ title: "", columns: 1, hidden: false, items: [] })
+		.describe("The section to display the references of the author."),
 });
 
 export type SectionType = keyof z.infer<typeof sectionsSchema>;
@@ -487,29 +544,13 @@ export const metadataSchema = z.object({
 	),
 	notes: z
 		.string()
+		.catch("")
 		.describe(
 			"Personal notes for the resume. Can be used to add any additional information or instructions for the resume. These notes are not displayed on the resume, they are only visible to the author of the resume when editing the resume. This should be a HTML-formatted string.",
 		),
 });
 
-export const resumeDataSchema = z.object({
-	picture: pictureSchema.describe("Configuration for photograph displayed on the resume"),
-	basics: basicsSchema.describe(
-		"Basic information about the author, such as name, email, phone, location, and website",
-	),
-	summary: summarySchema.describe("Summary section of the resume, useful for a short bio or introduction"),
-	sections: sectionsSchema.describe("Various sections of the resume, such as experience, education, projects, etc."),
-	customSections: customSectionsSchema.describe(
-		"Custom sections of the resume, such as a custom section for notes, etc.",
-	),
-	metadata: metadataSchema.describe(
-		"Metadata for the resume, such as template, layout, typography, etc. This section describes the overall design and appearance of the resume.",
-	),
-});
-
-export type ResumeData = z.infer<typeof resumeDataSchema>;
-
-export const defaultResumeData: ResumeData = {
+const initialResumeData = {
 	picture: {
 		hidden: false,
 		url: "",
@@ -654,3 +695,30 @@ export const defaultResumeData: ResumeData = {
 		notes: "",
 	},
 };
+
+export const resumeDataSchema = z.object({
+	picture: pictureSchema
+		.catch(initialResumeData.picture)
+		.describe("Configuration for photograph displayed on the resume"),
+	basics: basicsSchema
+		.catch(initialResumeData.basics)
+		.describe("Basic information about the author, such as name, email, phone, location, and website"),
+	summary: summarySchema
+		.catch(initialResumeData.summary)
+		.describe("Summary section of the resume, useful for a short bio or introduction"),
+	sections: sectionsSchema
+		.catch(initialResumeData.sections)
+		.describe("Various sections of the resume, such as experience, education, projects, etc."),
+	customSections: customSectionsSchema
+		.catch(initialResumeData.customSections)
+		.describe("Custom sections of the resume, such as a custom section for notes, etc."),
+	metadata: metadataSchema
+		.catch(initialResumeData.metadata)
+		.describe(
+			"Metadata for the resume, such as template, layout, typography, etc. This section describes the overall design and appearance of the resume.",
+		),
+});
+
+export type ResumeData = z.infer<typeof resumeDataSchema>;
+
+export const defaultResumeData: ResumeData = initialResumeData as ResumeData;
