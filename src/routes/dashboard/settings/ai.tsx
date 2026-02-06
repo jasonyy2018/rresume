@@ -141,6 +141,24 @@ function AIForm() {
 					options={providerOptions}
 					onValueChange={handleProviderChange}
 				/>
+
+				{provider === "openrouter" && (
+					<p className="text-muted-foreground text-xs leading-relaxed">
+						<InfoIcon className="mr-1 inline-block" size={12} />
+						<Trans>
+							To use free models on OpenRouter, you must enable "Free model publication" in your{" "}
+							<a
+								href="https://openrouter.ai/settings/privacy"
+								target="_blank"
+								rel="noreferrer"
+								className="text-primary underline"
+							>
+								OpenRouter settings
+							</a>
+							.
+						</Trans>
+					</p>
+				)}
 			</div>
 
 			<div className="flex flex-col gap-y-2">

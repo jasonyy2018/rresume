@@ -119,11 +119,22 @@ export async function testConnection(input: TestConnectionInput): Promise<boolea
 
 		return result.text.trim().includes(RESPONSE_OK);
 	} catch (error) {
+		const message = error instanceof Error ? error.message : String(error);
+
 		console.error("[AI Test Connection] Caught Error:", {
 			name: error instanceof Error ? error.name : "Unknown",
-			message: error instanceof Error ? error.message : String(error),
+			message,
 			stack: error instanceof Error ? error.stack : undefined,
 		});
+
+		// OpenRouter specific error handling for data policy / free models
+		if (message.includes("Free model publication") || message.includes("data policy")) {
+			throw new ORPCError("BAD_REQUEST", {
+				message:
+					'Your OpenRouter account settings prevent the use of free models. Please visit https://openrouter.ai/settings/privacy and enable "Free model publication" to use free models, or use a paid model.',
+			});
+		}
+
 		throw error;
 	}
 }
