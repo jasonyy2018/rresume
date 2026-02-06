@@ -106,7 +106,10 @@ export const baseItemSchema = z.object({
 });
 
 export const summaryItemSchema = baseItemSchema.extend({
-	content: z.string().describe("The rich text content of the summary item. This should be a HTML-formatted string."),
+	content: z
+		.string()
+		.catch("")
+		.describe("The rich text content of the summary item. This should be a HTML-formatted string."),
 });
 
 export type SummaryItem = z.infer<typeof summaryItemSchema>;
@@ -157,8 +160,8 @@ export const experienceItemSchema = baseItemSchema.extend({
 });
 
 export const interestItemSchema = baseItemSchema.extend({
-	icon: iconSchema,
-	name: z.string().min(1).describe("The name of the interest/hobby."),
+	icon: iconSchema.catch(""),
+	name: z.string().min(1).catch("").describe("The name of the interest/hobby."),
 	keywords: z
 		.array(z.string())
 		.catch([])
@@ -411,12 +414,16 @@ export const customSectionItemSchema = z.union([
 export type CustomSectionItem = z.infer<typeof customSectionItemSchema>;
 
 export const customSectionSchema = baseSectionSchema.extend({
-	id: z.string().describe("The unique identifier for the custom section. Usually generated as a UUID."),
-	type: sectionTypeSchema.describe(
-		"The type of items this custom section contains. Determines which item schema and form fields to use.",
-	),
+	id: z
+		.string()
+		.catch(generateId)
+		.describe("The unique identifier for the custom section. Usually generated as a UUID."),
+	type: sectionTypeSchema
+		.catch("experience")
+		.describe("The type of items this custom section contains. Determines which item schema and form fields to use."),
 	items: z
 		.array(customSectionItemSchema)
+		.catch([])
 		.describe("The items to display in the custom section. Items follow the schema of the section type."),
 });
 
@@ -427,7 +434,10 @@ export const customSectionsSchema = z.array(customSectionSchema);
 export const fontWeightSchema = z.enum(["100", "200", "300", "400", "500", "600", "700", "800", "900"]);
 
 export const typographyItemSchema = z.object({
-	fontFamily: z.string().describe("The family of the font to use. Must be a font that is available on Google Fonts."),
+	fontFamily: z
+		.string()
+		.catch("IBM Plex Serif")
+		.describe("The family of the font to use. Must be a font that is available on Google Fonts."),
 	fontWeights: z
 		.array(fontWeightSchema)
 		.catch(["400"])
@@ -472,8 +482,8 @@ export const layoutSchema = z.object({
 });
 
 export const cssSchema = z.object({
-	enabled: z.boolean().describe("Whether to enable custom CSS for the resume."),
-	value: z.string().describe("The custom CSS to apply to the resume. This should be a valid CSS string."),
+	enabled: z.boolean().catch(false).describe("Whether to enable custom CSS for the resume."),
+	value: z.string().catch("").describe("The custom CSS to apply to the resume. This should be a valid CSS string."),
 });
 
 export const pageSchema = z.object({
@@ -502,7 +512,10 @@ export const levelDesignSchema = z.object({
 });
 
 export const colorDesignSchema = z.object({
-	primary: z.string().describe("The primary color of the design, defined as rgba(r, g, b, a)."),
+	primary: z
+		.string()
+		.catch("rgba(220, 38, 38, 1)")
+		.describe("The primary color of the design, defined as rgba(r, g, b, a)."),
 	text: z
 		.string()
 		.describe("The text color of the design, defined as rgba(r, g, b, a). Usually set to black: rgba(0, 0, 0, 1)."),
@@ -666,7 +679,15 @@ const initialResumeData = {
 			],
 		},
 		css: { enabled: false, value: "" },
-		page: { gapX: 4, gapY: 6, marginX: 14, marginY: 12, format: "a4", locale: "en", hideIcons: false },
+		page: {
+			gapX: 4,
+			gapY: 6,
+			marginX: 14,
+			marginY: 12,
+			format: "a4",
+			locale: "en",
+			hideIcons: false,
+		},
 		design: {
 			colors: {
 				primary: "rgba(220, 38, 38, 1)",
@@ -694,31 +715,33 @@ const initialResumeData = {
 		},
 		notes: "",
 	},
-};
+} as const;
 
-export const resumeDataSchema = z.object({
-	picture: pictureSchema
-		.catch(initialResumeData.picture)
-		.describe("Configuration for photograph displayed on the resume"),
-	basics: basicsSchema
-		.catch(initialResumeData.basics)
-		.describe("Basic information about the author, such as name, email, phone, location, and website"),
-	summary: summarySchema
-		.catch(initialResumeData.summary)
-		.describe("Summary section of the resume, useful for a short bio or introduction"),
-	sections: sectionsSchema
-		.catch(initialResumeData.sections)
-		.describe("Various sections of the resume, such as experience, education, projects, etc."),
-	customSections: customSectionsSchema
-		.catch(initialResumeData.customSections)
-		.describe("Custom sections of the resume, such as a custom section for notes, etc."),
-	metadata: metadataSchema
-		.catch(initialResumeData.metadata)
-		.describe(
-			"Metadata for the resume, such as template, layout, typography, etc. This section describes the overall design and appearance of the resume.",
-		),
-});
+export const resumeDataSchema = z
+	.object({
+		picture: pictureSchema
+			.catch(initialResumeData.picture as any)
+			.describe("Configuration for photograph displayed on the resume"),
+		basics: basicsSchema
+			.catch(initialResumeData.basics as any)
+			.describe("Basic information about the author, such as name, email, phone, location, and website"),
+		summary: summarySchema
+			.catch(initialResumeData.summary as any)
+			.describe("Summary section of the resume, useful for a short bio or introduction"),
+		sections: sectionsSchema
+			.catch(initialResumeData.sections as any)
+			.describe("Various sections of the resume, such as experience, education, projects, etc."),
+		customSections: customSectionsSchema
+			.catch(initialResumeData.customSections as any)
+			.describe("Custom sections of the resume, such as a custom section for notes, etc."),
+		metadata: metadataSchema
+			.catch(initialResumeData.metadata as any)
+			.describe(
+				"Metadata for the resume, such as template, layout, typography, etc. This section describes the overall design and appearance of the resume.",
+			),
+	})
+	.catch(initialResumeData as any);
 
 export type ResumeData = z.infer<typeof resumeDataSchema>;
 
-export const defaultResumeData: ResumeData = initialResumeData as ResumeData;
+export const defaultResumeData: ResumeData = initialResumeData as unknown as ResumeData;

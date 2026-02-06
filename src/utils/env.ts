@@ -6,7 +6,10 @@ export const env = createEnv({
 	runtimeEnv: process.env,
 	emptyStringAsUndefined: true,
 
-	client: {},
+	client: {
+		VITE_MATOMO_URL: z.string().optional(),
+		VITE_MATOMO_SITE_ID: z.string().optional(),
+	},
 
 	server: {
 		// Server

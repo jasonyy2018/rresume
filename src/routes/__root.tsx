@@ -5,8 +5,9 @@ import { i18n } from "@lingui/core";
 import { I18nProvider } from "@lingui/react";
 import { IconContext } from "@phosphor-icons/react";
 import type { QueryClient } from "@tanstack/react-query";
-import { createRootRouteWithContext, HeadContent, Scripts } from "@tanstack/react-router";
+import { createRootRouteWithContext, HeadContent, Scripts, useLocation } from "@tanstack/react-router";
 import { MotionConfig } from "motion/react";
+import { useEffect } from "react";
 import { CommandPalette } from "@/components/command-palette";
 import { BreakpointIndicator } from "@/components/layout/breakpoint-indicator";
 import { ThemeProvider } from "@/components/theme/provider";
@@ -18,6 +19,7 @@ import { getSession } from "@/integrations/auth/functions";
 import type { AuthSession } from "@/integrations/auth/types";
 import { client, type orpc } from "@/integrations/orpc/client";
 import type { FeatureFlags } from "@/integrations/orpc/services/flags";
+import { env } from "@/utils/env";
 import { getLocale, isRTL, type Locale, loadLocale } from "@/utils/locale";
 import { getTheme, type Theme } from "@/utils/theme";
 import appCss from "../styles/globals.css?url";
@@ -121,9 +123,10 @@ export const Route = createRootRouteWithContext<RouterContext>()({
 						_paq.push(['trackPageView']);
 						_paq.push(['enableLinkTracking']);
 						(function() {
-							var u="//matomo.wisdomitc.com/";
-							_paq.push(['setTrackerUrl', u+'matomo.php']);
-							_paq.push(['setSiteId', '7']);
+							var u = "${env.VITE_MATOMO_URL ?? "https://matomo.wisdomitc.com/"}";
+							if (!u.endsWith('/')) u += '/';
+							_paq.push(['setTrackerUrl', u + 'matomo.php']);
+							_paq.push(['setSiteId', "${env.VITE_MATOMO_SITE_ID ?? "7"}"]);
 							var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
 							g.async=true; g.src=u+'matomo.js'; s.parentNode.insertBefore(g,s);
 						})();
@@ -151,6 +154,16 @@ type Props = {
 function RootDocument({ children }: Props) {
 	const { theme, locale } = Route.useRouteContext();
 	const dir = isRTL(locale) ? "rtl" : "ltr";
+	const location = useLocation();
+
+	useEffect(() => {
+		const _paq = (window as unknown as { _paq?: unknown[][] })._paq;
+		if (_paq) {
+			_paq.push(["setCustomUrl", location.pathname + location.search]);
+			_paq.push(["setDocumentTitle", document.title]);
+			_paq.push(["trackPageView"]);
+		}
+	}, [location.pathname, location.search]);
 
 	return (
 		<html suppressHydrationWarning dir={dir} lang={locale} className={theme}>
