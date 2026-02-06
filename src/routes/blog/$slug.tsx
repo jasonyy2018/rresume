@@ -2,14 +2,15 @@ import { t } from "@lingui/core/macro";
 import { ArrowLeftIcon } from "@phosphor-icons/react";
 import { createFileRoute, Link, useParams } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import articles from "@/content/blog/articles.json";
+import articlesEn from "@/content/blog/articles.en.json";
+import articlesZh from "@/content/blog/articles.zh-CN.json";
 import type { Article } from "@/schema/article";
-
-const allArticles: Article[] = articles as Article[];
 
 export const Route = createFileRoute("/blog/$slug")({
 	component: ArticlePage,
-	head: ({ params }) => {
+	head: ({ params, context }) => {
+		const locale = context.locale;
+		const allArticles = (locale === "zh-CN" ? articlesZh : articlesEn) as Article[];
 		const article = allArticles.find((a) => a.slug === params.slug);
 		if (!article) return {};
 
@@ -48,6 +49,8 @@ export const Route = createFileRoute("/blog/$slug")({
 });
 
 function ArticlePage() {
+	const { locale } = Route.useRouteContext();
+	const allArticles = (locale === "zh-CN" ? articlesZh : articlesEn) as Article[];
 	const { slug } = useParams({ from: "/blog/$slug" });
 	const article = allArticles.find((a) => a.slug === slug);
 

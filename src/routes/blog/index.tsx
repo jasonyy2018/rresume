@@ -3,16 +3,17 @@ import { ArrowRightIcon } from "@phosphor-icons/react";
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import articles from "@/content/blog/articles.json";
+import articlesEn from "@/content/blog/articles.en.json";
+import articlesZh from "@/content/blog/articles.zh-CN.json";
 import type { Article } from "@/schema/article";
-
-const allArticles: Article[] = articles as Article[];
 
 export const Route = createFileRoute("/blog/")({
 	component: BlogPage,
 });
 
 function BlogPage() {
+	const { locale } = Route.useRouteContext();
+	const allArticles: Article[] = (locale === "zh-CN" ? articlesZh : articlesEn) as Article[];
 	return (
 		<main className="container mx-auto px-4 py-24 sm:px-6 lg:px-12">
 			<div className="mb-12 text-center">
