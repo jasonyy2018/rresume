@@ -77,26 +77,16 @@ services:
       context: .
       dockerfile: Dockerfile
     image: reactive-resume:latest
-    # image: ghcr.io/amruthpillai/reactive-resume:latest
+    env_file:
+      - .env
     environment:
-      # Server
-      - TZ=Etc/UTC
       - NODE_ENV=production
       - APP_URL=https://rres.togomol.com
       - PRINTER_APP_URL=http://app:3000
       # Printer
       - PRINTER_ENDPOINT=ws://browserless:3000/chrome?token=1234567890
-      # - PRINTER_ENDPOINT=http://chrome:9222 # Or, if you're using chromedp/headless-shell
-      # Database
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/postgres
-      # Authentication
-      - AUTH_SECRET=change-me-to-a-secure-secret-key-in-production
-      # Storage
-      - S3_ACCESS_KEY_ID=seaweedfs
-      - S3_SECRET_ACCESS_KEY=seaweedfs
       - S3_ENDPOINT=http://seaweedfs:8333
-      - S3_BUCKET=reactive-resume
-      - S3_FORCE_PATH_STYLE=true
     volumes:
       - reactive_resume_data:/app/data
     ports:
