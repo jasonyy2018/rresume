@@ -134,9 +134,10 @@ export const printerService = {
 			// This prevents redirection loops if the app enforces HTTPS based on APP_URL
 			const host = new URL(env.APP_URL).host;
 			await page.setExtraHTTPHeaders({
-				"x-forwarded-proto": "https",
-				"x-forwarded-host": host,
-				"x-forwarded-port": "443",
+				"X-Forwarded-Proto": "https",
+				"X-Forwarded-Host": host,
+				"X-Forwarded-Port": "443",
+				"X-Forwarded-For": "127.0.0.1",
 			});
 
 			// Wait for the page to fully load (network idle + custom loaded attribute)
@@ -284,9 +285,10 @@ export const printerService = {
 			const page = await browser.newPage();
 			const host = new URL(env.APP_URL).host;
 			await page.setExtraHTTPHeaders({
-				"x-forwarded-proto": "https",
-				"x-forwarded-host": host,
-				"x-forwarded-port": "443",
+				"X-Forwarded-Proto": "https",
+				"X-Forwarded-Host": host,
+				"X-Forwarded-Port": "443",
+				"X-Forwarded-For": "127.0.0.1",
 			});
 
 			console.log("Navigating to HTML printer URL:", url);
@@ -378,9 +380,10 @@ export const printerService = {
 			const page = await browser.newPage();
 			const host = new URL(env.APP_URL).host;
 			await page.setExtraHTTPHeaders({
-				"x-forwarded-proto": "https",
-				"x-forwarded-host": host,
-				"x-forwarded-port": "443",
+				"X-Forwarded-Proto": "https",
+				"X-Forwarded-Host": host,
+				"X-Forwarded-Port": "443",
+				"X-Forwarded-For": "127.0.0.1",
 			});
 
 			await page.setViewport(pageDimensionsAsPixels.a4);

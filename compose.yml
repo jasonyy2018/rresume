@@ -80,7 +80,7 @@ services:
       - .env
     environment:
       - NODE_ENV=production
-      - NITRO_TRUST_PROXY=1
+      - NITRO_TRUST_PROXY=true
       - APP_URL=https://rres.togomol.com
       - PRINTER_APP_URL=http://app:3000
       # Printer
