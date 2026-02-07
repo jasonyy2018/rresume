@@ -80,10 +80,10 @@ services:
       - .env
     environment:
       - NODE_ENV=production
-      - NITRO_TRUST_PROXY=true
+      - NITRO_TRUST_PROXY=1
       - NITRO_PROXY_HEADER=x-forwarded-proto
       - APP_URL=https://rres.togomol.com
-      - PRINTER_APP_URL=http://app:3000
+      - PRINTER_APP_URL=http://rres.togomol.com:3000
       # Printer
       - PRINTER_ENDPOINT=ws://browserless:3000/chrome?token=1234567890
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/postgres
@@ -92,6 +92,10 @@ services:
       - reactive_resume_data:/app/data
     ports:
       - "8084:3000"
+    networks:
+      default:
+        aliases:
+          - rres.togomol.com
     depends_on:
       postgres:
         condition: service_healthy

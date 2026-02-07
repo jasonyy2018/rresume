@@ -131,12 +131,12 @@ export const printerService = {
 			const page = await browser.newPage();
 
 			// Add x-forwarded-proto header to trick the app into thinking it's already on HTTPS
-			// This prevents redirection loops if the app enforces HTTPS based on APP_URL
-			const host = new URL(env.APP_URL).host;
+			// Use the real Host as defined in APP_URL to match proxy behavior
+			const appUrl = new URL(env.APP_URL);
 			await page.setExtraHTTPHeaders({
 				"X-Forwarded-Proto": "https",
-				"X-Forwarded-Host": host,
-				"X-Forwarded-Port": "443",
+				"X-Forwarded-Host": appUrl.host,
+				"X-Forwarded-Port": appUrl.port || (appUrl.protocol === "https:" ? "443" : "80"),
 				"X-Forwarded-For": "127.0.0.1",
 			});
 

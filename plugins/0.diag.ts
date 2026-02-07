@@ -15,7 +15,14 @@ export default (nitroApp: any) => {
 		}
 
 		// Bypass HTTPS redirection for internal traffic
-		if (host?.includes("app:3000") || host === "localhost:3000" || forwardedHost?.includes("app:3000")) {
+		// We check for internal container names, localhost, and the aliased external domain hitting the internal port
+		if (
+			host?.includes("app:3000") ||
+			host === "localhost:3000" ||
+			forwardedHost?.includes("app:3000") ||
+			host?.includes("rres.togomol.com:3000") ||
+			host === "rres.togomol.com"
+		) {
 			if (proto !== "https") {
 				console.log(`[Nitro Diag] Forcing https protocol for internal request to ${host}`);
 				event.node.req.headers["x-forwarded-proto"] = "https";
