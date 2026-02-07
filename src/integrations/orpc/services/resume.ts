@@ -146,19 +146,25 @@ export const resumeService = {
 			.from(schema.resume)
 			.where(eq(schema.resume.id, input.id));
 
+		console.log("getByIdForPrinter hit for ID:", input.id, "Found resume:", !!resume);
+
 		if (!resume) throw new ORPCError("NOT_FOUND");
 
 		try {
-			if (!resume.data.picture.url) throw new Error("Picture is not available");
-
 			// Convert picture URL to base64 data, so there's no fetching required on the client.
-			const url = resume.data.picture.url.replace(env.APP_URL, "http://localhost:3000");
+			const internalUrl = env.PRINTER_APP_URL ?? "http://localhost:3000";
+			const url = resume.data.picture.url.replace(env.APP_URL, internalUrl);
+			console.log("Fetching resume picture internally from:", url);
 			const base64 = await fetch(url)
 				.then((res) => res.arrayBuffer())
 				.then((buffer) => Buffer.from(buffer).toString("base64"));
 
 			resume.data.picture.url = `data:image/jpeg;base64,${base64}`;
-		} catch {
+		} catch (error) {
+			console.error(
+				"Failed to fetch resume picture internally (Ignored):",
+				error instanceof Error ? error.message : error,
+			);
 			// Ignore errors, as the picture is not always available
 		}
 

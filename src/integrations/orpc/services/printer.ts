@@ -31,8 +31,8 @@ async function getBrowser(): Promise<Browser> {
 	else connectOptions.browserURL = endpoint.toString();
 
 	console.log("Connecting to browserless:", connectOptions);
-
 	browserInstance = await puppeteer.connect(connectOptions);
+	console.log("Connected to browserless successfully");
 	return browserInstance;
 }
 
@@ -236,8 +236,11 @@ export const printerService = {
 				type: "pdf",
 			});
 
+			console.log("PDF generated and uploaded successfully:", result.url);
+
 			return result.url;
 		} catch (error) {
+			console.error("PDF Generation Error (Detailed):", error);
 			throw new ORPCError("INTERNAL_SERVER_ERROR", error as Error);
 		}
 	},
@@ -284,8 +287,11 @@ export const printerService = {
 				type: "html",
 			});
 
+			console.log("HTML generated and uploaded successfully:", result.url);
+
 			return result.url;
 		} catch (error) {
+			console.error("HTML Generation Error (Detailed):", error);
 			throw new ORPCError("INTERNAL_SERVER_ERROR", error as Error);
 		}
 	},
@@ -364,8 +370,11 @@ export const printerService = {
 				type: "screenshot",
 			});
 
+			console.log("Screenshot generated and uploaded successfully:", result.url);
+
 			return result.url;
 		} catch (error) {
+			console.error("Screenshot Generation Error (Detailed):", error);
 			throw new ORPCError("INTERNAL_SERVER_ERROR", error as Error);
 		}
 	},
