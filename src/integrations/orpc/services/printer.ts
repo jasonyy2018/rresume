@@ -17,7 +17,12 @@ async function getBrowser(): Promise<Browser> {
 	// Reuse existing connected browser if available
 	if (browserInstance?.connected) return browserInstance;
 
-	const args = ["--disable-dev-shm-usage", "--disable-features=LocalNetworkAccessChecks,site-per-process,FedCm"];
+	const args = [
+		"--disable-dev-shm-usage",
+		"--disable-features=LocalNetworkAccessChecks,site-per-process,FedCm",
+		"--ignore-certificate-errors",
+		"--disable-web-security",
+	];
 
 	console.log("env.PRINTER_ENDPOINT:", env.PRINTER_ENDPOINT);
 	const endpoint = new URL(env.PRINTER_ENDPOINT);
@@ -127,7 +132,12 @@ export const printerService = {
 
 			// Add x-forwarded-proto header to trick the app into thinking it's already on HTTPS
 			// This prevents redirection loops if the app enforces HTTPS based on APP_URL
-			await page.setExtraHTTPHeaders({ "x-forwarded-proto": "https" });
+			const host = new URL(env.APP_URL).host;
+			await page.setExtraHTTPHeaders({
+				"x-forwarded-proto": "https",
+				"x-forwarded-host": host,
+				"x-forwarded-port": "443",
+			});
 
 			// Wait for the page to fully load (network idle + custom loaded attribute)
 			await page.setViewport(pageDimensionsAsPixels[format]);
@@ -272,7 +282,12 @@ export const printerService = {
 			await browser.setCookie({ name: "locale", value: locale, domain });
 
 			const page = await browser.newPage();
-			await page.setExtraHTTPHeaders({ "x-forwarded-proto": "https" });
+			const host = new URL(env.APP_URL).host;
+			await page.setExtraHTTPHeaders({
+				"x-forwarded-proto": "https",
+				"x-forwarded-host": host,
+				"x-forwarded-port": "443",
+			});
 
 			console.log("Navigating to HTML printer URL:", url);
 			await page.goto(url, { waitUntil: "networkidle0" });
@@ -361,7 +376,12 @@ export const printerService = {
 			await browser.setCookie({ name: "locale", value: locale, domain });
 
 			const page = await browser.newPage();
-			await page.setExtraHTTPHeaders({ "x-forwarded-proto": "https" });
+			const host = new URL(env.APP_URL).host;
+			await page.setExtraHTTPHeaders({
+				"x-forwarded-proto": "https",
+				"x-forwarded-host": host,
+				"x-forwarded-port": "443",
+			});
 
 			await page.setViewport(pageDimensionsAsPixels.a4);
 			console.log("Navigating to Screenshot printer URL:", url);
