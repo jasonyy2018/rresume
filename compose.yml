@@ -85,7 +85,7 @@ services:
       - APP_URL=https://rres.togomol.com
       - PRINTER_APP_URL=http://app:3000
       # Printer
-      - PRINTER_ENDPOINT=ws://browserless:3000?token=1234567890
+      - PRINTER_ENDPOINT=ws://browserless:3000/chrome?token=1234567890
       # - PRINTER_ENDPOINT=http://chrome:9222 # Or, if you're using chromedp/headless-shell
       # Database
       - DATABASE_URL=postgresql://postgres:postgres@postgres:5432/postgres
