@@ -24,6 +24,7 @@ async function getBrowser(): Promise<Browser> {
 	const isWebSocket = endpoint.protocol.startsWith("ws");
 	const connectOptions: ConnectOptions = { acceptInsecureCerts: true };
 
+	console.log("env.PRINTER_ENDPOINT pathname:", endpoint.pathname);
 	endpoint.searchParams.append("launch", JSON.stringify({ args }));
 
 	if (isWebSocket) connectOptions.browserWSEndpoint = endpoint.toString();
