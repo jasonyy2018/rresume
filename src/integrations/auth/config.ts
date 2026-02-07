@@ -70,10 +70,11 @@ const getAuthConfig = () => {
 		database: drizzleAdapter(db, { schema, provider: "pg" }),
 
 		telemetry: { enabled: false },
-		trustedOrigins: [env.APP_URL],
+		trustedOrigins: [env.APP_URL, "http://app:3000"],
 		advanced: {
 			database: { generateId },
 			useSecureCookies: env.APP_URL.startsWith("https://"),
+			trustHost: true,
 		},
 
 		emailAndPassword: {

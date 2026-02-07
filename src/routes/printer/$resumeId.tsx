@@ -1,4 +1,5 @@
 import { createFileRoute, redirect } from "@tanstack/react-router";
+import { getRequestHeaders } from "@tanstack/react-start/server";
 import { zodValidator } from "@tanstack/zod-adapter";
 import { useEffect } from "react";
 import { z } from "zod";
@@ -17,6 +18,12 @@ export const Route = createFileRoute("/printer/$resumeId")({
 	component: RouteComponent,
 	validateSearch: zodValidator(searchSchema),
 	beforeLoad: async ({ params, search }) => {
+		if (import.meta.env.SSR) {
+			const headers = getRequestHeaders();
+			console.log("[Printer Route] Request URL:", `${env.APP_URL}/printer/${params.resumeId}`);
+			console.log("[Printer Route] Headers:", JSON.stringify(Object.fromEntries(headers.entries())));
+		}
+
 		if (env.FLAG_DEBUG_PRINTER) return;
 
 		try {

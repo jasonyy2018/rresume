@@ -140,6 +140,23 @@ export const printerService = {
 				"X-Forwarded-For": "127.0.0.1",
 			});
 
+			// Add request and response interception for debugging
+			await page.setRequestInterception(true);
+			page.on("request", (request) => {
+				console.log(`[Puppeteer Request] ${request.method()} ${request.url()}`);
+				request.continue();
+			});
+			page.on("response", (response) => {
+				const status = response.status();
+				if (status >= 300 && status <= 399) {
+					console.log(
+						`[Puppeteer Response] ${status} Redirect from ${response.url()} to ${response.headers().location}`,
+					);
+				} else {
+					console.log(`[Puppeteer Response] ${status} ${response.url()}`);
+				}
+			});
+
 			// Wait for the page to fully load (network idle + custom loaded attribute)
 			await page.setViewport(pageDimensionsAsPixels[format]);
 			console.log("Navigating to PDF printer URL:", url);
