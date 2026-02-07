@@ -183,18 +183,24 @@ export const printerService = {
 
 						// Add margin between pages (except the last one)
 						for (let i = 0; i < numberOfPages - 1; i++) {
-							const pageEl = pageElements[i] as HTMLElement;
-							pageEl.style.marginBottom = `${marginYAsPixels}px`;
+							const pageEl = pageElements[i] as HTMLElement | null;
+							if (pageEl?.style) {
+								pageEl.style.marginBottom = `${marginYAsPixels}px`;
+							} else {
+								console.error(`[Puppeteer Eval] Page element ${i} or its style is missing.`);
+							}
 						}
 
 						// Now measure the total height (margins are now part of the DOM)
 						let totalHeight = 0;
-						for (const el of pageElements) {
-							const pageEl = el as HTMLElement;
-							// offsetHeight includes padding and border, but not margin
-							const style = getComputedStyle(pageEl);
-							const marginBottom = Number.parseFloat(style.marginBottom) || 0;
-							totalHeight += pageEl.offsetHeight + marginBottom;
+						for (let i = 0; i < pageElements.length; i++) {
+							const pageEl = pageElements[i] as HTMLElement | null;
+							if (pageEl) {
+								// offsetHeight includes padding and border, but not margin
+								const style = getComputedStyle(pageEl);
+								const marginBottom = Number.parseFloat(style.marginBottom) || 0;
+								totalHeight += pageEl.offsetHeight + marginBottom;
+							}
 						}
 
 						return Math.max(totalHeight, minPageHeight);
@@ -214,22 +220,31 @@ export const printerService = {
 					if (!Number.isNaN(heightValue)) {
 						// Subtract top + bottom margins from page height
 						const newHeight = `${heightValue - marginY}px`;
-						if (container) container.style.setProperty("--page-height", newHeight);
+						if (container) {
+							container.style.setProperty("--page-height", newHeight);
+						} else {
+							console.warn("[Puppeteer Eval] .resume-preview-container not found for A4/Letter.");
+						}
 						root.style.setProperty("--page-height", newHeight);
 					}
 
 					// Add page break CSS to each resume page element (identified by data-page-index attribute)
 					// This ensures each visual resume page starts a new PDF page
-					for (const el of pageElements) {
-						const element = el as HTMLElement;
-						const index = Number.parseInt(element.getAttribute("data-page-index") ?? "0", 10);
+					// Add page break CSS to each resume page element (identified by data-page-index attribute)
+					// This ensures each visual resume page starts a new PDF page
+					for (let i = 0; i < pageElements.length; i++) {
+						const element = pageElements[i] as HTMLElement | null;
+						if (element?.style) {
+							const indexAttr = element.getAttribute("data-page-index");
+							const index = Number.parseInt(indexAttr ?? "0", 10);
 
-						// Force a page break before each page except the first
-						if (index > 0) element.style.breakBefore = "page";
+							// Force a page break before each page except the first
+							if (index > 0) element.style.breakBefore = "page";
 
-						// Allow content within a page to break naturally if it overflows
-						// (e.g., if a single page has more content than fits on one PDF page)
-						element.style.breakInside = "auto";
+							// Allow content within a page to break naturally if it overflows
+							// (e.g., if a single page has more content than fits on one PDF page)
+							element.style.breakInside = "auto";
+						}
 					}
 
 					return null; // Fixed height from pageDimensionsAsPixels for A4/Letter
@@ -242,7 +257,8 @@ export const printerService = {
 			// Step 6: Generate the PDF with the specified dimensions and margins
 			// For free-form: use measured content height (with minimum constraint)
 			// For A4/Letter: use fixed dimensions from pageDimensionsAsPixels
-			const pdfHeight = isFreeForm && contentHeight ? contentHeight : pageDimensionsAsPixels[format].height;
+			const pdfHeight =
+				isFreeForm && typeof contentHeight === "number" ? contentHeight : pageDimensionsAsPixels[format].height;
 
 			const pdfBuffer = await page.pdf({
 				width: `${pageDimensionsAsPixels[format].width}px`,
