@@ -126,7 +126,17 @@ export const resumeService = {
 			.from(schema.resume)
 			.where(and(eq(schema.resume.id, input.id), eq(schema.resume.userId, input.userId)));
 
-		if (!resume) throw new ORPCError("NOT_FOUND");
+		console.log("[getById] ID:", input.id, "UserId:", input.userId, "Found:", !!resume);
+
+		if (!resume) {
+			console.log("[getById] Resume not found for user. Checking if it exists at all...");
+			const existsAtAll = await db
+				.select({ id: schema.resume.id })
+				.from(schema.resume)
+				.where(eq(schema.resume.id, input.id));
+			console.log("[getById] Exists at all:", !!existsAtAll[0]);
+			throw new ORPCError("NOT_FOUND");
+		}
 
 		return resume;
 	},
@@ -146,9 +156,18 @@ export const resumeService = {
 			.from(schema.resume)
 			.where(eq(schema.resume.id, input.id));
 
-		console.log("getByIdForPrinter hit for ID:", input.id, "Found resume:", !!resume);
+		console.log("[getByIdForPrinter] ID:", input.id, "Found:", !!resume);
 
-		if (!resume) throw new ORPCError("NOT_FOUND");
+		if (!resume) {
+			const allResumes = await db.select({ id: schema.resume.id }).from(schema.resume).limit(5);
+			const totalCount = await db.select({ count: sql<number>`count(*)` }).from(schema.resume);
+			console.log("[getByIdForPrinter] Total resumes in DB:", totalCount[0].count);
+			console.log(
+				"[getByIdForPrinter] Sample IDs in DB:",
+				allResumes.map((r) => r.id),
+			);
+			throw new ORPCError("NOT_FOUND");
+		}
 
 		try {
 			// Convert picture URL to base64 data, so there's no fetching required on the client.
