@@ -20,6 +20,8 @@ services:
   browserless:
     image: ghcr.io/browserless/chrome:latest
     restart: unless-stopped
+    ports:
+      - "4001:3000"
     environment:
       - QUEUED=10
       - HEALTH=true
