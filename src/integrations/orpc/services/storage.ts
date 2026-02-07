@@ -53,26 +53,6 @@ const DEFAULT_CONTENT_TYPE = "application/octet-stream";
 
 const IMAGE_MIME_TYPES = ["image/gif", "image/png", "image/jpeg", "image/webp"];
 
-// Key builders for different upload types
-function buildPictureKey(userId: string): string {
-	const timestamp = Date.now();
-	return `uploads/${userId}/pictures/${timestamp}.webp`;
-}
-
-function buildScreenshotKey(userId: string, resumeId: string): string {
-	const timestamp = Date.now();
-	return `uploads/${userId}/screenshots/${resumeId}/${timestamp}.webp`;
-}
-
-function buildPdfKey(userId: string, resumeId: string): string {
-	const timestamp = Date.now();
-	return `uploads/${userId}/pdfs/${resumeId}/${timestamp}.pdf`;
-}
-
-function buildPublicUrl(path: string): string {
-	return new URL(path, env.APP_URL).toString();
-}
-
 export function inferContentType(filename: string): string {
 	const extension = extname(filename).toLowerCase();
 	return CONTENT_TYPE_MAP[extension] ?? DEFAULT_CONTENT_TYPE;
@@ -313,8 +293,34 @@ export function getStorageService(): StorageService {
 	return cachedService;
 }
 
+// Key builders for different upload types
+function buildPictureKey(userId: string): string {
+	const timestamp = Date.now();
+	return `uploads/${userId}/pictures/${timestamp}.webp`;
+}
+
+function buildScreenshotKey(userId: string, resumeId: string): string {
+	const timestamp = Date.now();
+	return `uploads/${userId}/screenshots/${resumeId}/${timestamp}.webp`;
+}
+
+function buildPdfKey(userId: string, resumeId: string): string {
+	const timestamp = Date.now();
+	return `uploads/${userId}/pdfs/${resumeId}/${timestamp}.pdf`;
+}
+
+function buildHtmlKey(userId: string, resumeId: string): string {
+	const timestamp = Date.now();
+	return `uploads/${userId}/html/${resumeId}/${timestamp}.html`;
+}
+
+function buildPublicUrl(path: string): string {
+	if (env.S3_PUBLIC_URL) return `${env.S3_PUBLIC_URL}/${path}`;
+	return new URL(path, env.APP_URL).toString();
+}
+
 // High-level upload types
-type UploadType = "picture" | "screenshot" | "pdf";
+type UploadType = "picture" | "screenshot" | "pdf" | "html";
 
 export interface UploadFileInput {
 	userId: string;
@@ -332,7 +338,7 @@ export interface UploadFileResult {
 export async function uploadFile(input: UploadFileInput): Promise<UploadFileResult> {
 	const storageService = getStorageService();
 
-	let key: string;
+	let key = "";
 
 	switch (input.type) {
 		case "picture":
@@ -346,13 +352,24 @@ export async function uploadFile(input: UploadFileInput): Promise<UploadFileResu
 			if (!input.resumeId) throw new Error("resumeId is required for pdf uploads");
 			key = buildPdfKey(input.userId, input.resumeId);
 			break;
+		case "html":
+			if (!input.resumeId) throw new Error("resumeId is required for html uploads");
+			key = buildHtmlKey(input.userId, input.resumeId);
+			break;
 	}
 
-	await storageService.write({
-		key,
-		data: input.data,
-		contentType: input.contentType,
-	});
+	console.log("Uploading file to storage:", { key, contentType: input.contentType, type: input.type });
+
+	try {
+		await storageService.write({
+			key,
+			data: input.data,
+			contentType: input.contentType,
+		});
+	} catch (error) {
+		console.error("Failed to upload file to storage:", error);
+		throw error;
+	}
 
 	return {
 		key,

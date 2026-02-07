@@ -65,7 +65,7 @@ services:
       /bin/sh -c "
         sleep 5;
         mc alias set seaweedfs http://seaweedfs:8333 seaweedfs seaweedfs;
-        mc mb seaweedfs/reactive-resume;
+        mc mb seaweedfs/reactive-resume --ignore-existing;
         exit 0;
       "
     depends_on:

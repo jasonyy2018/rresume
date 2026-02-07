@@ -19,6 +19,7 @@ async function getBrowser(): Promise<Browser> {
 
 	const args = ["--disable-dev-shm-usage", "--disable-features=LocalNetworkAccessChecks,site-per-process,FedCm"];
 
+	console.log("env.PRINTER_ENDPOINT:", env.PRINTER_ENDPOINT);
 	const endpoint = new URL(env.PRINTER_ENDPOINT);
 	const isWebSocket = endpoint.protocol.startsWith("ws");
 	const connectOptions: ConnectOptions = { acceptInsecureCerts: true };
@@ -27,6 +28,8 @@ async function getBrowser(): Promise<Browser> {
 
 	if (isWebSocket) connectOptions.browserWSEndpoint = endpoint.toString();
 	else connectOptions.browserURL = endpoint.toString();
+
+	console.log("Connecting to browserless:", connectOptions);
 
 	browserInstance = await puppeteer.connect(connectOptions);
 	return browserInstance;
@@ -300,7 +303,7 @@ export const printerService = {
 
 		if (existingScreenshots.length > 0) {
 			const sortedFiles = existingScreenshots
-				.map((path) => {
+				.map((path: string) => {
 					const filename = path.split("/").pop();
 					const match = filename?.match(/^(\d+)\.webp$/);
 					return match ? { path, timestamp: Number(match[1]) } : null;
@@ -323,7 +326,7 @@ export const printerService = {
 				}
 
 				// Resume was updated after the screenshot - delete old ones and regenerate
-				await Promise.all(sortedFiles.map((file) => storageService.delete(file.path)));
+				await Promise.all(sortedFiles.map((file: { path: string }) => storageService.delete(file.path)));
 			}
 		}
 

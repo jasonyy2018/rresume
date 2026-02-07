@@ -61,6 +61,7 @@ export const env = createEnv({
 		S3_SECRET_ACCESS_KEY: z.string().min(1).optional(),
 		S3_REGION: z.string().default("us-east-1"),
 		S3_ENDPOINT: z.url({ protocol: /https?/ }).optional(),
+		S3_PUBLIC_URL: z.url({ protocol: /https?/ }).optional(),
 		S3_BUCKET: z.string().min(1).optional(),
 		// Set to "true" for path-style URLs (endpoint/bucket), common with MinIO, SeaweedFS, etc.
 		// Set to "false" for virtual-hosted-style URLs (bucket.endpoint), common with AWS S3, Cloudflare R2, etc.
