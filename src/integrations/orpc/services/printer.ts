@@ -125,8 +125,13 @@ export const printerService = {
 
 			const page = await browser.newPage();
 
+			// Add x-forwarded-proto header to trick the app into thinking it's already on HTTPS
+			// This prevents redirection loops if the app enforces HTTPS based on APP_URL
+			await page.setExtraHTTPHeaders({ "x-forwarded-proto": "https" });
+
 			// Wait for the page to fully load (network idle + custom loaded attribute)
 			await page.setViewport(pageDimensionsAsPixels[format]);
+			console.log("Navigating to PDF printer URL:", url);
 			await page.goto(url, { waitUntil: "networkidle0" });
 			await page.waitForFunction(() => document.body.getAttribute("data-wf-loaded") === "true", { timeout: 5_000 });
 
@@ -267,6 +272,9 @@ export const printerService = {
 			await browser.setCookie({ name: "locale", value: locale, domain });
 
 			const page = await browser.newPage();
+			await page.setExtraHTTPHeaders({ "x-forwarded-proto": "https" });
+
+			console.log("Navigating to HTML printer URL:", url);
 			await page.goto(url, { waitUntil: "networkidle0" });
 			await page.waitForFunction(() => document.body.getAttribute("data-wf-loaded") === "true", { timeout: 5_000 });
 
@@ -353,8 +361,10 @@ export const printerService = {
 			await browser.setCookie({ name: "locale", value: locale, domain });
 
 			const page = await browser.newPage();
+			await page.setExtraHTTPHeaders({ "x-forwarded-proto": "https" });
 
 			await page.setViewport(pageDimensionsAsPixels.a4);
+			console.log("Navigating to Screenshot printer URL:", url);
 			await page.goto(url, { waitUntil: "networkidle0" });
 			await page.waitForFunction(() => document.body.getAttribute("data-wf-loaded") === "true", { timeout: 5_000 });
 

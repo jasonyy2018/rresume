@@ -170,6 +170,8 @@ export const resumeService = {
 		}
 
 		try {
+			if (!resume.data.picture.url) return resume;
+
 			// Convert picture URL to base64 data, so there's no fetching required on the client.
 			const internalUrl = env.PRINTER_APP_URL ?? "http://localhost:3000";
 			const url = resume.data.picture.url.replace(env.APP_URL, internalUrl);
