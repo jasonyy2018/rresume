@@ -69,7 +69,7 @@ const config = defineConfig({
 		reflectPolyfillPlugin(),
 		tailwindcss(),
 		nitro({
-			plugins: ["plugins/1.migrate.ts"],
+			plugins: ["plugins/0.diag.ts", "plugins/1.migrate.ts"],
 		}),
 		tanstackStart({ router: { semicolons: true, quoteStyle: "double" } }),
 		viteReact({ babel: { plugins: ["@lingui/babel-plugin-lingui-macro"] } }),

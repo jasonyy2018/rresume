@@ -81,6 +81,7 @@ services:
     environment:
       - NODE_ENV=production
       - NITRO_TRUST_PROXY=true
+      - NITRO_PROXY_HEADER=x-forwarded-proto
       - APP_URL=https://rres.togomol.com
       - PRINTER_APP_URL=http://app:3000
       # Printer
